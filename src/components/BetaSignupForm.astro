@@ -1,0 +1,397 @@
+---
+import { getTranslations } from "@/i18n/utils";
+import type { Language } from "@/i18n/utils";
+import SkillGrid from "./SkillGrid";
+
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
+const t = getTranslations(lang);
+---
+
+<div id="beta-signup-container" data-lang={lang}>
+  <!-- Step 1: Required Fields -->
+  <form
+    id="beta-signup-form"
+    class="space-y-6"
+    data-step="1"
+    novalidate
+  >
+    <!-- Step Indicator -->
+    <div id="step-indicator-1" class="flex items-center justify-center gap-2 text-sm text-gray-500">
+      <span class="w-6 h-6 rounded-full bg-infinity-orange text-white flex items-center justify-center text-xs font-medium">1</span>
+      <span class="text-infinity-dark font-medium">{t.beta.step_1_of_2}</span>
+    </div>
+
+    <!-- Email Field -->
+    <div>
+      <label for="email" class="block text-sm font-medium text-infinity-dark mb-2">
+        {t.beta.email_label}
+      </label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        aria-required="true"
+        placeholder={t.beta.email_placeholder}
+        class="w-full px-4 py-3 border border-gray-300 rounded-lg
+               focus:border-infinity-orange focus:ring-1 focus:ring-infinity-orange
+               focus:outline-none transition-colors"
+      />
+      <p id="email-error" class="text-red-600 text-sm mt-1 hidden" role="alert"></p>
+    </div>
+
+    <!-- Name Field -->
+    <div>
+      <label for="name" class="block text-sm font-medium text-infinity-dark mb-2">
+        {t.beta.name_label}
+      </label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        aria-required="true"
+        placeholder={t.beta.name_placeholder}
+        class="w-full px-4 py-3 border border-gray-300 rounded-lg
+               focus:border-infinity-orange focus:ring-1 focus:ring-infinity-orange
+               focus:outline-none transition-colors"
+      />
+      <p id="name-error" class="text-red-600 text-sm mt-1 hidden" role="alert"></p>
+    </div>
+
+    <!-- Skills Selection -->
+    <div>
+      <label class="block text-sm font-medium text-infinity-dark mb-2">
+        {t.beta.skills_label}
+      </label>
+      <p class="text-gray-500 text-sm mb-3">{t.beta.skills_hint}</p>
+      <SkillGrid client:load lang={lang} />
+      <input type="hidden" id="selected-skills" name="skills" value="" />
+      <p id="skills-error" class="text-red-600 text-sm mt-1 hidden" role="alert"></p>
+    </div>
+
+    <!-- Continue Button -->
+    <button
+      type="submit"
+      id="continue-btn"
+      class="w-full bg-infinity-orange text-white px-6 py-4 rounded-lg
+             font-semibold text-lg hover:bg-orange-600 transition-colors
+             disabled:opacity-50 disabled:cursor-not-allowed
+             flex items-center justify-center gap-2 min-h-[56px]"
+    >
+      <span id="continue-text">{t.beta.continue}</span>
+    </button>
+
+    <!-- Form Messages -->
+    <div id="form-message-1" class="hidden text-center p-4 rounded-lg" role="alert" aria-live="polite"></div>
+  </form>
+
+  <!-- Step 2: Optional Fields -->
+  <div id="optional-step" class="space-y-6 hidden">
+    <!-- Step Indicator -->
+    <div class="flex items-center justify-center gap-2 text-sm text-gray-500">
+      <span class="text-green-600 font-bold">&#10003;</span>
+      <span class="w-6 h-6 rounded-full bg-infinity-orange text-white flex items-center justify-center text-xs font-medium">2</span>
+      <span class="text-infinity-dark font-medium">{t.beta.step_2_of_2}</span>
+    </div>
+
+    <!-- Header -->
+    <div class="text-center">
+      <h2 class="text-2xl font-bold text-infinity-dark">
+        {t.optional.headline}
+      </h2>
+      <p class="text-gray-600 mt-2">
+        {t.optional.subheadline}
+      </p>
+    </div>
+
+    <!-- Optional Fields -->
+    <div class="space-y-4">
+      <div>
+        <label for="role" class="block text-sm font-medium text-gray-600 mb-1">
+          {t.optional.role_label}
+          <span class="text-gray-400 font-normal ml-1">({t.common.optional})</span>
+        </label>
+        <input
+          type="text"
+          id="role"
+          name="role"
+          placeholder={t.optional.role_placeholder}
+          class="w-full px-4 py-3 border border-gray-200 rounded-lg
+                 focus:border-infinity-orange focus:ring-1 focus:ring-infinity-orange
+                 focus:outline-none transition-colors bg-gray-50"
+        />
+      </div>
+
+      <div>
+        <label for="company" class="block text-sm font-medium text-gray-600 mb-1">
+          {t.optional.company_label}
+          <span class="text-gray-400 font-normal ml-1">({t.common.optional})</span>
+        </label>
+        <input
+          type="text"
+          id="company"
+          name="company"
+          placeholder={t.optional.company_placeholder}
+          class="w-full px-4 py-3 border border-gray-200 rounded-lg
+                 focus:border-infinity-orange focus:ring-1 focus:ring-infinity-orange
+                 focus:outline-none transition-colors bg-gray-50"
+        />
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="flex flex-col gap-3">
+      <button
+        type="button"
+        id="submit-optional-btn"
+        class="w-full bg-infinity-orange text-white px-6 py-4 rounded-lg
+               font-semibold text-lg hover:bg-orange-600 transition-colors
+               disabled:opacity-50 disabled:cursor-not-allowed
+               flex items-center justify-center gap-2 min-h-[56px]"
+      >
+        <span id="submit-optional-text">{t.optional.submit}</span>
+        <svg id="submit-optional-spinner" class="animate-spin h-5 w-5 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+      </button>
+
+      <button
+        type="button"
+        id="skip-btn"
+        class="w-full text-infinity-dark hover:text-infinity-orange
+               font-medium py-3 transition-colors flex items-center justify-center gap-1"
+      >
+        <span id="skip-text">{t.optional.skip}</span>
+        <span aria-hidden="true">&rarr;</span>
+      </button>
+    </div>
+
+    <!-- Form Messages -->
+    <div id="form-message-2" class="hidden text-center p-4 rounded-lg" role="alert" aria-live="polite"></div>
+  </div>
+</div>
+
+<script define:vars={{ translations: t }}>
+  const container = document.getElementById('beta-signup-container');
+  const form = document.getElementById('beta-signup-form');
+  const optionalStep = document.getElementById('optional-step');
+  const emailInput = document.getElementById('email');
+  const nameInput = document.getElementById('name');
+  const roleInput = document.getElementById('role');
+  const companyInput = document.getElementById('company');
+  const emailError = document.getElementById('email-error');
+  const nameError = document.getElementById('name-error');
+  const skillsError = document.getElementById('skills-error');
+  const continueBtn = document.getElementById('continue-btn');
+  const continueText = document.getElementById('continue-text');
+  const submitOptionalBtn = document.getElementById('submit-optional-btn');
+  const submitOptionalText = document.getElementById('submit-optional-text');
+  const submitOptionalSpinner = document.getElementById('submit-optional-spinner');
+  const skipBtn = document.getElementById('skip-btn');
+  const skipText = document.getElementById('skip-text');
+  const formMessage1 = document.getElementById('form-message-1');
+  const formMessage2 = document.getElementById('form-message-2');
+  const selectedSkillsInput = document.getElementById('selected-skills');
+  const lang = container.dataset.lang;
+
+  const t = translations;
+
+  // Store form data between steps
+  let formData = {
+    email: '',
+    name: '',
+    skills: [],
+    role: '',
+    company: ''
+  };
+
+  // Email validation regex
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  // Helper to show/hide error
+  function showError(element, errorEl, message) {
+    element.classList.add('border-red-600');
+    element.classList.remove('border-gray-300');
+    element.setAttribute('aria-invalid', 'true');
+    element.setAttribute('aria-describedby', errorEl.id);
+    errorEl.textContent = message;
+    errorEl.classList.remove('hidden');
+  }
+
+  function hideError(element, errorEl) {
+    element.classList.remove('border-red-600');
+    element.classList.add('border-gray-300');
+    element.removeAttribute('aria-invalid');
+    element.removeAttribute('aria-describedby');
+    errorEl.classList.add('hidden');
+  }
+
+  // Validate email on blur
+  emailInput.addEventListener('blur', () => {
+    const value = emailInput.value.trim();
+    if (!value) {
+      showError(emailInput, emailError, t.beta.errors.email_required);
+    } else if (!emailRegex.test(value)) {
+      showError(emailInput, emailError, t.beta.errors.email_invalid);
+    } else {
+      hideError(emailInput, emailError);
+    }
+  });
+
+  // Validate name on blur
+  nameInput.addEventListener('blur', () => {
+    const value = nameInput.value.trim();
+    if (!value) {
+      showError(nameInput, nameError, t.beta.errors.name_required);
+    } else {
+      hideError(nameInput, nameError);
+    }
+  });
+
+  // Clear errors on input
+  emailInput.addEventListener('input', () => hideError(emailInput, emailError));
+  nameInput.addEventListener('input', () => hideError(nameInput, nameError));
+
+  // Listen for skill selection changes from SkillGrid
+  window.addEventListener('skillsChanged', (e) => {
+    const skills = e.detail.skills;
+    selectedSkillsInput.value = JSON.stringify(skills);
+
+    // Validate skills count
+    if (skills.length === 0) {
+      skillsError.textContent = t.beta.errors.skills_min;
+      skillsError.classList.remove('hidden');
+    } else if (skills.length > 5) {
+      skillsError.textContent = t.beta.errors.skills_max;
+      skillsError.classList.remove('hidden');
+    } else {
+      skillsError.classList.add('hidden');
+    }
+  });
+
+  // Step 1: Validate and proceed to optional step
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // Validate all fields
+    let isValid = true;
+
+    const email = emailInput.value.trim();
+    const name = nameInput.value.trim();
+    const skills = JSON.parse(selectedSkillsInput.value || '[]');
+
+    // Email validation
+    if (!email) {
+      showError(emailInput, emailError, t.beta.errors.email_required);
+      isValid = false;
+    } else if (!emailRegex.test(email)) {
+      showError(emailInput, emailError, t.beta.errors.email_invalid);
+      isValid = false;
+    }
+
+    // Name validation
+    if (!name) {
+      showError(nameInput, nameError, t.beta.errors.name_required);
+      isValid = false;
+    }
+
+    // Skills validation
+    if (skills.length === 0) {
+      skillsError.textContent = t.beta.errors.skills_min;
+      skillsError.classList.remove('hidden');
+      isValid = false;
+    } else if (skills.length > 5) {
+      skillsError.textContent = t.beta.errors.skills_max;
+      skillsError.classList.remove('hidden');
+      isValid = false;
+    }
+
+    if (!isValid) {
+      // Focus first error field
+      const firstError = form.querySelector('[aria-invalid="true"]');
+      if (firstError) firstError.focus();
+      return;
+    }
+
+    // Store data and show step 2
+    formData.email = email;
+    formData.name = name;
+    formData.skills = skills;
+
+    // Hide step 1, show step 2
+    form.classList.add('hidden');
+    optionalStep.classList.remove('hidden');
+
+    // Scroll to top of form
+    container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  // Submit with optional fields
+  async function submitForm(includeOptional = true) {
+    if (includeOptional) {
+      formData.role = roleInput.value.trim();
+      formData.company = companyInput.value.trim();
+    }
+
+    // Show loading state
+    submitOptionalBtn.disabled = true;
+    skipBtn.disabled = true;
+    submitOptionalText.textContent = t.beta.submitting;
+    submitOptionalSpinner.classList.remove('hidden');
+    skipText.textContent = t.beta.submitting;
+    formMessage2.classList.add('hidden');
+
+    try {
+      const response = await fetch('/api/beta-signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: formData.email,
+          name: formData.name,
+          skills: formData.skills,
+          role: formData.role || undefined,
+          company: formData.company || undefined,
+          lang
+        })
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        // Redirect to confirmation page
+        window.location.href = `/${lang}/beta/confirmation`;
+      } else {
+        // Show error message
+        formMessage2.textContent = result.error?.message || 'An error occurred';
+        formMessage2.classList.remove('hidden', 'bg-green-100', 'text-green-800');
+        formMessage2.classList.add('bg-red-100', 'text-red-800');
+
+        // Reset button state
+        submitOptionalBtn.disabled = false;
+        skipBtn.disabled = false;
+        submitOptionalText.textContent = t.optional.submit;
+        submitOptionalSpinner.classList.add('hidden');
+        skipText.textContent = t.optional.skip;
+      }
+    } catch (error) {
+      // Network error - still redirect for better UX (data may have been saved)
+      window.location.href = `/${lang}/beta/confirmation`;
+    }
+  }
+
+  // Submit optional button click
+  submitOptionalBtn.addEventListener('click', () => {
+    submitForm(true);
+  });
+
+  // Skip button click
+  skipBtn.addEventListener('click', () => {
+    submitForm(false);
+  });
+</script>

@@ -1,4 +1,97 @@
 {
+  "beta": {
+    "page_title": "Join the Beta",
+    "page_subtitle": "Be among the first to experience Infinity",
+    "email_label": "Email address",
+    "email_placeholder": "you@example.com",
+    "name_label": "First name",
+    "name_placeholder": "Your first name",
+    "skills_label": "Which skills do you want to master?",
+    "skills_hint": "Select 1 to 5 skills",
+    "submit": "Start Free",
+    "continue": "Continue",
+    "submitting": "Submitting...",
+    "step_1_of_2": "Step 1 of 2",
+    "step_2_of_2": "Step 2 of 2",
+    "errors": {
+      "email_required": "Email is required",
+      "email_invalid": "Please enter a valid email",
+      "name_required": "First name is required",
+      "skills_min": "Select at least 1 skill",
+      "skills_max": "Maximum 5 skills"
+    }
+  },
+  "optional": {
+    "headline": "Help us get to know you",
+    "subheadline": "This information helps us personalize your beta experience.",
+    "role_label": "Role / Title",
+    "role_placeholder": "e.g., Project Manager, Team Lead, Developer",
+    "company_label": "Company",
+    "company_placeholder": "Your company name",
+    "submit": "Complete signup",
+    "skip": "Skip for now"
+  },
+  "common": {
+    "optional": "optional"
+  },
+  "api": {
+    "beta_signup": {
+      "success": "Signup successful! You'll receive a confirmation email.",
+      "validation_error": "Please fix the errors below",
+      "server_error": "An error occurred. Please try again.",
+      "email_required": "Email address is required",
+      "email_invalid": "Please enter a valid email address",
+      "name_required": "First name is required",
+      "skills_min": "Select at least 1 skill",
+      "skills_max": "You can select up to 5 skills"
+    }
+  },
+  "confirmation": {
+    "page_title": "Welcome to the Beta",
+    "headline": "You're in!",
+    "subheadline": "Welcome to the community of professionals taking control of their future.",
+    "timeline": "Beta access within 48 hours",
+    "what_next": "What happens next?",
+    "expect_email": "A confirmation email is on its way",
+    "expect_dashboard": "You'll receive a preview of your personalized skill dashboard",
+    "expect_feedback": "You'll be able to share feedback from day one",
+    "share_prompt": "Know someone who feels behind? Share this opportunity.",
+    "return_home": "Back to home"
+  },
+  "skills": {
+    "categories": {
+      "tech": "Tech",
+      "leadership": "Leadership",
+      "business": "Business",
+      "personal": "Personal"
+    },
+    "items": {
+      "cloud": "Cloud & Infrastructure",
+      "devops": "DevOps & CI/CD",
+      "security": "Cybersecurity",
+      "data": "Data & Analytics",
+      "ai": "AI & Machine Learning",
+      "web": "Web Development",
+      "management": "Team Management",
+      "communication": "Communication",
+      "agile": "Agile & Scrum",
+      "coaching": "Coaching",
+      "strategy": "Strategy",
+      "change": "Change Management",
+      "finance": "Finance",
+      "marketing": "Digital Marketing",
+      "sales": "Sales & Negotiation",
+      "product": "Product Management",
+      "analytics": "Business Analytics",
+      "compliance": "Compliance & GDPR",
+      "productivity": "Productivity",
+      "presentation": "Public Speaking",
+      "writing": "Professional Writing",
+      "critical": "Critical Thinking",
+      "emotional": "Emotional Intelligence",
+      "learning": "Learning to Learn"
+    }
+  },
   "site": {
     "name": "Infinity",
     "tagline": "Learn what matters. Prove what you know. Stay ahead."

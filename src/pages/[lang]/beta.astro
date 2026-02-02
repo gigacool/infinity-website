@@ -1,0 +1,40 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Container from "@/components/container.astro";
+import Layout from "@/layouts/Layout.astro";
+import { languages, getTranslations } from '@/i18n/utils';
+import type { Language } from '@/i18n/utils';
+import BetaSignupForm from '@/components/BetaSignupForm.astro';
+
+export const prerender = true;
+
+export const getStaticPaths = (() => {
+  return languages.map((lang) => ({
+    params: { lang },
+  }));
+}) satisfies GetStaticPaths;
+
+const { lang } = Astro.params as { lang: Language };
+const t = getTranslations(lang);
+---
+
+<Layout title={t.beta.page_title} lang={lang}>
+  <Container>
+    <div class="py-16 md:py-24">
+      <!-- Page Header -->
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-infinity-dark mb-4">
+          {t.beta.page_title}
+        </h1>
+        <p class="text-lg md:text-xl text-gray-600">
+          {t.beta.page_subtitle}
+        </p>
+      </div>
+
+      <!-- Form Container -->
+      <div class="max-w-md mx-auto">
+        <BetaSignupForm lang={lang} />
+      </div>
+    </div>
+  </Container>
+</Layout>

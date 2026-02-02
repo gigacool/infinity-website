@@ -1,4 +1,97 @@
 {
+  "beta": {
+    "page_title": "Rejoindre la bêta",
+    "page_subtitle": "Soyez parmi les premiers à découvrir Infinity",
+    "email_label": "Adresse email",
+    "email_placeholder": "vous@exemple.com",
+    "name_label": "Prénom",
+    "name_placeholder": "Votre prénom",
+    "skills_label": "Quelles compétences souhaitez-vous maîtriser ?",
+    "skills_hint": "Sélectionnez 1 à 5 compétences",
+    "submit": "Commencer gratuitement",
+    "continue": "Continuer",
+    "submitting": "Envoi en cours...",
+    "step_1_of_2": "Étape 1 sur 2",
+    "step_2_of_2": "Étape 2 sur 2",
+    "errors": {
+      "email_required": "L'email est requis",
+      "email_invalid": "Veuillez entrer un email valide",
+      "name_required": "Le prénom est requis",
+      "skills_min": "Sélectionnez au moins 1 compétence",
+      "skills_max": "Maximum 5 compétences"
+    }
+  },
+  "optional": {
+    "headline": "Aidez-nous à mieux vous connaître",
+    "subheadline": "Ces informations nous aident à personnaliser votre expérience bêta.",
+    "role_label": "Rôle / Titre",
+    "role_placeholder": "ex: Chef de projet, Manager, Développeur",
+    "company_label": "Entreprise",
+    "company_placeholder": "Nom de votre entreprise",
+    "submit": "Terminer l'inscription",
+    "skip": "Passer cette étape"
+  },
+  "common": {
+    "optional": "optionnel"
+  },
+  "api": {
+    "beta_signup": {
+      "success": "Inscription réussie ! Vous recevrez un email de confirmation.",
+      "validation_error": "Veuillez corriger les erreurs ci-dessous",
+      "server_error": "Une erreur est survenue. Veuillez réessayer.",
+      "email_required": "L'adresse email est requise",
+      "email_invalid": "Veuillez entrer une adresse email valide",
+      "name_required": "Le prénom est requis",
+      "skills_min": "Sélectionnez au moins 1 compétence",
+      "skills_max": "Vous pouvez sélectionner 5 compétences maximum"
+    }
+  },
+  "confirmation": {
+    "page_title": "Bienvenue dans la bêta",
+    "headline": "Vous êtes inscrit(e) !",
+    "subheadline": "Bienvenue dans la communauté des professionnels qui prennent leur avenir en main.",
+    "timeline": "Accès bêta dans les 48 prochaines heures",
+    "what_next": "Que se passe-t-il ensuite ?",
+    "expect_email": "Un email de confirmation arrive dans votre boîte",
+    "expect_dashboard": "Vous recevrez un aperçu de votre tableau de bord personnalisé",
+    "expect_feedback": "Vous pourrez nous faire part de vos retours dès le premier jour",
+    "share_prompt": "Vous connaissez quelqu'un qui se sent dépassé ? Partagez cette opportunité.",
+    "return_home": "Retour à l'accueil"
+  },
+  "skills": {
+    "categories": {
+      "tech": "Tech",
+      "leadership": "Leadership",
+      "business": "Business",
+      "personal": "Personnel"
+    },
+    "items": {
+      "cloud": "Cloud & Infrastructure",
+      "devops": "DevOps & CI/CD",
+      "security": "Cybersécurité",
+      "data": "Data & Analytics",
+      "ai": "IA & Machine Learning",
+      "web": "Développement Web",
+      "management": "Management d'équipe",
+      "communication": "Communication",
+      "agile": "Agilité & Scrum",
+      "coaching": "Coaching",
+      "strategy": "Stratégie",
+      "change": "Conduite du changement",
+      "finance": "Finance",
+      "marketing": "Marketing Digital",
+      "sales": "Vente & Négociation",
+      "product": "Product Management",
+      "analytics": "Business Analytics",
+      "compliance": "Conformité & RGPD",
+      "productivity": "Productivité",
+      "presentation": "Prise de parole",
+      "writing": "Écriture professionnelle",
+      "critical": "Pensée critique",
+      "emotional": "Intelligence émotionnelle",
+      "learning": "Apprendre à apprendre"
+    }
+  },
   "site": {
     "name": "Infinity",
     "tagline": "Apprenez ce qui compte. Prouvez ce que vous savez. Gardez une longueur d'avance."

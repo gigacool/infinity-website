@@ -8,6 +8,8 @@ import Layout from "@/layouts/Layout.astro";
 import { languages } from '@/i18n/utils';
 import type { Language } from '@/i18n/utils';
 
+export const prerender = true;
+
 export const getStaticPaths = (() => {
   return languages.map((lang) => ({
     params: { lang },
