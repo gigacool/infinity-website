@@ -1,40 +1,42 @@
 ---
 import Container from "@/components/container.astro";
-import Link from "@/components/ui/link.astro";
 import Dropdown from "./dropdown.astro";
+import LanguageToggle from "@/components/LanguageToggle.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import { getTranslations, getCurrentLang } from "@/i18n/utils";
+import type { Language } from "@/i18n/utils";
+
+interface Props {
+  lang?: Language;
+}
+
+const { lang: propLang } = Astro.props;
+const lang = propLang || getCurrentLang(Astro.url);
+const t = getTranslations(lang);
+const currentPath = Astro.url.pathname;
 
 const menuitems = [
   {
-    title: "Features",
+    title: t.nav.features,
     path: "#",
     children: [
-      { title: "Action", path: "/" },
-      { title: "Another action", path: "#" },
-      { title: "Dropdown Submenu", path: "#" },
-      { title: "404 Page", path: "/404" },
+      { title: t.features.quizzes.title, path: `/${lang}/features/quizzes` },
+      { title: t.features.surveys.title, path: `/${lang}/features/surveys` },
+      { title: t.features.microlearning.title, path: `/${lang}/features/microlearning` },
+      { title: t.features.gamification.title, path: `/${lang}/features/gamification` },
     ],
   },
   {
-    title: "Pricing",
-    path: "/pricing",
+    title: t.nav.about,
+    path: `/${lang}/about`,
   },
   {
-    title: "About",
-    path: "/about",
+    title: t.nav.blog,
+    path: `/${lang}/blog`,
   },
   {
-    title: "Blog",
-    path: "/blog",
-  },
-  {
-    title: "Contact",
-    path: "/contact",
-  },
-  {
-    title: "Pro Version",
-    badge: true,
-    path: "https://astroship-pro.web3templates.com/",
+    title: t.nav.contact,
+    path: `/${lang}/contact`,
   },
 ];
 ---
@@ -43,10 +45,8 @@ const menuitems = [
   <header class="flex flex-col lg:flex-row justify-between items-center my-5">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
-        <a href="/" class="text-lg"
-          ><span class="font-bold text-slate-800">Astro</span><span
-            class="text-slate-500">ship</span
-          >
+        <a href={`/${lang}/`} class="text-xl font-bold text-infinity-dark" aria-label="Infinity - Home">
+          Infinity
         </a>
         <div class="block lg:hidden">
           <MenuIcon class="w-4 h-4 text-gray-800" />
@@ -62,6 +62,7 @@ const menuitems = [
                     title={item.title}
                     children={item.children}
                     lastItem={index === menuitems.length - 1}
+                    lang={lang}
                   />
                 )}
 
@@ -69,13 +70,8 @@ const menuitems = [
                   <li>
                     <a
                       href={item.path}
-                      class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900">
-                      <span> {item.title}</span>
-                      {item.badge && (
-                        <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">
-                          New
-                        </span>
-                      )}
+                      class="flex lg:px-3 py-2 items-center text-infinity-dark hover:text-infinity-orange transition-colors">
+                      <span>{item.title}</span>
                     </a>
                   </li>
                 )}
@@ -83,17 +79,39 @@ const menuitems = [
             ))
           }
         </ul>
-        <div class="lg:hidden flex items-center mt-3 gap-4">
-          <Link href="#" style="muted" block size="md">Log in</Link>
-          <Link href="#" size="md" block>Sign up</Link>
+        <!-- Mobile menu bottom section -->
+        <div class="lg:hidden flex flex-col items-start mt-4 pt-4 border-t border-gray-200 gap-3">
+          <LanguageToggle currentLang={lang} currentPath={currentPath} />
+          <a
+            href={`/${lang}/beta`}
+            class="text-infinity-dark hover:text-infinity-orange transition-colors"
+          >
+            {t.cta.for_teams}
+          </a>
+          <a
+            href={`/${lang}/beta`}
+            class="bg-infinity-orange text-white px-4 py-2 text-sm rounded-md hover:bg-orange-600 transition-colors w-full text-center"
+          >
+            {t.cta.start_free}
+          </a>
         </div>
       </MenuItems>
     </Astronav>
-    <div>
-      <div class="hidden lg:flex items-center gap-4">
-        <a href="#">Log in</a>
-        <Link href="#" size="md">Sign up</Link>
-      </div>
+    <!-- Desktop right section -->
+    <div class="hidden lg:flex items-center gap-4">
+      <LanguageToggle currentLang={lang} currentPath={currentPath} />
+      <a
+        href={`/${lang}/beta`}
+        class="text-infinity-dark hover:text-infinity-orange transition-colors"
+      >
+        {t.cta.for_teams}
+      </a>
+      <a
+        href={`/${lang}/beta`}
+        class="bg-infinity-orange text-white px-4 py-2 text-sm rounded-md hover:bg-orange-600 transition-colors"
+      >
+        {t.cta.start_free}
+      </a>
     </div>
   </header>
 </Container>

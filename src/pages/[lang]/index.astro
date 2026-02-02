@@ -1,0 +1,26 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Container from "@/components/container.astro";
+import Cta from "@/components/cta.astro";
+import Features from "@/components/features.astro";
+import Hero from "@/components/hero.astro";
+import Layout from "@/layouts/Layout.astro";
+import { languages } from '@/i18n/utils';
+import type { Language } from '@/i18n/utils';
+
+export const getStaticPaths = (() => {
+  return languages.map((lang) => ({
+    params: { lang },
+  }));
+}) satisfies GetStaticPaths;
+
+const { lang } = Astro.params as { lang: Language };
+---
+
+<Layout lang={lang}>
+  <Container>
+    <Hero lang={lang} />
+    <Features lang={lang} />
+    <Cta lang={lang} />
+  </Container>
+</Layout>

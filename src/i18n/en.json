@@ -1,0 +1,58 @@
+{
+  "site": {
+    "name": "Infinity",
+    "tagline": "Learn what matters. Prove what you know. Stay ahead."
+  },
+  "nav": {
+    "features": "Features",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "cta": {
+    "start_free": "Start free",
+    "for_teams": "For Teams",
+    "join_beta": "Join the beta",
+    "learn_more": "Learn more"
+  },
+  "hero": {
+    "tagline": "FINALLY, A LEARNING PLATFORM THAT GETS IT",
+    "title": "Learn what matters. Prove what you know. Stay ahead.",
+    "subtitle": "Skills become obsolete faster than ever. Infinity helps you focus on what's coming, learn it faster, and build a portable skill profile.",
+    "trust_signal": "Join 50+ professionals shaping the future of learning"
+  },
+  "features": {
+    "section_title": "Four ways to stay ahead",
+    "section_subtitle": "Everything you need to stay ahead, prove your skills, and actually enjoy the process.",
+    "quizzes": {
+      "title": "Smart Quizzes",
+      "description": "Adaptive assessments that adjust to your level and identify your gaps."
+    },
+    "surveys": {
+      "title": "AI Surveys",
+      "description": "Discover your learning needs through AI-powered personalized assessments."
+    },
+    "microlearning": {
+      "title": "Micro-learning",
+      "description": "Short, focused lessons that fit into your busy schedule."
+    },
+    "gamification": {
+      "title": "Gamification",
+      "description": "Badges, rewards, and leaderboards that make learning engaging."
+    }
+  },
+  "footer": {
+    "features": "Features",
+    "company": "Company",
+    "legal": "Legal",
+    "rights": "All rights reserved.",
+    "tagline": "Learn what matters."
+  },
+  "legal": {
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "accessibility": {
+    "skip_to_content": "Skip to main content"
+  }
+}

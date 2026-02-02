@@ -1,12 +1,23 @@
 ---
 import { Dropdown as DropdownContainer, DropdownItems } from "astro-navbar";
-const { title, lastItem, children } = Astro.props;
+import type { Language } from "@/i18n/utils";
+
+interface Props {
+  title: string;
+  lastItem?: boolean;
+  children: Array<{ title: string; path: string }>;
+  lang?: Language;
+}
+
+const { title, lastItem, children, lang } = Astro.props;
 ---
 
 <li class="relative">
   <DropdownContainer class="group">
     <button
-      class="flex items-center gap-1 w-full lg:w-auto lg:px-3 py-2 text-gray-600 hover:text-gray-900">
+      class="flex items-center gap-1 w-full lg:w-auto lg:px-3 py-2 text-infinity-dark hover:text-infinity-orange transition-colors"
+      aria-haspopup="menu"
+    >
       <span>{title}</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -14,7 +25,9 @@ const { title, lastItem, children } = Astro.props;
         viewBox="0 0 24 24"
         stroke-width="3"
         stroke="currentColor"
-        class="w-3 h-3 mt-0.5 group-open:rotate-180">
+        class="w-3 h-3 mt-0.5 group-open:rotate-180 transition-transform"
+        aria-hidden="true"
+      >
         <path
           stroke-linecap="round"
           stroke-linejoin="round"
@@ -24,18 +37,22 @@ const { title, lastItem, children } = Astro.props;
     <DropdownItems>
       <div
         class:list={[
-          "lg:absolute w-full lg:w-48 z-10",
+          "lg:absolute w-full lg:w-56 z-10",
           lastItem
             ? "lg:right-0 origin-top-right"
             : "lg:left-0 origin-top-left",
         ]}>
         <div
-          class="px-3 lg:py-2 lg:bg-white lg:rounded-md lg:shadow-sm lg:border flex flex-col">
+          class="px-3 lg:py-2 lg:bg-white lg:rounded-md lg:shadow-md lg:border border-gray-100 flex flex-col"
+          role="menu"
+        >
           {
             children.map((item) => (
               <a
                 href={item.path}
-                class="py-1 text-gray-600 hover:text-gray-900">
+                class="py-2 text-infinity-dark hover:text-infinity-orange transition-colors"
+                role="menuitem"
+              >
                 {item.title}
               </a>
             ))
@@ -45,3 +62,24 @@ const { title, lastItem, children } = Astro.props;
     </DropdownItems>
   </DropdownContainer>
 </li>
+
+<script>
+  // Ensure aria-expanded is properly managed for accessibility
+  document.addEventListener('astro:page-load', () => {
+    const dropdowns = document.querySelectorAll('[data-dropdown]');
+    dropdowns.forEach((dropdown) => {
+      const button = dropdown.querySelector('button');
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          if (mutation.attributeName === 'open') {
+            const isOpen = dropdown.hasAttribute('open');
+            button?.setAttribute('aria-expanded', String(isOpen));
+          }
+        });
+      });
+      observer.observe(dropdown, { attributes: true });
+      // Set initial state
+      button?.setAttribute('aria-expanded', String(dropdown.hasAttribute('open')));
+    });
+  });
+</script>

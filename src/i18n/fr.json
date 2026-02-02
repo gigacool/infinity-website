@@ -1,0 +1,58 @@
+{
+  "site": {
+    "name": "Infinity",
+    "tagline": "Apprenez ce qui compte. Prouvez ce que vous savez. Gardez une longueur d'avance."
+  },
+  "nav": {
+    "features": "Fonctionnalités",
+    "about": "À propos",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "cta": {
+    "start_free": "Commencer gratuitement",
+    "for_teams": "Pour les équipes",
+    "join_beta": "Rejoindre la bêta",
+    "learn_more": "En savoir plus"
+  },
+  "hero": {
+    "tagline": "ENFIN, UNE PLATEFORME D'APPRENTISSAGE QUI COMPREND",
+    "title": "Apprenez ce qui compte. Prouvez ce que vous savez. Gardez une longueur d'avance.",
+    "subtitle": "Les compétences deviennent obsolètes plus vite que jamais. Infinity vous aide à vous concentrer sur ce qui vient, à l'apprendre plus vite et à construire un profil de compétences portable.",
+    "trust_signal": "Rejoignez plus de 50 professionnels qui façonnent l'avenir de l'apprentissage"
+  },
+  "features": {
+    "section_title": "Quatre façons de garder une longueur d'avance",
+    "section_subtitle": "Tout ce dont vous avez besoin pour rester à jour, prouver vos compétences et vraiment apprécier le processus.",
+    "quizzes": {
+      "title": "Quiz Intelligents",
+      "description": "Évaluations adaptatives qui s'ajustent à votre niveau et identifient vos lacunes."
+    },
+    "surveys": {
+      "title": "Sondages IA",
+      "description": "Découvrez vos besoins d'apprentissage grâce à des évaluations personnalisées par l'IA."
+    },
+    "microlearning": {
+      "title": "Micro-apprentissage",
+      "description": "Leçons courtes et ciblées qui s'intègrent dans votre emploi du temps chargé."
+    },
+    "gamification": {
+      "title": "Gamification",
+      "description": "Badges, récompenses et classements qui rendent l'apprentissage engageant."
+    }
+  },
+  "footer": {
+    "features": "Fonctionnalités",
+    "company": "Entreprise",
+    "legal": "Légal",
+    "rights": "Tous droits réservés.",
+    "tagline": "Apprenez ce qui compte."
+  },
+  "legal": {
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation"
+  },
+  "accessibility": {
+    "skip_to_content": "Aller au contenu principal"
+  }
+}

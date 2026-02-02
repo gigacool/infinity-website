@@ -3,19 +3,67 @@
 @plugin '@tailwindcss/typography';
 
 @theme {
-  --font-sans:
-    Bricolage Grotesque Variable, Inter Variable, Inter, ui-sans-serif,
-    system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol', 'Noto Color Emoji';
+  /* Typography - System font for zero load time */
+  --font-sans: Arial, ui-sans-serif, system-ui, sans-serif;
+
+  /* Infinity Brand Colors - these create Tailwind utility classes */
+  /* Usage: bg-infinity-orange, text-infinity-dark, bg-infinity-light */
+  --color-infinity-orange: #F97316;
+  --color-infinity-dark: #374151;
+  --color-infinity-light: #F9FAFB;
+
+  /* Semantic Aliases */
+  --color-primary: var(--color-infinity-orange);
+  --color-text: var(--color-infinity-dark);
+  --color-background: var(--color-infinity-light);
+}
+
+/* Motion tokens with reduced motion support */
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    --transition-fast: 150ms ease;
+    --transition-normal: 300ms ease;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0ms;
+    --transition-normal: 0ms;
+  }
+}
+
+/* Focus visible pattern for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-infinity-orange);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  padding: 8px 16px;
+  background: var(--color-infinity-orange);
+  color: white;
+  z-index: 9999;
+  transition: top var(--transition-fast);
+  border-radius: 4px;
+}
+
+.skip-link:focus {
+  top: 16px;
 }
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
   looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
 */
 @layer base {
   *,

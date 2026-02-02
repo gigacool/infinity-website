@@ -1,0 +1,56 @@
+---
+import type { Language } from '@/i18n/utils';
+import { getLocalizedPath } from '@/i18n/utils';
+
+interface Props {
+  currentLang: Language;
+  currentPath: string;
+  class?: string;
+}
+
+const { currentLang, currentPath, class: className } = Astro.props;
+
+const frPath = getLocalizedPath(currentPath, 'fr');
+const enPath = getLocalizedPath(currentPath, 'en');
+---
+
+<div class:list={["flex gap-1 text-sm", className]}>
+  <a
+    href={frPath}
+    class:list={[
+      "transition-colors lang-switch",
+      currentLang === 'fr'
+        ? 'text-infinity-orange font-bold'
+        : 'text-infinity-dark hover:text-infinity-orange'
+    ]}
+    aria-current={currentLang === 'fr' ? 'page' : undefined}
+  >
+    FR
+  </a>
+  <span class="text-gray-300">|</span>
+  <a
+    href={enPath}
+    class:list={[
+      "transition-colors lang-switch",
+      currentLang === 'en'
+        ? 'text-infinity-orange font-bold'
+        : 'text-infinity-dark hover:text-infinity-orange'
+    ]}
+    aria-current={currentLang === 'en' ? 'page' : undefined}
+  >
+    EN
+  </a>
+</div>
+
+<script>
+  // Force full page reload on language switch to ensure all content updates
+  document.addEventListener('astro:page-load', () => {
+    document.querySelectorAll('.lang-switch').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const href = (e.currentTarget as HTMLAnchorElement).href;
+        window.location.href = href;
+      });
+    });
+  });
+</script>
