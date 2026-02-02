@@ -1,0 +1,33 @@
+---
+import { getTranslations, defaultLang } from "@/i18n/utils";
+import type { Language } from "@/i18n/utils";
+
+interface Props {
+  lang?: Language;
+}
+
+const { lang = defaultLang } = Astro.props;
+const t = getTranslations(lang);
+
+const ariaLabel = lang === "fr"
+  ? "Inscrivez-vous gratuitement à la bêta"
+  : "Sign up for free beta access";
+---
+
+<!-- StickyCTA: THE ONLY sticky element on the site. Z-index discipline enforced. -->
+<div class="fixed z-50
+            bottom-6 right-4 left-4
+            lg:bottom-8 lg:right-8 lg:left-auto">
+  <a
+    href={`/${lang}/beta`}
+    class="block w-full lg:w-auto text-center
+           bg-infinity-orange text-white
+           px-6 py-3 min-h-11 rounded-full
+           shadow-lg hover:bg-orange-600
+           transition-colors
+           font-semibold"
+    aria-label={ariaLabel}
+  >
+    {t.cta.start_free}
+  </a>
+</div>

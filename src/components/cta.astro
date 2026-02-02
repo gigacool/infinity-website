@@ -1,5 +1,4 @@
 ---
-import Link from "./ui/link.astro";
 import { getTranslations, defaultLang } from "@/i18n/utils";
 import type { Language } from "@/i18n/utils";
 
@@ -20,8 +19,11 @@ const t = getTranslations(lang);
     {t.hero.trust_signal}
   </p>
   <div class="flex mt-8">
-    <Link href={`/${lang}/beta`} style="inverted" class="bg-infinity-orange hover:bg-orange-600 text-white">
+    <a
+      href={`/${lang}/beta`}
+      class="bg-infinity-orange text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors"
+    >
       {t.cta.start_free}
-    </Link>
+    </a>
   </div>
 </div>

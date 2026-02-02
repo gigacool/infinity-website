@@ -1,0 +1,17 @@
+---
+import { getTranslations, defaultLang } from "@/i18n/utils";
+import type { Language } from "@/i18n/utils";
+
+interface Props {
+  lang?: Language;
+}
+
+const { lang = defaultLang } = Astro.props;
+const t = getTranslations(lang);
+---
+
+<div class="flex items-center justify-center gap-2 text-sm text-slate-500">
+  <span class="inline-block w-2 h-2 rounded-full bg-infinity-orange opacity-60" aria-hidden="true"></span>
+  <span>{t.hero.trust_signal}</span>
+  <span class="inline-block w-2 h-2 rounded-full bg-infinity-orange opacity-60" aria-hidden="true"></span>
+</div>

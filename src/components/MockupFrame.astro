@@ -1,0 +1,31 @@
+---
+import { Picture } from "astro:assets";
+import heroImage from "@/assets/hero.png";
+
+interface Props {
+  alt?: string;
+}
+
+const { alt = "Infinity Platform Dashboard" } = Astro.props;
+---
+
+<div class="mockup-frame backdrop-blur-md bg-white/80 rounded-xl shadow-lg p-4 max-w-2xl">
+  <Picture
+    src={heroImage}
+    alt={alt}
+    widths={[400, 600, 800]}
+    sizes="(max-width: 800px) 100vw, 800px"
+    loading="eager"
+    format="avif"
+    class="rounded-lg"
+  />
+</div>
+
+<style>
+  /* Safari fallback for backdrop-blur issues */
+  @supports not (backdrop-filter: blur(12px)) {
+    .mockup-frame {
+      background-color: white;
+    }
+  }
+</style>
