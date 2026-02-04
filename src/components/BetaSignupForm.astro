@@ -380,8 +380,17 @@ const t = getTranslations(lang);
         skipText.textContent = t.optional.skip;
       }
     } catch (error) {
-      // Network error - still redirect for better UX (data may have been saved)
-      window.location.href = `/${lang}/beta/confirmation`;
+      // Network error - show error, do NOT redirect (data was not saved)
+      formMessage2.textContent = t.api?.beta_signup?.server_error || 'A network error occurred. Please try again.';
+      formMessage2.classList.remove('hidden', 'bg-green-100', 'text-green-800');
+      formMessage2.classList.add('bg-red-100', 'text-red-800');
+
+      // Reset button state
+      submitOptionalBtn.disabled = false;
+      skipBtn.disabled = false;
+      submitOptionalText.textContent = t.optional.submit;
+      submitOptionalSpinner.classList.add('hidden');
+      skipText.textContent = t.optional.skip;
     }
   }
 
