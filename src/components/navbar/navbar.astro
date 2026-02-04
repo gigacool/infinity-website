@@ -1,5 +1,6 @@
 ---
 import Container from "@/components/container.astro";
+import BrandName from "@/components/BrandName.astro";
 import Dropdown from "./dropdown.astro";
 import LanguageToggle from "@/components/LanguageToggle.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
@@ -46,8 +47,8 @@ const menuitems = [
   <header class="flex flex-col lg:flex-row justify-between items-center my-5">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
-        <a href={`/${lang}/`} class="text-xl font-bold text-infinity-dark" aria-label="Infinity - Home">
-          Infinity
+        <a href={`/${lang}/`} class="text-xl font-bold text-infinity-dark" aria-label="noosia Infinity - Home">
+          <BrandName /> <span class="text-infinity-orange">Infinity</span>
         </a>
         <div class="block lg:hidden">
           <MenuIcon class="w-4 h-4 text-gray-800" />

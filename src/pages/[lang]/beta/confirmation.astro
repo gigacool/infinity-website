@@ -17,16 +17,16 @@ const { lang } = Astro.params as { lang: Language };
 const t = getTranslations(lang);
 
 // Social share URLs
-const siteUrl = `https://infinity-learning.com/${lang}/beta`;
-const shareTextFr = "Je viens de rejoindre la bêta Infinity ! Enfin une plateforme qui comprend que les compétences bougent vite.";
-const shareTextEn = "Just joined the Infinity beta! Finally a platform that gets it - skills move fast.";
+const siteUrl = `https://infinity-website-psi.vercel.app/${lang}/beta`;
+const shareTextFr = "Je viens de rejoindre la bêta n∞sia ! Enfin une plateforme qui comprend que les compétences bougent vite.";
+const shareTextEn = "Just joined the n∞sia beta! Finally a platform that gets it - skills move fast.";
 const shareText = lang === 'fr' ? shareTextFr : shareTextEn;
 
 const linkedInShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(siteUrl)}`;
 const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(siteUrl)}`;
 ---
 
-<Layout title={t.confirmation.page_title} lang={lang}>
+<Layout title={t.confirmation.page_title} lang={lang} noindex={true}>
   <Container>
     <div class="min-h-[60vh] flex flex-col items-center justify-center text-center py-16 md:py-24">
       <!-- Success Icon with subtle animation -->

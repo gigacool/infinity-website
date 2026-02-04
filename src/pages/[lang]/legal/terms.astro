@@ -1,0 +1,134 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Container from "@/components/container.astro";
+import Layout from "@/layouts/Layout.astro";
+import { languages, getTranslations } from '@/i18n/utils';
+import type { Language } from '@/i18n/utils';
+
+export const prerender = true;
+
+export const getStaticPaths = (() => {
+  return languages.map((lang) => ({
+    params: { lang },
+  }));
+}) satisfies GetStaticPaths;
+
+const { lang } = Astro.params as { lang: Language };
+const t = getTranslations(lang);
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": lang === 'fr' ? "Accueil" : "Home", "item": `https://infinity-website-psi.vercel.app/${lang}/` },
+    { "@type": "ListItem", "position": 2, "name": t.legal.terms }
+  ]
+};
+---
+
+<Layout lang={lang} title={t.legal.terms} description={lang === 'fr' ? "Conditions d'utilisation de n∞sia." : "n∞sia's terms of service."}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <Container>
+    <article class="mx-auto max-w-3xl py-16 prose prose-slate prose-headings:text-infinity-dark">
+
+      {lang === 'fr' ? (
+        <div>
+          <h1>Conditions d'Utilisation</h1>
+          <p class="text-sm text-gray-500">Dernière mise à jour : 4 février 2026</p>
+
+          <h2>1. Acceptation des conditions</h2>
+          <p>En accédant au site web n∞sia et en l'utilisant, vous acceptez d'être lié par ces conditions d'utilisation. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser le site.</p>
+
+          <h2>2. Description du service</h2>
+          <p>n∞sia propose Infinity, une plateforme d'apprentissage gamifiée alimentée par l'IA, actuellement en phase bêta. Le site web actuel est un site marketing qui présente le produit et permet l'inscription au programme bêta.</p>
+
+          <h2>3. Programme bêta</h2>
+          <p>En vous inscrivant au programme bêta :</p>
+          <ul>
+            <li>Vous comprenez que le service est en cours de développement et peut contenir des bugs ou des fonctionnalités incomplètes</li>
+            <li>Vous acceptez de fournir des retours constructifs pour aider à améliorer le produit</li>
+            <li>Vous comprenez que les fonctionnalités peuvent changer ou être supprimées sans préavis</li>
+            <li>L'accès à la bêta est gratuit et peut être révoqué à tout moment</li>
+          </ul>
+
+          <h2>4. Obligations de l'utilisateur</h2>
+          <ul>
+            <li>Fournir des informations exactes lors de l'inscription et du contact</li>
+            <li>Ne pas utiliser le service à des fins illicites ou non autorisées</li>
+            <li>Ne pas tenter de compromettre la sécurité ou l'intégrité du site</li>
+            <li>Respecter les autres utilisateurs et l'équipe n∞sia</li>
+          </ul>
+
+          <h2>5. Propriété intellectuelle</h2>
+          <p>Tout le contenu du site web n∞sia, y compris les textes, images, logos, design et code source, est la propriété de n∞sia et est protégé par les lois françaises et internationales sur la propriété intellectuelle.</p>
+          <p>Vous ne pouvez pas reproduire, distribuer ou créer des œuvres dérivées de notre contenu sans autorisation écrite préalable.</p>
+
+          <h2>6. Limitation de responsabilité</h2>
+          <p>Le site web et le programme bêta sont fournis « en l'état » sans garantie d'aucune sorte, expresse ou implicite. n∞sia ne sera pas responsable des dommages directs, indirects, accessoires ou consécutifs résultant de l'utilisation ou de l'impossibilité d'utiliser le service.</p>
+
+          <h2>7. Vie privée</h2>
+          <p>Votre utilisation du site est également régie par notre <a href={`/${lang}/legal/privacy`}>Politique de Confidentialité</a>, qui décrit comment nous collectons et utilisons vos données personnelles.</p>
+
+          <h2>8. Droit applicable</h2>
+          <p>Ces conditions sont régies par le droit français. Tout litige sera soumis à la compétence exclusive des tribunaux français.</p>
+
+          <h2>9. Modifications des conditions</h2>
+          <p>Nous nous réservons le droit de modifier ces conditions à tout moment. Les modifications seront publiées sur cette page avec une date de mise à jour révisée. L'utilisation continue du site après les modifications constitue votre acceptation des nouvelles conditions.</p>
+
+          <h2>10. Contact</h2>
+          <p>Pour toute question concernant ces conditions :</p>
+          <p>Contactez-nous via le <a href={`/${lang}/contact`}>formulaire de contact</a></p>
+        </div>
+      ) : (
+        <div>
+          <h1>Terms of Service</h1>
+          <p class="text-sm text-gray-500">Last updated: February 4, 2026</p>
+
+          <h2>1. Acceptance of Terms</h2>
+          <p>By accessing and using the n∞sia website, you agree to be bound by these terms of service. If you do not agree to these terms, please do not use the site.</p>
+
+          <h2>2. Description of Service</h2>
+          <p>n∞sia offers Infinity, an AI-powered gamified learning platform, currently in beta. The current website is a marketing site that presents the product and enables beta program signup.</p>
+
+          <h2>3. Beta Program</h2>
+          <p>By signing up for the beta program:</p>
+          <ul>
+            <li>You understand that the service is under development and may contain bugs or incomplete features</li>
+            <li>You agree to provide constructive feedback to help improve the product</li>
+            <li>You understand that features may change or be removed without notice</li>
+            <li>Beta access is free and may be revoked at any time</li>
+          </ul>
+
+          <h2>4. User Obligations</h2>
+          <ul>
+            <li>Provide accurate information when signing up and contacting us</li>
+            <li>Do not use the service for unlawful or unauthorized purposes</li>
+            <li>Do not attempt to compromise the security or integrity of the site</li>
+            <li>Respect other users and the n∞sia team</li>
+          </ul>
+
+          <h2>5. Intellectual Property</h2>
+          <p>All content on the n∞sia website, including text, images, logos, design, and source code, is the property of n∞sia and is protected by French and international intellectual property laws.</p>
+          <p>You may not reproduce, distribute, or create derivative works from our content without prior written permission.</p>
+
+          <h2>6. Limitation of Liability</h2>
+          <p>The website and beta program are provided "as is" without warranty of any kind, express or implied. n∞sia shall not be liable for any direct, indirect, incidental, or consequential damages resulting from the use or inability to use the service.</p>
+
+          <h2>7. Privacy</h2>
+          <p>Your use of the site is also governed by our <a href={`/${lang}/legal/privacy`}>Privacy Policy</a>, which describes how we collect and use your personal data.</p>
+
+          <h2>8. Governing Law</h2>
+          <p>These terms are governed by French law. Any disputes shall be subject to the exclusive jurisdiction of French courts.</p>
+
+          <h2>9. Changes to Terms</h2>
+          <p>We reserve the right to modify these terms at any time. Changes will be posted on this page with a revised update date. Continued use of the site after changes constitutes your acceptance of the new terms.</p>
+
+          <h2>10. Contact</h2>
+          <p>For any questions about these terms:</p>
+          <p>Contact us via the <a href={`/${lang}/contact`}>contact form</a></p>
+        </div>
+      )}
+
+    </article>
+  </Container>
+</Layout>

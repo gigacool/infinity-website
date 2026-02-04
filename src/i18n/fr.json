@@ -1,6 +1,7 @@
 {
   "beta": {
     "page_title": "Rejoindre la bêta",
+    "meta_description": "Inscrivez-vous pour un accès anticipé à Infinity, la plateforme d'apprentissage gamifiée par l'IA.",
     "page_subtitle": "Soyez parmi les premiers à découvrir Infinity",
     "email_label": "Adresse email",
     "email_placeholder": "vous@exemple.com",
@@ -93,7 +94,7 @@
     }
   },
   "site": {
-    "name": "Infinity",
+    "name": "n∞sia",
     "tagline": "Apprenez ce qui compte. Prouvez ce que vous savez. Gardez une longueur d'avance."
   },
   "nav": {
@@ -145,7 +146,7 @@
     "microlearning_desc": "Des leçons courtes qui s'adaptent à votre emploi du temps chargé.",
     "gamification_desc": "Badges, tokens et récompenses qui vous gardent motivé.",
     "team_title": "Conçu aussi pour les équipes",
-    "team_desc": "Développement des compétences simple pour toute votre équipe. Pas de complexité entreprise — juste des résultats.",
+    "team_desc": "Développement des compétences simple pour toute votre équipe. Pas de complexité entreprise, juste des résultats.",
     "team_price": "5,99 €/mois par utilisateur",
     "team_cta": "Essai gratuit de 14 jours",
     "team_no_card": "Aucune carte de crédit requise",
@@ -157,7 +158,7 @@
   },
   "features_quizzes": {
     "title": "Quiz Intelligents",
-    "meta_description": "Des quiz adaptatifs qui prouvent ce que vous savez — anti-triche, classements et feedback instantané.",
+    "meta_description": "Des quiz adaptatifs qui prouvent ce que vous savez : anti-triche, classements et feedback instantané.",
     "description": "Des évaluations qui s'adaptent à votre niveau et prouvent vos vraies connaissances, pas la mémorisation par cœur.",
     "benefit_1_title": "Difficulté Adaptative",
     "benefit_1_desc": "Les questions s'ajustent à votre niveau en temps réel pour un défi toujours adapté.",
@@ -183,14 +184,14 @@
     "benefit_4_title": "Suivi de Progression",
     "benefit_4_desc": "Réévaluez-vous au fil du temps et mesurez votre croissance avec des repères clairs.",
     "benefit_5_title": "Résultats Actionnables",
-    "benefit_5_desc": "Pas seulement des scores — des étapes concrètes pour combler vos lacunes."
+    "benefit_5_desc": "Pas seulement des scores, des étapes concrètes pour combler vos lacunes."
   },
   "features_microlearning": {
     "title": "Micro-apprentissage",
-    "meta_description": "Des leçons courtes conçues pour les professionnels occupés — apprenez en 5 minutes par jour.",
+    "meta_description": "Des leçons courtes conçues pour les professionnels occupés. Apprenez en 5 minutes par jour.",
     "description": "Des leçons courtes et ciblées conçues pour les professionnels qui apprennent en déplacement.",
     "benefit_1_title": "Leçons de 5 Minutes",
-    "benefit_1_desc": "Apprenez pendant les pauses café, les trajets ou entre deux réunions — pas de longues sessions.",
+    "benefit_1_desc": "Apprenez pendant les pauses café, les trajets ou entre deux réunions. Pas de longues sessions.",
     "benefit_2_title": "Répétition Espacée",
     "benefit_2_desc": "Une méthodologie scientifique qui espace les révisions pour ancrer les connaissances durablement.",
     "benefit_3_title": "Mobile d'Abord",
@@ -198,12 +199,12 @@
     "benefit_4_title": "Séries Quotidiennes",
     "benefit_4_desc": "Construisez des habitudes d'apprentissage régulières avec le suivi de séries et les rappels.",
     "benefit_5_title": "Contenu Ciblé",
-    "benefit_5_desc": "Pas de superflu — uniquement les connaissances essentielles pour votre carrière."
+    "benefit_5_desc": "Pas de superflu, uniquement les connaissances essentielles pour votre carrière."
   },
   "features_gamification": {
     "title": "Gamification",
     "meta_description": "Apprentissage gamifié avec badges, tokens et récompenses qui rendent le développement des compétences engageant.",
-    "description": "Un apprentissage gratifiant — gagnez des badges, collectez des tokens et suivez votre progression.",
+    "description": "Un apprentissage gratifiant : gagnez des badges, collectez des tokens et suivez votre progression.",
     "benefit_1_title": "Badges de Compétences",
     "benefit_1_desc": "Gagnez des badges vérifiables qui prouvent votre expertise et partagez-les avec votre réseau.",
     "benefit_2_title": "Récompenses en Tokens",
@@ -231,35 +232,65 @@
     "share_linkedin": "Partager sur LinkedIn",
     "share_twitter": "Partager sur X",
     "related_posts": "Articles similaires",
-    "published_on": "Publie le",
+    "published_on": "Publié le",
     "reading_time": "min de lecture"
   },
   "blog": {
     "title": "Blog",
-    "subtitle": "Reflexions sur l'apprentissage, les competences et comment garder une longueur d'avance.",
-    "meta_description": "Articles sur l'apprentissage, les competences et la croissance professionnelle.",
+    "subtitle": "Réflexions sur l'apprentissage, les compétences et comment garder une longueur d'avance.",
+    "meta_description": "Articles sur l'apprentissage, les compétences et la croissance professionnelle.",
     "all_posts": "Tous les articles",
     "read_more": "Lire la suite",
-    "no_posts": "Aucun article trouve.",
+    "no_posts": "Aucun article trouvé.",
     "filter_all": "Tous",
     "back_to_blog": "Retour au blog"
   },
   "about": {
-    "title": "A propos",
-    "meta_description": "Decouvrez le fondateur et la science derriere Infinity — repetition espacee, gamification et apprentissage adaptatif.",
-    "hero_title": "Pourquoi j'ai cree Infinity",
-    "founder_intro": "Salut, moi c'est Cedric.",
-    "founder_story_p1": "Il y a quelques années, j'ai atteint un point de rupture. Mon secteur évoluait à toute vitesse — nouveaux outils, nouveaux frameworks, nouvelles certifications à suivre — et chaque formation revenait à remplir un panier percé. De longues vidéos oubliées dès le vendredi. Des certificats qui ne prouvaient rien. J'investissais du temps et de l'argent, mais rien ne restait.",
-    "founder_story_p2": "J'ai commence a creuser comment l'apprentissage fonctionne vraiment — la science derriere la memoire, la motivation et la formation d'habitudes. Ce que j'ai decouvert a tout change : les techniques qui marchent (repetition espacee, rappel actif, pratique deliberee) sont bien documentees, mais presque aucune plateforme ne les utilise correctement.",
-    "founder_story_p3": "Alors j'ai decide de construire la plateforme que j'aurais voulu avoir. Une qui respecte votre temps, s'adapte a votre niveau, et fait que les vraies competences restent — pas juste cocher une case.",
-    "founder_story_p4": "C'est ca, Infinity. C'est personnel pour moi. Et je pense que ca le sera aussi pour vous.",
-    "methodology_title": "La science derriere Infinity",
-    "spaced_repetition_title": "Repetition Espacee",
-    "spaced_repetition_desc": "La recherche montre qu'on oublie 80 % de ce qu'on apprend en une semaine. La repetition espacee combat cela en revisant le contenu a des intervalles scientifiquement optimises. Au lieu de tout ingurgiter, vous apprenez un peu, attendez, puis revisez juste avant d'oublier. Le resultat ? Des connaissances qui restent des mois et des annees, pas des jours.",
+    "title": "À propos",
+    "meta_description": "Découvrez le fondateur et la science derrière Infinity : répétition espacée, gamification et apprentissage adaptatif.",
+    "hero_title": "Pourquoi j'ai créé Infinity",
+    "founder_intro": "Salut, moi c'est Cédric.",
+    "founder_story_p1": "Il y a quelques années, j'ai atteint un point de rupture. Mon secteur évoluait à toute vitesse : nouveaux outils, nouveaux frameworks, nouvelles certifications à suivre. Chaque formation revenait à remplir un panier percé. De longues vidéos oubliées dès le vendredi. Des certificats qui ne prouvaient rien et n'avaient souvent aucun rapport avec les compétences dont j'avais réellement besoin au quotidien. J'investissais du temps et de l'argent, mais rien ne restait.",
+    "founder_story_p2": "Et je n'étais pas le seul. J'ai croisé des professionnels aguerris, 10, 15, 20 ans d'expérience, tout aussi perdus. Ils avaient une expertise profonde et beaucoup à apporter, mais peinaient à s'adapter aux nouveaux outils et aux nouvelles méthodes de travail. À côté, des profils juniors suivaient le rythme plus facilement, moins de choses à réapprendre. Mais le décalage se creusait des deux côtés : de l'expérience sans adaptation d'un côté, de la vitesse sans profondeur de l'autre.",
+    "founder_story_p3": "J'ai commencé à creuser comment l'apprentissage fonctionne vraiment, la science derrière la mémoire, la motivation et la formation d'habitudes. Ce que j'ai découvert a tout changé : les techniques qui marchent (répétition espacée, rappel actif, pratique délibérée) sont bien documentées, mais presque aucune plateforme ne les utilise correctement.",
+    "founder_story_p4": "Alors j'ai décidé de construire la plateforme que j'aurais voulu avoir. Une qui respecte votre temps, s'adapte à votre niveau et fait que les vraies compétences restent. Pas juste cocher une case.",
+    "founder_story_p5": "C'est ça, Infinity. C'est personnel pour moi. Et je pense que ça le sera aussi pour vous.",
+    "methodology_title": "La science derrière Infinity",
+    "spaced_repetition_title": "Répétition Espacée",
+    "spaced_repetition_desc": "La recherche montre qu'on oublie 80 % de ce qu'on apprend en une semaine. La répétition espacée combat cela en révisant le contenu à des intervalles scientifiquement optimisés. Au lieu de tout ingurgiter, vous apprenez un peu, attendez, puis révisez juste avant d'oublier. Le résultat ? Des connaissances qui restent des mois et des années, pas des jours.",
     "gamification_title": "Science de la Gamification",
-    "gamification_desc": "La gamification, ce ne sont pas des gadgets — c'est de la psychologie comportementale appliquee. Les badges, les series et les barres de progression activent la motivation intrinseque : le desir de s'ameliorer, de voir sa progression, de se sentir accompli. Quand l'apprentissage est gratifiant a chaque instant, on revient. Et c'est la regularite qui transforme la connaissance en competence.",
+    "gamification_desc": "La gamification, ce ne sont pas des artifices, c'est de la psychologie comportementale appliquée. Les badges, les séries et les barres de progression activent la motivation intrinsèque : le désir de s'améliorer, de voir sa progression, de se sentir accompli. Quand l'apprentissage est gratifiant à chaque instant, on revient. Et c'est la régularité qui transforme la connaissance en compétence.",
     "adaptive_title": "Apprentissage Adaptatif",
-    "adaptive_desc": "Aucun apprenant n'est identique. Notre IA analyse vos performances, vos difficultes et ce que vous savez deja — puis ajuste le contenu en temps reel. Vous passez moins de temps sur ce qui est facile et plus la ou ca compte. C'est comme avoir un tuteur personnel qui sait exactement ou vous en etes."
+    "adaptive_desc": "Aucun apprenant n'est identique. Notre IA analyse vos performances, vos difficultés et ce que vous savez déjà, puis ajuste le contenu en temps réel. Vous passez moins de temps sur ce qui est facile et plus là où ça compte. C'est comme avoir un tuteur personnel qui sait exactement où vous en êtes."
+  },
+  "cookie": {
+    "message": "Nous utilisons des analyses pour améliorer votre expérience. Aucune donnée personnelle n'est collectée.",
+    "accept": "Accepter",
+    "decline": "Refuser",
+    "privacy_link": "En savoir plus"
+  },
+  "contact": {
+    "title": "Contact",
+    "meta_description": "Contactez l'équipe n∞sia.",
+    "hero_title": "Contactez-nous",
+    "hero_desc": "Une question ? Nous serions ravis de vous entendre.",
+    "name_label": "Nom",
+    "name_placeholder": "Votre nom",
+    "email_label": "Email",
+    "email_placeholder": "votre@email.com",
+    "message_label": "Message",
+    "message_placeholder": "Comment pouvons-nous vous aider ?",
+    "submit": "Envoyer le message",
+    "submitting": "Envoi en cours...",
+    "success_title": "Message envoyé !",
+    "success_message": "Nous vous répondrons dans les 24 heures.",
+    "error_name_required": "Veuillez entrer votre nom.",
+    "error_name_min": "Le nom doit contenir au moins 2 caractères.",
+    "error_email_required": "Veuillez entrer votre email.",
+    "error_email_invalid": "Veuillez entrer une adresse email valide.",
+    "error_message_required": "Veuillez entrer un message.",
+    "error_message_min": "Le message doit contenir au moins 10 caractères.",
+    "error_generic": "Une erreur est survenue. Veuillez réessayer."
   },
   "accessibility": {
     "skip_to_content": "Aller au contenu principal"

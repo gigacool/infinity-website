@@ -1,5 +1,6 @@
 ---
 import Container from "@/components/container.astro";
+import BrandName from "@/components/BrandName.astro";
 import LanguageToggle from "@/components/LanguageToggle.astro";
 import { getTranslations, getCurrentLang } from "@/i18n/utils";
 import type { Language } from "@/i18n/utils";
@@ -19,7 +20,7 @@ const currentPath = Astro.url.pathname;
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       <!-- Brand Column -->
       <div>
-        <span class="font-bold text-xl text-infinity-dark">Infinity</span>
+        <BrandName class="text-xl text-infinity-dark" />
         <p class="text-sm text-gray-600 mt-2">{t.footer.tagline}</p>
       </div>
 
@@ -100,7 +101,7 @@ const currentPath = Astro.url.pathname;
 
     <!-- Copyright -->
     <div class="mt-8 pt-8 border-t border-gray-200 text-center text-sm text-gray-600">
-      © {new Date().getFullYear()} Infinity. {t.footer.rights}
+      © {new Date().getFullYear()} <BrandName />. {t.footer.rights}
     </div>
   </Container>
 </footer>

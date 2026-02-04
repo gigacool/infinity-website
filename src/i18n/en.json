@@ -1,6 +1,7 @@
 {
   "beta": {
     "page_title": "Join the Beta",
+    "meta_description": "Sign up for early access to Infinity — the AI-powered gamified learning platform.",
     "page_subtitle": "Be among the first to experience Infinity",
     "email_label": "Email address",
     "email_placeholder": "you@example.com",
@@ -93,7 +94,7 @@
     }
   },
   "site": {
-    "name": "Infinity",
+    "name": "n∞sia",
     "tagline": "Learn what matters. Prove what you know. Stay ahead."
   },
   "nav": {
@@ -249,10 +250,11 @@
     "meta_description": "Learn about the founder and the science behind Infinity — spaced repetition, gamification, and adaptive learning.",
     "hero_title": "Why I built Infinity",
     "founder_intro": "Hi, I'm Cedric.",
-    "founder_story_p1": "A few years ago, I hit a wall. My industry was evolving fast — new tools, new frameworks, new certifications to keep up with — and every course I tried felt like drinking from a firehose. Long videos I'd forget by Friday. Certificates that proved nothing. I was investing time and money, but the skills never stuck.",
-    "founder_story_p2": "I started digging into how learning actually works — the science behind memory, motivation, and habit formation. What I found changed everything: the techniques that work (spaced repetition, active recall, deliberate practice) are well-documented, but almost no learning platform uses them properly.",
-    "founder_story_p3": "So I decided to build the platform I wished existed. One that respects your time, adapts to your level, and makes real skills stick — not just check a box.",
-    "founder_story_p4": "That's Infinity. It's personal for me. And I think it will be personal for you too.",
+    "founder_story_p1": "A few years ago, I hit a wall. My industry was evolving fast — new tools, new frameworks, new certifications to keep up with — and every course I tried felt like drinking from a firehose. Long videos I'd forget by Friday. Certificates that proved nothing and often bore no relation to the skills I actually needed day to day. I was investing time and money, but the skills never stuck.",
+    "founder_story_p2": "And I wasn't alone. I met seasoned professionals — 10, 15, 20 years of experience — who felt just as lost. They had deep expertise and so much to offer, yet struggled to adapt to new tools and ways of working. Meanwhile, junior profiles kept up more easily — less to relearn. But the gap was widening on both sides: experience without adaptation on one hand, speed without depth on the other.",
+    "founder_story_p3": "I started digging into how learning actually works — the science behind memory, motivation, and habit formation. What I found changed everything: the techniques that work (spaced repetition, active recall, deliberate practice) are well-documented, but almost no learning platform uses them properly.",
+    "founder_story_p4": "So I decided to build the platform I wished existed. One that respects your time, adapts to your level, and makes real skills stick — not just check a box.",
+    "founder_story_p5": "That's Infinity. It's personal for me. And I think it will be personal for you too.",
     "methodology_title": "The science behind Infinity",
     "spaced_repetition_title": "Spaced Repetition",
     "spaced_repetition_desc": "Research shows we forget 80% of what we learn within a week. Spaced repetition fights this by reviewing material at scientifically optimized intervals. Instead of cramming, you learn a little, wait, then review just before you'd forget. The result? Knowledge that stays with you for months and years, not days.",
@@ -260,6 +262,35 @@
     "gamification_desc": "Gamification isn't gimmicks — it's applied behavioral psychology. Badges, streaks, and progress bars tap into intrinsic motivation: the desire to improve, to see progress, to feel accomplished. When learning feels rewarding moment to moment, you show up consistently. And consistency is what turns knowledge into skill.",
     "adaptive_title": "Adaptive Learning",
     "adaptive_desc": "No two learners are the same. Our AI analyzes how you perform, where you struggle, and what you already know — then adjusts the content in real time. You spend less time on what's easy and more time where it matters. It's like having a personal tutor who knows exactly where you are."
+  },
+  "cookie": {
+    "message": "We use analytics to improve your experience. No personal data is collected.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "privacy_link": "Learn more"
+  },
+  "contact": {
+    "title": "Contact",
+    "meta_description": "Get in touch with the n∞sia team.",
+    "hero_title": "Get in touch",
+    "hero_desc": "Have a question? We'd love to hear from you.",
+    "name_label": "Name",
+    "name_placeholder": "Your name",
+    "email_label": "Email",
+    "email_placeholder": "your@email.com",
+    "message_label": "Message",
+    "message_placeholder": "How can we help?",
+    "submit": "Send message",
+    "submitting": "Sending...",
+    "success_title": "Message sent!",
+    "success_message": "We'll respond within 24 hours.",
+    "error_name_required": "Please enter your name.",
+    "error_name_min": "Name must be at least 2 characters.",
+    "error_email_required": "Please enter your email.",
+    "error_email_invalid": "Please enter a valid email address.",
+    "error_message_required": "Please enter a message.",
+    "error_message_min": "Message must be at least 10 characters.",
+    "error_generic": "Something went wrong. Please try again."
   },
   "accessibility": {
     "skip_to_content": "Skip to main content"

@@ -1,9 +1,10 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
-import { SEO } from "astro-seo";
+import SEO from "@/components/SEO.astro";
 import Footer from "@/components/footer.astro";
 import Navbar from "@/components/navbar/navbar.astro";
 import StickyCTA from "@/components/StickyCTA.astro";
+import CookieConsent from "@/components/CookieConsent.astro";
 import { getTranslations } from "@/i18n/utils";
 import type { Language } from "@/i18n/utils";
 import "../styles/global.css";
@@ -12,25 +13,22 @@ export interface Props {
   title?: string;
   lang?: Language;
   description?: string;
+  ogType?: string;
+  noindex?: boolean;
+  publishedDate?: string;
+  author?: string;
 }
 
-const { title, lang = 'fr', description } = Astro.props;
+const { title, lang = 'fr', description, ogType, noindex, publishedDate, author } = Astro.props;
 const t = getTranslations(lang);
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
-
-const resolvedImageWithDomain = new URL(
-  "/opengraph.jpg",
-  Astro.site
-).toString();
-
-const makeTitle = title
-  ? title + " | Infinity"
-  : "Infinity - Learn what matters. Prove what you know. Stay ahead.";
+const defaultTitle = lang === 'fr'
+  ? "Apprenez ce qui compte. Prouvez ce que vous savez."
+  : "Learn what matters. Prove what you know.";
 
 const defaultDescription = lang === 'fr'
-  ? "Infinity - Plateforme d'apprentissage gamifiée alimentée par l'IA. Apprenez ce qui compte. Prouvez ce que vous savez."
-  : "Infinity - AI-powered gamified learning platform. Learn what matters. Prove what you know. Stay ahead.";
+  ? "n∞sia — Plateforme d'apprentissage gamifiée alimentée par l'IA. Apprenez ce qui compte. Prouvez ce que vous savez."
+  : "n∞sia — AI-powered gamified learning platform. Learn what matters. Prove what you know. Stay ahead.";
 ---
 
 <!doctype html>
@@ -40,30 +38,29 @@ const defaultDescription = lang === 'fr'
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="alternate" type="application/rss+xml" title="Infinity Blog" href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="n∞sia Blog" href="/rss.xml" />
     <ViewTransitions />
 
     <SEO
-      title={makeTitle}
+      title={title || defaultTitle}
       description={description || defaultDescription}
-      canonical={canonicalURL}
-      twitter={{
-        creator: "@infinityhq",
-        site: "@infinityhq",
-        card: "summary_large_image",
-      }}
-      openGraph={{
-        basic: {
-          url: canonicalURL,
-          type: "website",
-          title: makeTitle,
-          image: resolvedImageWithDomain,
-        },
-        image: {
-          alt: "Infinity - AI-powered gamified learning platform",
-        },
-      }}
+      type={ogType}
+      noindex={noindex}
+      publishedDate={publishedDate}
+      author={author}
     />
+
+    <!-- Organization Schema (all pages) -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "n∞sia",
+      "url": "https://infinity-website-psi.vercel.app",
+      "logo": "https://infinity-website-psi.vercel.app/favicon.svg",
+      "description": "AI-powered gamified learning platform for professionals"
+    })} />
+
+    <slot name="head" />
   </head>
   <body>
     <a href="#main" class="skip-link">
@@ -79,6 +76,7 @@ const defaultDescription = lang === 'fr'
       <Footer lang={lang} />
     </div>
     <StickyCTA lang={lang} />
+    <CookieConsent lang={lang} />
     <style is:global>
       /* Improve Page speed */
       /* https://css-tricks.com/almanac/properties/c/content-visibility/ */

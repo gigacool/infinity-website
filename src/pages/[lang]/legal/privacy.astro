@@ -1,0 +1,188 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Container from "@/components/container.astro";
+import Layout from "@/layouts/Layout.astro";
+import { languages, getTranslations } from '@/i18n/utils';
+import type { Language } from '@/i18n/utils';
+
+export const prerender = true;
+
+export const getStaticPaths = (() => {
+  return languages.map((lang) => ({
+    params: { lang },
+  }));
+}) satisfies GetStaticPaths;
+
+const { lang } = Astro.params as { lang: Language };
+const t = getTranslations(lang);
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": lang === 'fr' ? "Accueil" : "Home", "item": `https://infinity-website-psi.vercel.app/${lang}/` },
+    { "@type": "ListItem", "position": 2, "name": t.legal.privacy }
+  ]
+};
+---
+
+<Layout lang={lang} title={t.legal.privacy} description={lang === 'fr' ? "Politique de confidentialité de n∞sia." : "n∞sia's privacy policy."}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <Container>
+    <article class="mx-auto max-w-3xl py-16 prose prose-slate prose-headings:text-infinity-dark">
+
+      {lang === 'fr' ? (
+        <div>
+          <h1>Politique de Confidentialité</h1>
+          <p class="text-sm text-gray-500">Dernière mise à jour : 4 février 2026</p>
+
+          <h2>1. Introduction</h2>
+          <p>n∞sia (« nous », « notre ») s'engage à protéger votre vie privée. Cette politique explique quelles données nous collectons, comment nous les utilisons et quels sont vos droits.</p>
+          <p>Cette politique s'applique au site web n∞sia et au programme bêta associé.</p>
+
+          <h2>2. Données que nous collectons</h2>
+          <h3>Inscription à la bêta</h3>
+          <p>Lorsque vous vous inscrivez à la bêta, nous collectons :</p>
+          <ul>
+            <li>Adresse email (obligatoire)</li>
+            <li>Prénom (obligatoire)</li>
+            <li>Compétences d'intérêt (obligatoire)</li>
+            <li>Rôle / titre (optionnel)</li>
+            <li>Entreprise (optionnel)</li>
+          </ul>
+
+          <h3>Formulaire de contact</h3>
+          <p>Lorsque vous nous contactez, nous collectons :</p>
+          <ul>
+            <li>Nom (obligatoire)</li>
+            <li>Adresse email (obligatoire)</li>
+            <li>Message (obligatoire)</li>
+          </ul>
+
+          <h3>Données techniques</h3>
+          <p>Nous utilisons Vercel Analytics, un service respectueux de la vie privée qui ne dépose pas de cookies et ne collecte pas de données personnelles identifiantes.</p>
+
+          <h2>3. Comment nous utilisons vos données</h2>
+          <ul>
+            <li>Gérer votre inscription à la bêta et vous fournir un accès</li>
+            <li>Répondre à vos demandes via le formulaire de contact</li>
+            <li>Envoyer des notifications à l'administrateur concernant les nouvelles inscriptions et messages</li>
+            <li>Améliorer notre site web grâce aux données analytiques anonymes</li>
+          </ul>
+
+          <h2>4. Cookies et analytiques</h2>
+          <p>Vercel Analytics est notre seul outil d'analyse. Il est respectueux de la vie privée et ne dépose aucun cookie de suivi.</p>
+          <p>Lorsque vous interagissez avec notre bannière de consentement, votre choix est enregistré dans le stockage local de votre navigateur (localStorage). Aucun cookie de suivi n'est déposé.</p>
+
+          <h2>5. Stockage et sécurité des données</h2>
+          <p>Vos données sont transmises de manière sécurisée via HTTPS. Les emails de notification sont envoyés via Resend, un service de messagerie sécurisé. Le site est hébergé par Vercel.</p>
+
+          <h2>6. Vos droits (RGPD)</h2>
+          <p>En tant qu'utilisateur basé dans l'UE, vous disposez des droits suivants :</p>
+          <ul>
+            <li><strong>Droit d'accès :</strong> Demander une copie de vos données personnelles</li>
+            <li><strong>Droit de rectification :</strong> Corriger des données inexactes</li>
+            <li><strong>Droit à l'effacement :</strong> Demander la suppression de vos données</li>
+            <li><strong>Droit à la portabilité :</strong> Recevoir vos données dans un format structuré</li>
+            <li><strong>Droit d'opposition :</strong> Vous opposer au traitement de vos données</li>
+          </ul>
+          <p>Pour exercer ces droits, contactez-nous à l'adresse indiquée ci-dessous.</p>
+
+          <h2>7. Conservation des données</h2>
+          <p>Les données d'inscription à la bêta sont conservées pendant toute la durée du programme bêta et jusqu'à 12 mois après. Les messages du formulaire de contact sont conservés jusqu'à ce qu'une réponse ait été apportée, puis supprimés dans un délai de 6 mois.</p>
+
+          <h2>8. Tiers</h2>
+          <ul>
+            <li><strong>Vercel :</strong> Hébergement et analytiques (respectueux de la vie privée)</li>
+            <li><strong>Resend :</strong> Envoi d'emails de notification à l'administrateur</li>
+          </ul>
+          <p>Nous ne vendons ni ne partageons vos données personnelles avec des tiers à des fins commerciales.</p>
+
+          <h2>9. Modifications de cette politique</h2>
+          <p>Nous pouvons mettre à jour cette politique occasionnellement. Les modifications seront publiées sur cette page avec une date de mise à jour révisée.</p>
+
+          <h2>10. Contact</h2>
+          <p>Pour toute question concernant cette politique ou vos données personnelles :</p>
+          <p>Responsable du traitement : Cédric<br/>
+          Email : via le <a href={`/${lang}/contact`}>formulaire de contact</a></p>
+        </div>
+      ) : (
+        <div>
+          <h1>Privacy Policy</h1>
+          <p class="text-sm text-gray-500">Last updated: February 4, 2026</p>
+
+          <h2>1. Introduction</h2>
+          <p>n∞sia ("we", "our") is committed to protecting your privacy. This policy explains what data we collect, how we use it, and what your rights are.</p>
+          <p>This policy applies to the n∞sia website and associated beta program.</p>
+
+          <h2>2. Data We Collect</h2>
+          <h3>Beta Signup</h3>
+          <p>When you sign up for the beta, we collect:</p>
+          <ul>
+            <li>Email address (required)</li>
+            <li>First name (required)</li>
+            <li>Skills of interest (required)</li>
+            <li>Role / title (optional)</li>
+            <li>Company (optional)</li>
+          </ul>
+
+          <h3>Contact Form</h3>
+          <p>When you contact us, we collect:</p>
+          <ul>
+            <li>Name (required)</li>
+            <li>Email address (required)</li>
+            <li>Message (required)</li>
+          </ul>
+
+          <h3>Technical Data</h3>
+          <p>We use Vercel Analytics, a privacy-friendly analytics service that does not use cookies and does not collect personally identifiable information.</p>
+
+          <h2>3. How We Use Your Data</h2>
+          <ul>
+            <li>Manage your beta signup and provide access</li>
+            <li>Respond to your contact form inquiries</li>
+            <li>Send admin notifications about new signups and messages</li>
+            <li>Improve our website through anonymous analytics data</li>
+          </ul>
+
+          <h2>4. Cookies & Analytics</h2>
+          <p>Vercel Analytics is our only analytics tool. It is privacy-friendly and does not set any tracking cookies.</p>
+          <p>When you interact with our consent banner, your choice is stored in your browser's local storage (localStorage). No tracking cookies are set.</p>
+
+          <h2>5. Data Storage & Security</h2>
+          <p>Your data is transmitted securely via HTTPS. Notification emails are sent via Resend, a secure email service. The site is hosted by Vercel.</p>
+
+          <h2>6. Your Rights (GDPR)</h2>
+          <p>As an EU-based user, you have the following rights:</p>
+          <ul>
+            <li><strong>Right of access:</strong> Request a copy of your personal data</li>
+            <li><strong>Right to rectification:</strong> Correct inaccurate data</li>
+            <li><strong>Right to erasure:</strong> Request deletion of your data</li>
+            <li><strong>Right to data portability:</strong> Receive your data in a structured format</li>
+            <li><strong>Right to object:</strong> Object to the processing of your data</li>
+          </ul>
+          <p>To exercise these rights, contact us at the address below.</p>
+
+          <h2>7. Data Retention</h2>
+          <p>Beta signup data is retained for the duration of the beta program and up to 12 months after. Contact form messages are retained until a response has been provided, then deleted within 6 months.</p>
+
+          <h2>8. Third Parties</h2>
+          <ul>
+            <li><strong>Vercel:</strong> Hosting and analytics (privacy-friendly)</li>
+            <li><strong>Resend:</strong> Sending admin notification emails</li>
+          </ul>
+          <p>We do not sell or share your personal data with third parties for commercial purposes.</p>
+
+          <h2>9. Changes to This Policy</h2>
+          <p>We may update this policy occasionally. Changes will be posted on this page with a revised update date.</p>
+
+          <h2>10. Contact</h2>
+          <p>For any questions about this policy or your personal data:</p>
+          <p>Data Controller: Cedric<br/>
+          Email: via the <a href={`/${lang}/contact`}>contact form</a></p>
+        </div>
+      )}
+
+    </article>
+  </Container>
+</Layout>

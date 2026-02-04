@@ -12,7 +12,7 @@ export async function GET(context: APIContext) {
   );
 
   return rss({
-    title: 'Infinity Blog',
+    title: 'n∞sia Blog',
     description: 'Articles about learning, skills, and professional growth.',
     site: context.site ?? 'https://infinity-website-psi.vercel.app',
     items: sortedPosts.map((post) => {
