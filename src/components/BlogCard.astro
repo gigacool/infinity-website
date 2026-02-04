@@ -1,0 +1,44 @@
+---
+import type { Language } from '@/i18n/utils';
+import { getTranslations } from '@/i18n/utils';
+
+interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  category: string;
+  slug: string;
+  lang: Language;
+}
+
+const { title, description, date, category, slug, lang } = Astro.props;
+const t = getTranslations(lang);
+
+const formattedDate = date.toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<a href={`/${lang}/blog/${slug}`} class="group block">
+  <article class="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow p-6 h-full flex flex-col">
+    <span class="text-sm font-medium text-infinity-orange uppercase tracking-wider">
+      {category}
+    </span>
+    <h2 class="text-xl font-bold text-slate-900 mt-2 group-hover:text-infinity-orange transition-colors">
+      {title}
+    </h2>
+    <p class="text-slate-600 mt-3 flex-1">
+      {description}
+    </p>
+    <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
+      <time class="text-sm text-gray-400" datetime={date.toISOString()}>
+        {formattedDate}
+      </time>
+      <span class="text-sm font-medium text-infinity-orange group-hover:underline">
+        {t.blog.read_more} &rarr;
+      </span>
+    </div>
+  </article>
+</a>

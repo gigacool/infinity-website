@@ -1,0 +1,116 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection } from 'astro:content';
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/components/container.astro";
+import BlogCard from "@/components/BlogCard.astro";
+import { languages, getTranslations } from '@/i18n/utils';
+import type { Language } from '@/i18n/utils';
+
+export const prerender = true;
+
+export const getStaticPaths = (() => {
+  return languages.map((lang) => ({
+    params: { lang },
+  }));
+}) satisfies GetStaticPaths;
+
+const { lang } = Astro.params as { lang: Language };
+const t = getTranslations(lang);
+
+const allPosts = await getCollection('blog', ({ id, data }) => {
+  return id.startsWith(`${lang}/`) && !data.draft;
+});
+
+const sortedPosts = allPosts.sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const categories = ['all', ...new Set(sortedPosts.map(p => p.data.category))];
+---
+
+<Layout lang={lang} title={t.blog.title} description={t.blog.meta_description}>
+  <Container>
+    <section class="py-16">
+      <div class="text-center">
+        <h1 class="text-4xl lg:text-5xl font-bold tracking-tight">
+          {t.blog.title}
+        </h1>
+        <p class="text-lg mt-4 text-slate-600 max-w-xl mx-auto">
+          {t.blog.subtitle}
+        </p>
+      </div>
+
+      <!-- Category filters -->
+      <div class="flex flex-wrap gap-2 justify-center mt-10" id="blog-filters">
+        {categories.map((cat) => (
+          <button
+            data-category={cat}
+            class:list={[
+              "px-4 py-2 rounded-full text-sm font-medium transition-colors border",
+              cat === 'all'
+                ? "bg-slate-900 text-white border-slate-900"
+                : "bg-white text-slate-600 border-gray-200 hover:border-slate-900 hover:text-slate-900",
+            ]}
+          >
+            {cat === 'all' ? t.blog.filter_all : cat.charAt(0).toUpperCase() + cat.slice(1)}
+          </button>
+        ))}
+      </div>
+
+      <!-- Posts grid -->
+      {sortedPosts.length > 0 ? (
+        <div class="grid gap-8 mt-12 md:grid-cols-2 lg:grid-cols-3" id="blog-grid">
+          {sortedPosts.map((post) => {
+            const slug = post.id.replace(`${lang}/`, '').replace(/\.mdx?$/, '');
+            return (
+              <div data-category={post.data.category}>
+                <BlogCard
+                  title={post.data.title}
+                  description={post.data.description}
+                  date={post.data.date}
+                  category={post.data.category}
+                  slug={slug}
+                  lang={lang}
+                />
+              </div>
+            );
+          })}
+        </div>
+      ) : (
+        <p class="text-center text-slate-500 mt-12">{t.blog.no_posts}</p>
+      )}
+    </section>
+  </Container>
+</Layout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const filters = document.querySelectorAll('#blog-filters button');
+    const cards = document.querySelectorAll('#blog-grid > div');
+
+    filters.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const category = (btn as HTMLElement).dataset.category;
+
+        // Update active filter style
+        filters.forEach((f) => {
+          f.classList.remove('bg-slate-900', 'text-white', 'border-slate-900');
+          f.classList.add('bg-white', 'text-slate-600', 'border-gray-200');
+        });
+        btn.classList.remove('bg-white', 'text-slate-600', 'border-gray-200');
+        btn.classList.add('bg-slate-900', 'text-white', 'border-slate-900');
+
+        // Filter cards
+        cards.forEach((card) => {
+          const el = card as HTMLElement;
+          if (category === 'all' || el.dataset.category === category) {
+            el.style.display = '';
+          } else {
+            el.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>

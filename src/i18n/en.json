@@ -226,6 +226,41 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Service"
   },
+  "blog_post": {
+    "share": "Share",
+    "share_linkedin": "Share on LinkedIn",
+    "share_twitter": "Share on X",
+    "related_posts": "Related articles",
+    "published_on": "Published on",
+    "reading_time": "min read"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Insights on learning, skills, and staying ahead.",
+    "meta_description": "Articles about learning, skills, and professional growth.",
+    "all_posts": "All articles",
+    "read_more": "Read more",
+    "no_posts": "No articles found.",
+    "filter_all": "All",
+    "back_to_blog": "Back to Blog"
+  },
+  "about": {
+    "title": "About",
+    "meta_description": "Learn about the founder and the science behind Infinity — spaced repetition, gamification, and adaptive learning.",
+    "hero_title": "Why I built Infinity",
+    "founder_intro": "Hi, I'm Cedric.",
+    "founder_story_p1": "A few years ago, I hit a wall. My industry was evolving fast — new tools, new frameworks, new certifications to keep up with — and every course I tried felt like drinking from a firehose. Long videos I'd forget by Friday. Certificates that proved nothing. I was investing time and money, but the skills never stuck.",
+    "founder_story_p2": "I started digging into how learning actually works — the science behind memory, motivation, and habit formation. What I found changed everything: the techniques that work (spaced repetition, active recall, deliberate practice) are well-documented, but almost no learning platform uses them properly.",
+    "founder_story_p3": "So I decided to build the platform I wished existed. One that respects your time, adapts to your level, and makes real skills stick — not just check a box.",
+    "founder_story_p4": "That's Infinity. It's personal for me. And I think it will be personal for you too.",
+    "methodology_title": "The science behind Infinity",
+    "spaced_repetition_title": "Spaced Repetition",
+    "spaced_repetition_desc": "Research shows we forget 80% of what we learn within a week. Spaced repetition fights this by reviewing material at scientifically optimized intervals. Instead of cramming, you learn a little, wait, then review just before you'd forget. The result? Knowledge that stays with you for months and years, not days.",
+    "gamification_title": "Gamification Science",
+    "gamification_desc": "Gamification isn't gimmicks — it's applied behavioral psychology. Badges, streaks, and progress bars tap into intrinsic motivation: the desire to improve, to see progress, to feel accomplished. When learning feels rewarding moment to moment, you show up consistently. And consistency is what turns knowledge into skill.",
+    "adaptive_title": "Adaptive Learning",
+    "adaptive_desc": "No two learners are the same. Our AI analyzes how you perform, where you struggle, and what you already know — then adjusts the content in real time. You spend less time on what's easy and more time where it matters. It's like having a personal tutor who knows exactly where you are."
+  },
   "accessibility": {
     "skip_to_content": "Skip to main content"
   }

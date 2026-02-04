@@ -1,0 +1,71 @@
+---
+import { getCollection } from 'astro:content';
+import BlogLayout from '@/layouts/BlogLayout.astro';
+import BlogCard from '@/components/BlogCard.astro';
+import { getTranslations } from '@/i18n/utils';
+import type { Language } from '@/i18n/utils';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => {
+    const [lang, ...slugParts] = post.id.split('/');
+    const slug = slugParts.join('/').replace(/\.mdx?$/, '');
+    return {
+      params: { lang, slug },
+      props: { post },
+    };
+  });
+}
+
+const { post } = Astro.props;
+const { lang } = Astro.params as { lang: Language };
+const t = getTranslations(lang);
+const { Content } = await post.render();
+
+const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
+
+// Get related posts (same language, different post, max 3)
+const allPosts = await getCollection('blog', ({ id, data }) => {
+  return id.startsWith(`${lang}/`) && !data.draft;
+});
+const relatedPosts = allPosts
+  .filter((p) => p.id !== post.id)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+---
+
+<BlogLayout
+  title={post.data.title}
+  description={post.data.description}
+  date={post.data.date}
+  author={post.data.author}
+  category={post.data.category}
+  tags={post.data.tags}
+  lang={lang}
+  pageUrl={pageUrl}
+>
+  <Content />
+
+  {relatedPosts.length > 0 && (
+    <section slot="related" class="max-w-5xl mx-auto mb-16">
+      <h2 class="text-2xl font-bold text-center mb-8">{t.blog_post.related_posts}</h2>
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {relatedPosts.map((rp) => {
+          const slug = rp.id.replace(`${lang}/`, '').replace(/\.mdx?$/, '');
+          return (
+            <BlogCard
+              title={rp.data.title}
+              description={rp.data.description}
+              date={rp.data.date}
+              category={rp.data.category}
+              slug={slug}
+              lang={lang}
+            />
+          );
+        })}
+      </div>
+    </section>
+  )}
+</BlogLayout>

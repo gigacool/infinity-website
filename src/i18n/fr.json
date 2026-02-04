@@ -226,6 +226,41 @@
     "privacy": "Politique de confidentialité",
     "terms": "Conditions d'utilisation"
   },
+  "blog_post": {
+    "share": "Partager",
+    "share_linkedin": "Partager sur LinkedIn",
+    "share_twitter": "Partager sur X",
+    "related_posts": "Articles similaires",
+    "published_on": "Publie le",
+    "reading_time": "min de lecture"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Reflexions sur l'apprentissage, les competences et comment garder une longueur d'avance.",
+    "meta_description": "Articles sur l'apprentissage, les competences et la croissance professionnelle.",
+    "all_posts": "Tous les articles",
+    "read_more": "Lire la suite",
+    "no_posts": "Aucun article trouve.",
+    "filter_all": "Tous",
+    "back_to_blog": "Retour au blog"
+  },
+  "about": {
+    "title": "A propos",
+    "meta_description": "Decouvrez le fondateur et la science derriere Infinity — repetition espacee, gamification et apprentissage adaptatif.",
+    "hero_title": "Pourquoi j'ai cree Infinity",
+    "founder_intro": "Salut, moi c'est Cedric.",
+    "founder_story_p1": "Il y a quelques années, j'ai atteint un point de rupture. Mon secteur évoluait à toute vitesse — nouveaux outils, nouveaux frameworks, nouvelles certifications à suivre — et chaque formation revenait à remplir un panier percé. De longues vidéos oubliées dès le vendredi. Des certificats qui ne prouvaient rien. J'investissais du temps et de l'argent, mais rien ne restait.",
+    "founder_story_p2": "J'ai commence a creuser comment l'apprentissage fonctionne vraiment — la science derriere la memoire, la motivation et la formation d'habitudes. Ce que j'ai decouvert a tout change : les techniques qui marchent (repetition espacee, rappel actif, pratique deliberee) sont bien documentees, mais presque aucune plateforme ne les utilise correctement.",
+    "founder_story_p3": "Alors j'ai decide de construire la plateforme que j'aurais voulu avoir. Une qui respecte votre temps, s'adapte a votre niveau, et fait que les vraies competences restent — pas juste cocher une case.",
+    "founder_story_p4": "C'est ca, Infinity. C'est personnel pour moi. Et je pense que ca le sera aussi pour vous.",
+    "methodology_title": "La science derriere Infinity",
+    "spaced_repetition_title": "Repetition Espacee",
+    "spaced_repetition_desc": "La recherche montre qu'on oublie 80 % de ce qu'on apprend en une semaine. La repetition espacee combat cela en revisant le contenu a des intervalles scientifiquement optimises. Au lieu de tout ingurgiter, vous apprenez un peu, attendez, puis revisez juste avant d'oublier. Le resultat ? Des connaissances qui restent des mois et des annees, pas des jours.",
+    "gamification_title": "Science de la Gamification",
+    "gamification_desc": "La gamification, ce ne sont pas des gadgets — c'est de la psychologie comportementale appliquee. Les badges, les series et les barres de progression activent la motivation intrinseque : le desir de s'ameliorer, de voir sa progression, de se sentir accompli. Quand l'apprentissage est gratifiant a chaque instant, on revient. Et c'est la regularite qui transforme la connaissance en competence.",
+    "adaptive_title": "Apprentissage Adaptatif",
+    "adaptive_desc": "Aucun apprenant n'est identique. Notre IA analyse vos performances, vos difficultes et ce que vous savez deja — puis ajuste le contenu en temps reel. Vous passez moins de temps sur ce qui est facile et plus la ou ca compte. C'est comme avoir un tuteur personnel qui sait exactement ou vous en etes."
+  },
   "accessibility": {
     "skip_to_content": "Aller au contenu principal"
   }
