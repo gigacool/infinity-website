@@ -1,0 +1,152 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { Icon } from "astro-icon/components";
+import Container from "@/components/container.astro";
+import Cta from "@/components/cta.astro";
+import Sectionhead from "@/components/sectionhead.astro";
+import Layout from "@/layouts/Layout.astro";
+import { languages, getTranslations } from '@/i18n/utils';
+import type { Language } from '@/i18n/utils';
+
+export const prerender = true;
+
+export const getStaticPaths = (() => {
+  return languages.map((lang) => ({
+    params: { lang },
+  }));
+}) satisfies GetStaticPaths;
+
+const { lang } = Astro.params as { lang: Language };
+const t = getTranslations(lang);
+
+const featureCards = [
+  {
+    title: t.features.quizzes.title,
+    description: t.features_page.quizzes_desc,
+    icon: "bx:bxs-bulb",
+    href: `/${lang}/features/quizzes`,
+  },
+  {
+    title: t.features.surveys.title,
+    description: t.features_page.surveys_desc,
+    icon: "bx:bxs-bar-chart-alt-2",
+    href: `/${lang}/features/surveys`,
+  },
+  {
+    title: t.features.microlearning.title,
+    description: t.features_page.microlearning_desc,
+    icon: "bx:bxs-book-reader",
+    href: `/${lang}/features/microlearning`,
+  },
+  {
+    title: t.features.gamification.title,
+    description: t.features_page.gamification_desc,
+    icon: "bx:bxs-trophy",
+    href: `/${lang}/features/gamification`,
+  },
+];
+
+const teamValueProps = [
+  { icon: "bx:bxs-check-circle", text: t.features_page.team_setup },
+  { icon: "bx:bxs-bar-chart-alt-2", text: t.features_page.team_tracking },
+  { icon: "bx:bxs-zap", text: t.features_page.team_no_enterprise },
+];
+---
+
+<Layout lang={lang} title={t.features_page.title} description={t.features_page.meta_description}>
+  <Container>
+    <!-- Hero / Page Header -->
+    <Sectionhead>
+      <Fragment slot="title">{t.features_page.hero_title}</Fragment>
+      <Fragment slot="desc">{t.features_page.hero_description}</Fragment>
+    </Sectionhead>
+
+    <!-- Feature Pillars Section -->
+    <section class="py-16 md:py-20 lg:py-24" aria-label={t.features_page.title}>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {featureCards.map((card) => (
+          <a
+            href={card.href}
+            class="feature-card bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow group"
+          >
+            <div class="bg-infinity-orange/10 rounded-full p-3 w-12 h-12 flex items-center justify-center mb-4">
+              <Icon class="text-infinity-orange w-6 h-6" name={card.icon} />
+            </div>
+            <h2 class="font-semibold text-lg text-infinity-dark group-hover:text-infinity-orange transition-colors">
+              {card.title}
+            </h2>
+            <p class="text-slate-500 mt-2 leading-relaxed text-sm">
+              {card.description}
+            </p>
+          </a>
+        ))}
+      </div>
+    </section>
+  </Container>
+
+  <!-- Team Value Proposition Section -->
+  <section class="bg-gray-50 py-16 md:py-20 lg:py-24">
+    <Container>
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-infinity-dark">
+          {t.features_page.team_title}
+        </h2>
+        <p class="text-lg mt-4 text-slate-600">
+          {t.features_page.team_desc}
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-6 mt-8">
+          {teamValueProps.map((prop) => (
+            <div class="flex items-center gap-2 text-sm text-infinity-dark">
+              <Icon class="text-infinity-orange w-5 h-5" name={prop.icon} />
+              <span>{prop.text}</span>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-10">
+          <p class="text-4xl font-bold text-infinity-dark">
+            {t.features_page.team_price}
+          </p>
+          <div class="mt-6">
+            <a
+              href={`/${lang}/beta`}
+              class="bg-infinity-orange text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-600 transition-colors inline-block"
+            >
+              {t.features_page.team_cta}
+            </a>
+          </div>
+          <p class="text-sm text-slate-500 mt-3">
+            {t.features_page.team_no_card}
+          </p>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- CTA Section -->
+  <Container>
+    <Cta lang={lang} />
+  </Container>
+</Layout>
+
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    .feature-card {
+      animation: fade-in-up linear;
+      animation-timeline: view();
+      animation-range: entry 0% cover 30%;
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

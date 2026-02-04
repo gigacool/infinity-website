@@ -98,6 +98,7 @@
   },
   "nav": {
     "features": "Features",
+    "all_features": "All Features",
     "about": "About",
     "blog": "Blog",
     "contact": "Contact"
@@ -133,6 +134,24 @@
       "title": "Gamification",
       "description": "Badges, rewards, and leaderboards that make learning engaging."
     }
+  },
+  "features_page": {
+    "title": "Features",
+    "meta_description": "Discover Infinity's four pillars: Smart Quizzes, AI Surveys, Micro-learning, and Gamification.",
+    "hero_title": "Everything you need to stay ahead",
+    "hero_description": "Four powerful tools to learn, prove, and grow.",
+    "quizzes_desc": "Adaptive assessments that prove what you know.",
+    "surveys_desc": "Identify your skill gaps with AI-powered assessments.",
+    "microlearning_desc": "Bite-sized lessons that fit your busy schedule.",
+    "gamification_desc": "Badges, tokens, and rewards that keep you engaged.",
+    "team_title": "Built for teams too",
+    "team_desc": "Simple skill development for your entire team. No enterprise complexity — just results.",
+    "team_price": "€5.99/month per user",
+    "team_cta": "Start 14-day free trial",
+    "team_no_card": "No credit card required",
+    "team_setup": "Simple setup",
+    "team_tracking": "Skill tracking",
+    "team_no_enterprise": "No enterprise complexity"
   },
   "footer": {
     "features": "Features",

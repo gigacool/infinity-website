@@ -28,6 +28,11 @@ const currentPath = Astro.url.pathname;
         <h4 class="font-bold text-infinity-dark mb-4">{t.footer.features}</h4>
         <ul class="space-y-2 text-sm">
           <li>
+            <a href={`/${lang}/features`} class="text-gray-600 hover:text-infinity-orange transition-colors">
+              {t.nav.all_features}
+            </a>
+          </li>
+          <li>
             <a href={`/${lang}/features/quizzes`} class="text-gray-600 hover:text-infinity-orange transition-colors">
               {t.features.quizzes.title}
             </a>

@@ -18,8 +18,9 @@ const currentPath = Astro.url.pathname;
 const menuitems = [
   {
     title: t.nav.features,
-    path: "#",
+    path: `/${lang}/features`,
     children: [
+      { title: t.nav.all_features, path: `/${lang}/features` },
       { title: t.features.quizzes.title, path: `/${lang}/features/quizzes` },
       { title: t.features.surveys.title, path: `/${lang}/features/surveys` },
       { title: t.features.microlearning.title, path: `/${lang}/features/microlearning` },

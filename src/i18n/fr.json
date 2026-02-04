@@ -98,6 +98,7 @@
   },
   "nav": {
     "features": "Fonctionnalités",
+    "all_features": "Toutes les fonctionnalités",
     "about": "À propos",
     "blog": "Blog",
     "contact": "Contact"
@@ -133,6 +134,24 @@
       "title": "Gamification",
       "description": "Badges, récompenses et classements qui rendent l'apprentissage engageant."
     }
+  },
+  "features_page": {
+    "title": "Fonctionnalités",
+    "meta_description": "Découvrez les quatre piliers d'Infinity : Quiz Intelligents, Sondages IA, Micro-apprentissage et Gamification.",
+    "hero_title": "Tout ce dont vous avez besoin pour garder une longueur d'avance",
+    "hero_description": "Quatre outils puissants pour apprendre, prouver et progresser.",
+    "quizzes_desc": "Des évaluations adaptatives qui prouvent ce que vous savez.",
+    "surveys_desc": "Identifiez vos lacunes grâce à des évaluations alimentées par l'IA.",
+    "microlearning_desc": "Des leçons courtes qui s'adaptent à votre emploi du temps chargé.",
+    "gamification_desc": "Badges, tokens et récompenses qui vous gardent motivé.",
+    "team_title": "Conçu aussi pour les équipes",
+    "team_desc": "Développement des compétences simple pour toute votre équipe. Pas de complexité entreprise — juste des résultats.",
+    "team_price": "5,99 €/mois par utilisateur",
+    "team_cta": "Essai gratuit de 14 jours",
+    "team_no_card": "Aucune carte de crédit requise",
+    "team_setup": "Mise en place simple",
+    "team_tracking": "Suivi des compétences",
+    "team_no_enterprise": "Pas de complexité entreprise"
   },
   "footer": {
     "features": "Fonctionnalités",
