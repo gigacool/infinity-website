@@ -1,0 +1,134 @@
+---
+import { Icon } from "astro-icon/components";
+import Container from "@/components/container.astro";
+import { getTranslations } from "@/i18n/utils";
+import type { Language } from "@/i18n/utils";
+
+interface Benefit {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+interface RelatedFeature {
+  title: string;
+  description: string;
+  icon: string;
+  href: string;
+}
+
+interface Props {
+  lang: Language;
+  title: string;
+  description: string;
+  benefits: Benefit[];
+  relatedFeatures: RelatedFeature[];
+  ctaTitle?: string;
+  ctaDescription?: string;
+}
+
+const {
+  lang,
+  title,
+  description,
+  benefits,
+  relatedFeatures,
+  ctaTitle,
+  ctaDescription,
+} = Astro.props;
+
+const t = getTranslations(lang);
+const resolvedCtaTitle = ctaTitle || t.cta.join_beta;
+const resolvedCtaDescription = ctaDescription || t.hero.trust_signal;
+---
+
+<!-- Hero Section -->
+<section class="py-16 md:py-20 lg:py-24">
+  <Container>
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-infinity-dark">
+        {title}
+      </h1>
+      <p class="text-lg mt-4 text-slate-600">
+        {description}
+      </p>
+    </div>
+  </Container>
+</section>
+
+<!-- Benefits Section -->
+{benefits.length > 0 && (
+  <section class="bg-gray-50 py-16 md:py-20 lg:py-24" aria-label={t.features_page.benefits_title}>
+    <Container>
+      <h2 class="text-3xl md:text-4xl font-bold text-infinity-dark text-center mb-12">
+        {t.features_page.benefits_title}
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {benefits.map((benefit) => (
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <div class="bg-infinity-orange/10 rounded-full p-3 w-12 h-12 flex items-center justify-center mb-4">
+              <Icon class="text-infinity-orange w-6 h-6" name={benefit.icon} />
+            </div>
+            <h3 class="font-semibold text-lg text-infinity-dark">
+              {benefit.title}
+            </h3>
+            <p class="text-slate-500 mt-2 leading-relaxed text-sm">
+              {benefit.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+)}
+
+<!-- CTA Section -->
+<section class="py-16 md:py-20 lg:py-24">
+  <Container>
+    <div class="bg-infinity-dark p-8 md:px-20 md:py-20 mx-auto max-w-5xl rounded-lg flex flex-col items-center text-center">
+      <h2 class="text-white text-3xl md:text-4xl lg:text-5xl tracking-tight font-bold">
+        {resolvedCtaTitle}
+      </h2>
+      <p class="text-slate-300 mt-4 text-lg md:text-xl max-w-xl">
+        {resolvedCtaDescription}
+      </p>
+      <div class="flex mt-8">
+        <a
+          href={`/${lang}/beta`}
+          class="bg-infinity-orange text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors"
+        >
+          {t.cta.start_free}
+        </a>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<!-- Related Features Section -->
+{relatedFeatures.length > 0 && (
+  <section class="bg-gray-50 py-16 md:py-20 lg:py-24" aria-label={t.features_page.related_title}>
+    <Container>
+      <h2 class="text-3xl md:text-4xl font-bold text-infinity-dark text-center mb-12">
+        {t.features_page.related_title}
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        {relatedFeatures.map((feature) => (
+          <a
+            href={feature.href}
+            class="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow group"
+          >
+            <div class="bg-infinity-orange/10 rounded-full p-3 w-12 h-12 flex items-center justify-center mb-4">
+              <Icon class="text-infinity-orange w-6 h-6" name={feature.icon} />
+            </div>
+            <h3 class="font-semibold text-lg text-infinity-dark group-hover:text-infinity-orange transition-colors">
+              {feature.title}
+            </h3>
+            <p class="text-slate-500 mt-2 leading-relaxed text-sm">
+              {feature.description}
+            </p>
+          </a>
+        ))}
+      </div>
+    </Container>
+  </section>
+)}

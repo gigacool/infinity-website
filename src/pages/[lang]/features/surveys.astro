@@ -1,0 +1,77 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Layout from "@/layouts/Layout.astro";
+import FeaturePage from "@/components/FeaturePage.astro";
+import { languages, getTranslations } from '@/i18n/utils';
+import type { Language } from '@/i18n/utils';
+
+export const prerender = true;
+
+export const getStaticPaths = (() => {
+  return languages.map((lang) => ({
+    params: { lang },
+  }));
+}) satisfies GetStaticPaths;
+
+const { lang } = Astro.params as { lang: Language };
+const t = getTranslations(lang);
+
+const benefits = [
+  {
+    icon: "bx:bxs-brain",
+    title: t.features_surveys.benefit_1_title,
+    description: t.features_surveys.benefit_1_desc,
+  },
+  {
+    icon: "bx:bxs-direction-right",
+    title: t.features_surveys.benefit_2_title,
+    description: t.features_surveys.benefit_2_desc,
+  },
+  {
+    icon: "bx:bxs-group",
+    title: t.features_surveys.benefit_3_title,
+    description: t.features_surveys.benefit_3_desc,
+  },
+  {
+    icon: "bx:bxs-time-five",
+    title: t.features_surveys.benefit_4_title,
+    description: t.features_surveys.benefit_4_desc,
+  },
+  {
+    icon: "bx:bxs-rocket",
+    title: t.features_surveys.benefit_5_title,
+    description: t.features_surveys.benefit_5_desc,
+  },
+];
+
+const relatedFeatures = [
+  {
+    title: t.features.quizzes.title,
+    description: t.features.quizzes.description,
+    icon: "bx:bxs-bulb",
+    href: `/${lang}/features/quizzes`,
+  },
+  {
+    title: t.features.microlearning.title,
+    description: t.features.microlearning.description,
+    icon: "bx:bxs-book-reader",
+    href: `/${lang}/features/microlearning`,
+  },
+  {
+    title: t.features.gamification.title,
+    description: t.features.gamification.description,
+    icon: "bx:bxs-trophy",
+    href: `/${lang}/features/gamification`,
+  },
+];
+---
+
+<Layout lang={lang} title={t.features_surveys.title} description={t.features_surveys.meta_description}>
+  <FeaturePage
+    lang={lang}
+    title={t.features_surveys.title}
+    description={t.features_surveys.description}
+    benefits={benefits}
+    relatedFeatures={relatedFeatures}
+  />
+</Layout>
