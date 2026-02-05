@@ -25,6 +25,7 @@
     "@preact/signals": "^2.6.2",
     "@tailwindcss/typography": "0.5.16",
     "@tailwindcss/vite": "4.0.14",
+    "@vercel/analytics": "^1.6.1",
     "astro": "5.5.2",
     "astro-icon": "1.1.5",
     "astro-navbar": "2.3.9",

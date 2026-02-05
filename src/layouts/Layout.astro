@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
 import SEO from "@/components/SEO.astro";
+import Analytics from '@vercel/analytics/astro'
 import Footer from "@/components/footer.astro";
 import Navbar from "@/components/navbar/navbar.astro";
 import StickyCTA from "@/components/StickyCTA.astro";
@@ -84,5 +85,6 @@ const defaultDescription = lang === 'fr'
         content-visibility: auto;
       }
     </style>
+    <Analytics/>
   </body>
 </html>

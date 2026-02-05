@@ -38,6 +38,9 @@ dependencies:
   '@tailwindcss/vite':
     specifier: 4.0.14
     version: 4.0.14(vite@6.4.1)
+  '@vercel/analytics':
+    specifier: ^1.6.1
+    version: 1.6.1
   astro:
     specifier: 5.5.2
     version: 5.5.2(typescript@5.9.3)
