@@ -20,7 +20,7 @@ const currentPath = Astro.url.pathname;
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       <!-- Brand Column -->
       <div>
-        <BrandName class="text-xl text-infinity-dark" />
+        <BrandName height={28} />
         <p class="text-sm text-gray-600 mt-2">{t.footer.tagline}</p>
       </div>
 
@@ -101,7 +101,7 @@ const currentPath = Astro.url.pathname;
 
     <!-- Copyright -->
     <div class="mt-8 pt-8 border-t border-gray-200 text-center text-sm text-gray-600">
-      © {new Date().getFullYear()} <BrandName />. {t.footer.rights}
+      © {new Date().getFullYear()} n∞sia. {t.footer.rights}
     </div>
   </Container>
 </footer>

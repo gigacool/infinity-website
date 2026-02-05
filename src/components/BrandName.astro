@@ -1,7 +1,20 @@
 ---
+import { Image } from 'astro:assets';
+import noosiaLogo from '@/assets/noosia-logo-2x2.png';
+
 interface Props {
   class?: string;
+  height?: number;
 }
-const { class: className } = Astro.props;
+const { class: className, height = 32 } = Astro.props;
+// Use 2x height for retina displays, CSS will scale it down
+const renderHeight = height * 2;
 ---
-<span class:list={[className]}>n<span class="font-bold text-[1.3em] leading-none align-baseline">∞</span>sia</span>
+<Image
+  src={noosiaLogo}
+  alt="n∞sia"
+  height={renderHeight}
+  quality={100}
+  style={`height: ${height}px; width: auto;`}
+  class:list={[className]}
+/>

@@ -47,8 +47,9 @@ const menuitems = [
   <header class="flex flex-col lg:flex-row justify-between items-center my-5">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
-        <a href={`/${lang}/`} class="text-xl font-bold text-infinity-dark" aria-label="noosia Infinity - Home">
-          <BrandName /> <span class="text-infinity-orange">Infinity</span>
+        <a href={`/${lang}/`} class="flex items-end gap-1" aria-label="n∞sia Infinity - Home">
+          <BrandName height={36} />
+          <span class="text-xl font-bold text-infinity-orange leading-none mb-[2px]">Infinity</span>
         </a>
         <div class="block lg:hidden">
           <MenuIcon class="w-4 h-4 text-gray-800" />
