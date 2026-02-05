@@ -8,10 +8,27 @@ import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astroship.web3templates.com",
+  site: "https://infinity-website-psi.vercel.app",
   output: "server",
   adapter: vercel(),
-  integrations: [mdx(), sitemap(), icon(), preact()],
+  integrations: [
+    mdx(),
+    sitemap({
+      i18n: {
+        defaultLocale: 'fr',
+        locales: {
+          fr: 'fr-FR',
+          en: 'en-US',
+        },
+      },
+      filter: (page) =>
+        !page.includes('/api/') &&
+        !page.includes('/confirmation') &&
+        !page.includes('/404'),
+    }),
+    icon(),
+    preact(),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },

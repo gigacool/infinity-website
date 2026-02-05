@@ -1,0 +1,312 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Container from "@/components/container.astro";
+import Layout from "@/layouts/Layout.astro";
+import { languages, getTranslations } from '@/i18n/utils';
+import type { Language } from '@/i18n/utils';
+
+export const prerender = true;
+
+export const getStaticPaths = (() => {
+  return languages.map((lang) => ({
+    params: { lang },
+  }));
+}) satisfies GetStaticPaths;
+
+const { lang } = Astro.params as { lang: Language };
+const t = getTranslations(lang);
+---
+
+<Layout lang={lang} title={t.contact.title} description={t.contact.meta_description}>
+  <Container>
+    <article class="mx-auto max-w-2xl py-16">
+
+      <!-- Hero -->
+      <section class="text-center">
+        <h1 class="text-4xl lg:text-5xl font-bold tracking-tight">
+          {t.contact.hero_title}
+        </h1>
+        <p class="text-lg mt-4 text-slate-600">
+          {t.contact.hero_desc}
+        </p>
+      </section>
+
+      <!-- Contact Form -->
+      <section class="mt-12">
+        <form
+          id="contact-form"
+          class="space-y-6"
+          novalidate
+          data-lang={lang}
+        >
+          <!-- Name Field -->
+          <div>
+            <label for="contact-name" class="block text-sm font-medium text-infinity-dark mb-2">
+              {t.contact.name_label}
+            </label>
+            <input
+              type="text"
+              id="contact-name"
+              name="name"
+              required
+              aria-required="true"
+              minlength="2"
+              maxlength="100"
+              placeholder={t.contact.name_placeholder}
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg
+                     focus:border-infinity-orange focus:ring-1 focus:ring-infinity-orange
+                     focus:outline-none transition-colors min-h-[48px]"
+            />
+            <p id="contact-name-error" class="text-red-600 text-sm mt-1 hidden flex items-center gap-1" role="alert">
+              <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+              <span></span>
+            </p>
+          </div>
+
+          <!-- Email Field -->
+          <div>
+            <label for="contact-email" class="block text-sm font-medium text-infinity-dark mb-2">
+              {t.contact.email_label}
+            </label>
+            <input
+              type="email"
+              id="contact-email"
+              name="email"
+              required
+              aria-required="true"
+              maxlength="255"
+              placeholder={t.contact.email_placeholder}
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg
+                     focus:border-infinity-orange focus:ring-1 focus:ring-infinity-orange
+                     focus:outline-none transition-colors min-h-[48px]"
+            />
+            <p id="contact-email-error" class="text-red-600 text-sm mt-1 hidden flex items-center gap-1" role="alert">
+              <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+              <span></span>
+            </p>
+          </div>
+
+          <!-- Message Field -->
+          <div>
+            <label for="contact-message" class="block text-sm font-medium text-infinity-dark mb-2">
+              {t.contact.message_label}
+            </label>
+            <textarea
+              id="contact-message"
+              name="message"
+              required
+              aria-required="true"
+              minlength="10"
+              maxlength="2000"
+              rows="5"
+              placeholder={t.contact.message_placeholder}
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg
+                     focus:border-infinity-orange focus:ring-1 focus:ring-infinity-orange
+                     focus:outline-none transition-colors resize-y min-h-[48px]"
+            ></textarea>
+            <p id="contact-message-error" class="text-red-600 text-sm mt-1 hidden flex items-center gap-1" role="alert">
+              <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+              <span></span>
+            </p>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            id="contact-submit"
+            class="w-full sm:w-auto bg-infinity-orange text-white px-8 py-4 rounded-lg
+                   font-semibold text-lg hover:bg-orange-600 transition-colors
+                   disabled:opacity-50 disabled:cursor-not-allowed
+                   flex items-center justify-center gap-2 min-h-[48px]"
+          >
+            <span id="contact-submit-text">{t.contact.submit}</span>
+            <svg id="contact-spinner" class="animate-spin h-5 w-5 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+          </button>
+
+          <!-- Status Messages -->
+          <div id="contact-status" class="hidden p-4 rounded-lg text-center" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+
+    </article>
+  </Container>
+</Layout>
+
+<script define:vars={{ translations: t }}>
+  const form = document.getElementById('contact-form');
+  const nameInput = document.getElementById('contact-name');
+  const emailInput = document.getElementById('contact-email');
+  const messageInput = document.getElementById('contact-message');
+  const nameError = document.getElementById('contact-name-error');
+  const emailError = document.getElementById('contact-email-error');
+  const messageError = document.getElementById('contact-message-error');
+  const submitBtn = document.getElementById('contact-submit');
+  const submitText = document.getElementById('contact-submit-text');
+  const spinner = document.getElementById('contact-spinner');
+  const statusDiv = document.getElementById('contact-status');
+  const lang = form.dataset.lang;
+
+  const ct = translations.contact;
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  let formState = 'idle'; // 'idle' | 'submitting' | 'success' | 'error'
+
+  function showFieldError(input, errorEl, message) {
+    input.classList.add('border-red-600');
+    input.classList.remove('border-gray-300');
+    input.setAttribute('aria-invalid', 'true');
+    input.setAttribute('aria-describedby', errorEl.id);
+    errorEl.querySelector('span').textContent = message;
+    errorEl.classList.remove('hidden');
+  }
+
+  function hideFieldError(input, errorEl) {
+    input.classList.remove('border-red-600');
+    input.classList.add('border-gray-300');
+    input.removeAttribute('aria-invalid');
+    input.removeAttribute('aria-describedby');
+    errorEl.classList.add('hidden');
+  }
+
+  function validateName() {
+    const value = nameInput.value.trim();
+    if (!value) {
+      showFieldError(nameInput, nameError, ct.error_name_required);
+      return false;
+    }
+    if (value.length < 2) {
+      showFieldError(nameInput, nameError, ct.error_name_min);
+      return false;
+    }
+    if (value.length > 100) {
+      showFieldError(nameInput, nameError, ct.error_name_required);
+      return false;
+    }
+    hideFieldError(nameInput, nameError);
+    return true;
+  }
+
+  function validateEmail() {
+    const value = emailInput.value.trim();
+    if (!value) {
+      showFieldError(emailInput, emailError, ct.error_email_required);
+      return false;
+    }
+    if (!emailRegex.test(value)) {
+      showFieldError(emailInput, emailError, ct.error_email_invalid);
+      return false;
+    }
+    if (value.length > 255) {
+      showFieldError(emailInput, emailError, ct.error_email_invalid);
+      return false;
+    }
+    hideFieldError(emailInput, emailError);
+    return true;
+  }
+
+  function validateMessage() {
+    const value = messageInput.value.trim();
+    if (!value) {
+      showFieldError(messageInput, messageError, ct.error_message_required);
+      return false;
+    }
+    if (value.length < 10) {
+      showFieldError(messageInput, messageError, ct.error_message_min);
+      return false;
+    }
+    if (value.length > 2000) {
+      showFieldError(messageInput, messageError, ct.error_message_min);
+      return false;
+    }
+    hideFieldError(messageInput, messageError);
+    return true;
+  }
+
+  // Validate on blur
+  nameInput.addEventListener('blur', validateName);
+  emailInput.addEventListener('blur', validateEmail);
+  messageInput.addEventListener('blur', validateMessage);
+
+  // Clear errors on input
+  nameInput.addEventListener('input', () => hideFieldError(nameInput, nameError));
+  emailInput.addEventListener('input', () => hideFieldError(emailInput, emailError));
+  messageInput.addEventListener('input', () => hideFieldError(messageInput, messageError));
+
+  function setFormState(state) {
+    formState = state;
+
+    if (state === 'submitting') {
+      submitBtn.disabled = true;
+      submitText.textContent = ct.submitting;
+      spinner.classList.remove('hidden');
+      statusDiv.classList.add('hidden');
+    } else if (state === 'success') {
+      submitBtn.disabled = false;
+      submitText.textContent = ct.submit;
+      spinner.classList.add('hidden');
+      statusDiv.textContent = ct.success_title + ' ' + ct.success_message;
+      statusDiv.classList.remove('hidden', 'bg-red-100', 'text-red-800');
+      statusDiv.classList.add('bg-green-100', 'text-green-800');
+    } else if (state === 'error') {
+      submitBtn.disabled = false;
+      submitText.textContent = ct.submit;
+      spinner.classList.add('hidden');
+      statusDiv.textContent = ct.error_generic;
+      statusDiv.classList.remove('hidden', 'bg-green-100', 'text-green-800');
+      statusDiv.classList.add('bg-red-100', 'text-red-800');
+    } else {
+      submitBtn.disabled = false;
+      submitText.textContent = ct.submit;
+      spinner.classList.add('hidden');
+      statusDiv.classList.add('hidden');
+    }
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    if (formState === 'submitting') return;
+
+    // Validate all fields
+    const nameValid = validateName();
+    const emailValid = validateEmail();
+    const messageValid = validateMessage();
+
+    if (!nameValid || !emailValid || !messageValid) {
+      // Focus first error field
+      const firstInvalid = form.querySelector('[aria-invalid="true"]');
+      if (firstInvalid) firstInvalid.focus();
+      return;
+    }
+
+    setFormState('submitting');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: nameInput.value.trim(),
+          email: emailInput.value.trim(),
+          message: messageInput.value.trim(),
+          lang
+        })
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setFormState('success');
+        form.reset();
+      } else {
+        setFormState('error');
+      }
+    } catch {
+      setFormState('error');
+    }
+  });
+</script>

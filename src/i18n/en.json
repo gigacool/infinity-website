@@ -51,7 +51,7 @@
     "page_title": "Welcome to the Beta",
     "headline": "You're in!",
     "subheadline": "Welcome to the community of professionals taking control of their future.",
-    "timeline": "Beta access within 48 hours",
+    "timeline": "Beta access within next few days",
     "what_next": "What happens next?",
     "expect_email": "A confirmation email is on its way",
     "expect_dashboard": "You'll receive a preview of your personalized skill dashboard",
@@ -114,7 +114,7 @@
     "tagline": "FINALLY, A LEARNING PLATFORM THAT GETS IT",
     "title": "Learn what matters. Prove what you know. Stay ahead.",
     "subtitle": "Skills become obsolete faster than ever. Infinity helps you focus on what's coming, learn it faster, and build a portable skill profile.",
-    "trust_signal": "Join 50+ professionals shaping the future of learning"
+    "trust_signal": "Join professionals shaping the future of learning"
   },
   "features": {
     "section_title": "Four ways to stay ahead",
@@ -283,7 +283,7 @@
     "submit": "Send message",
     "submitting": "Sending...",
     "success_title": "Message sent!",
-    "success_message": "We'll respond within 24 hours.",
+    "success_message": "We'll respond as soon as possible.",
     "error_name_required": "Please enter your name.",
     "error_name_min": "Name must be at least 2 characters.",
     "error_email_required": "Please enter your email.",

@@ -51,7 +51,7 @@
     "page_title": "Bienvenue dans la bêta",
     "headline": "Vous êtes inscrit(e) !",
     "subheadline": "Bienvenue dans la communauté des professionnels qui prennent leur avenir en main.",
-    "timeline": "Accès bêta dans les 48 prochaines heures",
+    "timeline": "Accès bêta dans les jours qui viennent",
     "what_next": "Que se passe-t-il ensuite ?",
     "expect_email": "Un email de confirmation arrive dans votre boîte",
     "expect_dashboard": "Vous recevrez un aperçu de votre tableau de bord personnalisé",
@@ -114,7 +114,7 @@
     "tagline": "ENFIN, UNE PLATEFORME D'APPRENTISSAGE QUI COMPREND",
     "title": "Apprenez ce qui compte. Prouvez ce que vous savez. Gardez une longueur d'avance.",
     "subtitle": "Les compétences deviennent obsolètes plus vite que jamais. Infinity vous aide à vous concentrer sur ce qui vient, à l'apprendre plus vite et à construire un profil de compétences portable.",
-    "trust_signal": "Rejoignez plus de 50 professionnels qui façonnent l'avenir de l'apprentissage"
+    "trust_signal": "Rejoignez les professionnels qui façonnent l'avenir de l'apprentissage"
   },
   "features": {
     "section_title": "Quatre façons de garder une longueur d'avance",
@@ -283,7 +283,7 @@
     "submit": "Envoyer le message",
     "submitting": "Envoi en cours...",
     "success_title": "Message envoyé !",
-    "success_message": "Nous vous répondrons dans les 24 heures.",
+    "success_message": "Nous vous répondrons dans les meilleurs délais.",
     "error_name_required": "Veuillez entrer votre nom.",
     "error_name_min": "Le nom doit contenir au moins 2 caractères.",
     "error_email_required": "Veuillez entrer votre email.",

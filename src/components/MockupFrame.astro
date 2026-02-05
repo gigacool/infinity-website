@@ -1,6 +1,6 @@
 ---
 import { Picture } from "astro:assets";
-import heroImage from "@/assets/hero.png";
+import heroImage from "@/assets/noosia.jpg";
 
 interface Props {
   alt?: string;
@@ -9,12 +9,12 @@ interface Props {
 const { alt = "Infinity Platform Dashboard" } = Astro.props;
 ---
 
-<div class="mockup-frame backdrop-blur-md bg-white/80 rounded-xl shadow-lg p-4 max-w-2xl">
+<div class="mockup-frame backdrop-blur-md bg-white/80 rounded-xl p-4 max-w-2xl">
   <Picture
     src={heroImage}
     alt={alt}
-    widths={[400, 600, 800]}
-    sizes="(max-width: 800px) 100vw, 800px"
+    widths={[200, , 400, 600]}
+    sizes="(max-width: 600px) 100vw, 600px"
     loading="eager"
     format="avif"
     class="rounded-lg"

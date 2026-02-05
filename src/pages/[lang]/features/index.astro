@@ -51,9 +51,47 @@ const teamValueProps = [
   { icon: "bx:bxs-bar-chart-alt-2", text: t.features_page.team_tracking },
   { icon: "bx:bxs-zap", text: t.features_page.team_no_enterprise },
 ];
+
+const siteUrl = "https://infinity-website-psi.vercel.app";
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Infinity Learning Platform",
+  "description": lang === 'fr'
+    ? "Plateforme d'apprentissage gamifiée alimentée par l'IA"
+    : "AI-powered gamified learning platform",
+  "offers": {
+    "@type": "Offer",
+    "price": "5.99",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/PreOrder",
+    "priceValidUntil": "2027-12-31"
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": lang === 'fr' ? "Accueil" : "Home",
+      "item": `${siteUrl}/${lang}/`
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": t.features_page.title
+    }
+  ]
+};
 ---
 
 <Layout lang={lang} title={t.features_page.title} description={t.features_page.meta_description}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <Container>
     <!-- Hero / Page Header -->
     <Sectionhead>

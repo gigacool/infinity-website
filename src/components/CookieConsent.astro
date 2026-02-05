@@ -1,0 +1,120 @@
+---
+import { getTranslations, defaultLang } from "@/i18n/utils";
+import type { Language } from "@/i18n/utils";
+
+interface Props {
+  lang?: Language;
+}
+
+const { lang = defaultLang } = Astro.props;
+const t = getTranslations(lang);
+---
+
+<div
+  id="cookie-banner"
+  class="fixed z-40 bottom-20 lg:bottom-0 left-0 right-0
+         bg-white border-t border-gray-200 shadow-lg
+         hidden"
+  role="dialog"
+  aria-label={lang === 'fr' ? 'Consentement aux cookies' : 'Cookie consent'}
+>
+  <div class="max-w-(--breakpoint-xl) mx-auto px-5 py-4
+              flex flex-col sm:flex-row items-center justify-between gap-4">
+    <p class="text-sm text-gray-600 text-center sm:text-left">
+      {t.cookie.message}
+      {' '}
+      <a href={`/${lang}/legal/privacy`} class="underline hover:text-infinity-orange transition-colors">
+        {t.cookie.privacy_link}
+      </a>
+    </p>
+    <div class="flex gap-3 shrink-0">
+      <button
+        id="cookie-decline"
+        class="text-sm text-gray-500 hover:text-infinity-dark px-4 py-2
+               transition-colors rounded-lg"
+      >
+        {t.cookie.decline}
+      </button>
+      <button
+        id="cookie-accept"
+        class="text-sm bg-infinity-orange text-white px-4 py-2 rounded-lg
+               hover:bg-orange-600 transition-colors font-medium"
+      >
+        {t.cookie.accept}
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const CONSENT_KEY = 'infinity-cookie-consent';
+
+  function getConsent(): string | null {
+    try {
+      return localStorage.getItem(CONSENT_KEY);
+    } catch {
+      return null;
+    }
+  }
+
+  function setConsent(value: 'accepted' | 'declined') {
+    try {
+      localStorage.setItem(CONSENT_KEY, value);
+    } catch {
+      // localStorage unavailable
+    }
+    if (value === 'accepted') {
+      loadAnalytics();
+    }
+    hideBanner();
+  }
+
+  function showBanner() {
+    const banner = document.getElementById('cookie-banner');
+    if (banner) banner.classList.remove('hidden');
+  }
+
+  function hideBanner() {
+    const banner = document.getElementById('cookie-banner');
+    if (banner) banner.classList.add('hidden');
+  }
+
+  function loadAnalytics() {
+    if (document.getElementById('vercel-analytics')) return;
+    const script = document.createElement('script');
+    script.id = 'vercel-analytics';
+    script.src = '/_vercel/insights/script.js';
+    script.defer = true;
+    document.head.appendChild(script);
+  }
+
+  function bindListeners() {
+    const acceptBtn = document.getElementById('cookie-accept');
+    const declineBtn = document.getElementById('cookie-decline');
+
+    // Remove old listeners by replacing elements (prevents duplicate listeners on view transitions)
+    acceptBtn?.replaceWith(acceptBtn.cloneNode(true));
+    declineBtn?.replaceWith(declineBtn.cloneNode(true));
+
+    document.getElementById('cookie-accept')?.addEventListener('click', () => setConsent('accepted'));
+    document.getElementById('cookie-decline')?.addEventListener('click', () => setConsent('declined'));
+  }
+
+  function init() {
+    const consent = getConsent();
+    if (consent === 'accepted') {
+      loadAnalytics();
+    } else if (consent === null) {
+      showBanner();
+    }
+    // If 'declined', do nothing (banner stays hidden, no analytics)
+
+    bindListeners();
+  }
+
+  // Run on initial page load
+  init();
+
+  // Re-run on Astro view transitions (page navigation)
+  document.addEventListener('astro:after-swap', init);
+</script>

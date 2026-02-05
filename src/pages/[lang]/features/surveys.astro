@@ -64,9 +64,20 @@ const relatedFeatures = [
     href: `/${lang}/features/gamification`,
   },
 ];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": lang === 'fr' ? "Accueil" : "Home", "item": `https://infinity-website-psi.vercel.app/${lang}/` },
+    { "@type": "ListItem", "position": 2, "name": t.features_page.title, "item": `https://infinity-website-psi.vercel.app/${lang}/features/` },
+    { "@type": "ListItem", "position": 3, "name": t.features_surveys.title }
+  ]
+};
 ---
 
 <Layout lang={lang} title={t.features_surveys.title} description={t.features_surveys.meta_description}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <FeaturePage
     lang={lang}
     title={t.features_surveys.title}

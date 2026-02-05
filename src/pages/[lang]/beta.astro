@@ -18,7 +18,7 @@ const { lang } = Astro.params as { lang: Language };
 const t = getTranslations(lang);
 ---
 
-<Layout title={t.beta.page_title} lang={lang}>
+<Layout title={t.beta.page_title} lang={lang} description={t.beta.meta_description}>
   <Container>
     <div class="py-16 md:py-24">
       <!-- Page Header -->
