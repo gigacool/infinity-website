@@ -1,0 +1,138 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Container from "@/components/container.astro";
+import Layout from "@/layouts/Layout.astro";
+import { languages, getTranslations } from '@/i18n/utils';
+import type { Language } from '@/i18n/utils';
+
+export const prerender = true;
+
+export const getStaticPaths = (() => {
+  return languages.map((lang) => ({
+    params: { lang },
+  }));
+}) satisfies GetStaticPaths;
+
+const { lang } = Astro.params as { lang: Language };
+const t = getTranslations(lang);
+
+const tiers = [
+  {
+    key: 'individual' as const,
+    highlighted: false,
+    ctaLabel: t.cta.join_beta,
+    ctaLink: `/${lang}/beta`,
+  },
+  {
+    key: 'teams' as const,
+    highlighted: true,
+    ctaLabel: t.cta.join_beta,
+    ctaLink: `/${lang}/beta`,
+  },
+  {
+    key: 'enterprise' as const,
+    highlighted: false,
+    ctaLabel: t.pricing.cta_contact,
+    ctaLink: `/${lang}/contact`,
+  },
+];
+---
+
+<Layout lang={lang} title={t.pricing.title} description={t.pricing.meta_description}>
+  <Container>
+    <div class="mx-auto max-w-5xl py-16">
+
+      <!-- Hero Section -->
+      <section class="text-center mb-16">
+        <h1 class="text-4xl lg:text-5xl font-bold tracking-tight text-infinity-dark">
+          {t.pricing.hero_title}
+        </h1>
+        <p class="mt-4 text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto">
+          {t.pricing.hero_subtitle}
+        </p>
+      </section>
+
+      <!-- Pricing Tiers Grid -->
+      <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {tiers.map((tier) => {
+          const tierData = t.pricing[tier.key];
+          const hasIncludesPrevious = 'includes_previous' in tierData;
+          return (
+            <div
+              class:list={[
+                "relative flex flex-col rounded-2xl border p-8",
+                tier.highlighted
+                  ? "border-infinity-orange shadow-lg shadow-orange-100 ring-2 ring-infinity-orange"
+                  : "border-gray-200"
+              ]}
+            >
+              <!-- Coming Soon Badge -->
+              <div class="mb-6">
+                <span class="inline-block rounded-full bg-orange-50 px-3 py-1 text-sm font-medium text-infinity-orange">
+                  {t.pricing.coming_soon}
+                </span>
+              </div>
+
+              <!-- Tier Name -->
+              <h2 class="text-2xl font-bold text-infinity-dark">
+                {tierData.name}
+              </h2>
+
+              <!-- Description -->
+              <p class="mt-2 text-slate-600">
+                {tierData.description}
+              </p>
+
+              <!-- Feature List -->
+              <ul class="mt-8 space-y-3 flex-1">
+                {hasIncludesPrevious && (
+                  <li class="text-sm font-medium text-slate-500 pb-2">
+                    {(tierData as typeof t.pricing.teams).includes_previous}
+                  </li>
+                )}
+                {tierData.features.map((feature: string) => (
+                  <li class="flex items-start gap-3">
+                    <svg
+                      class="h-5 w-5 flex-shrink-0 text-infinity-orange mt-0.5"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <span class="text-slate-700">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <!-- CTA Button -->
+              <div class="mt-8">
+                <a
+                  href={tier.ctaLink}
+                  class:list={[
+                    "block w-full text-center rounded-full px-6 py-3 font-semibold transition-colors",
+                    tier.highlighted
+                      ? "bg-infinity-orange text-white hover:bg-orange-600"
+                      : "bg-infinity-dark text-white hover:bg-gray-800"
+                  ]}
+                >
+                  {tier.ctaLabel}
+                </a>
+              </div>
+            </div>
+          );
+        })}
+      </section>
+
+      <!-- Footer Note -->
+      <p class="mt-12 text-center text-slate-500">
+        {t.pricing.footer_note}
+      </p>
+
+    </div>
+  </Container>
+</Layout>

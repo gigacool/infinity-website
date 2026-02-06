@@ -2,7 +2,6 @@
 import type { GetStaticPaths } from 'astro';
 import { Icon } from "astro-icon/components";
 import Container from "@/components/container.astro";
-import Cta from "@/components/cta.astro";
 import Sectionhead from "@/components/sectionhead.astro";
 import Layout from "@/layouts/Layout.astro";
 import { languages, getTranslations } from '@/i18n/utils';
@@ -19,56 +18,41 @@ export const getStaticPaths = (() => {
 const { lang } = Astro.params as { lang: Language };
 const t = getTranslations(lang);
 
-const featureCards = [
+const useCases = [
   {
-    title: t.features.quizzes.title,
-    description: t.features_page.quizzes_desc,
-    icon: "bx:bxs-bulb",
-    href: `/${lang}/features/quizzes`,
-  },
-  {
-    title: t.features.surveys.title,
-    description: t.features_page.surveys_desc,
-    icon: "bx:bxs-bar-chart-alt-2",
-    href: `/${lang}/features/surveys`,
-  },
-  {
-    title: t.features.microlearning.title,
-    description: t.features_page.microlearning_desc,
+    title: t.features_page.uc1_title,
+    points: [t.features_page.uc1_point1, t.features_page.uc1_point2, t.features_page.uc1_point3],
     icon: "bx:bxs-book-reader",
-    href: `/${lang}/features/microlearning`,
   },
   {
-    title: t.features.gamification.title,
-    description: t.features_page.gamification_desc,
-    icon: "bx:bxs-trophy",
-    href: `/${lang}/features/gamification`,
+    title: t.features_page.uc2_title,
+    points: [t.features_page.uc2_point1, t.features_page.uc2_point2, t.features_page.uc2_point3],
+    icon: "bx:bxs-brain",
+  },
+  {
+    title: t.features_page.uc3_title,
+    points: [t.features_page.uc3_point1, t.features_page.uc3_point2, t.features_page.uc3_point3],
+    icon: "bx:bxs-badge-check",
+  },
+  {
+    title: t.features_page.uc4_title,
+    points: [t.features_page.uc4_point1, t.features_page.uc4_point2, t.features_page.uc4_point3],
+    icon: "bx:bxs-compass",
   },
 ];
 
-const teamValueProps = [
-  { icon: "bx:bxs-check-circle", text: t.features_page.team_setup },
-  { icon: "bx:bxs-bar-chart-alt-2", text: t.features_page.team_tracking },
-  { icon: "bx:bxs-zap", text: t.features_page.team_no_enterprise },
+const gridItems = [
+  { title: t.features_page.grid_1, icon: "bx:bxs-bulb" },
+  { title: t.features_page.grid_2, icon: "bx:bxs-bar-chart-alt-2" },
+  { title: t.features_page.grid_3, icon: "bx:bxs-book-reader" },
+  { title: t.features_page.grid_4, icon: "bx:bxs-trophy" },
+  { title: t.features_page.grid_5, icon: "bx:bxs-time-five" },
+  { title: t.features_page.grid_6, icon: "bx:bxs-badge-check" },
+  { title: t.features_page.grid_7, icon: "bx:bxs-bot" },
+  { title: t.features_page.grid_8, icon: "bx:bxs-dashboard" },
 ];
 
 const siteUrl = "https://infinity-website-psi.vercel.app";
-
-const productSchema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Infinity Learning Platform",
-  "description": lang === 'fr'
-    ? "Plateforme d'apprentissage gamifiée alimentée par l'IA"
-    : "AI-powered gamified learning platform",
-  "offers": {
-    "@type": "Offer",
-    "price": "5.99",
-    "priceCurrency": "EUR",
-    "availability": "https://schema.org/PreOrder",
-    "priceValidUntil": "2027-12-31"
-  }
-};
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -90,101 +74,88 @@ const breadcrumbSchema = {
 ---
 
 <Layout lang={lang} title={t.features_page.title} description={t.features_page.meta_description}>
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(productSchema)} />
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <!-- Hero -->
   <Container>
-    <!-- Hero / Page Header -->
     <Sectionhead>
       <Fragment slot="title">{t.features_page.hero_title}</Fragment>
       <Fragment slot="desc">{t.features_page.hero_description}</Fragment>
     </Sectionhead>
-
-    <!-- Feature Pillars Section -->
-    <section class="py-16 md:py-20 lg:py-24" aria-label={t.features_page.title}>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {featureCards.map((card) => (
-          <a
-            href={card.href}
-            class="feature-card bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow group"
-          >
-            <div class="bg-infinity-orange/10 rounded-full p-3 w-12 h-12 flex items-center justify-center mb-4">
-              <Icon class="text-infinity-orange w-6 h-6" name={card.icon} />
-            </div>
-            <h2 class="font-semibold text-lg text-infinity-dark group-hover:text-infinity-orange transition-colors">
-              {card.title}
-            </h2>
-            <p class="text-slate-500 mt-2 leading-relaxed text-sm">
-              {card.description}
-            </p>
-          </a>
-        ))}
-      </div>
-    </section>
   </Container>
 
-  <!-- Team Value Proposition Section -->
-  <section class="bg-gray-50 py-16 md:py-20 lg:py-24">
-    <Container>
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-infinity-dark">
-          {t.features_page.team_title}
-        </h2>
-        <p class="text-lg mt-4 text-slate-600">
-          {t.features_page.team_desc}
-        </p>
-
-        <div class="flex flex-wrap justify-center gap-6 mt-8">
-          {teamValueProps.map((prop) => (
-            <div class="flex items-center gap-2 text-sm text-infinity-dark">
-              <Icon class="text-infinity-orange w-5 h-5" name={prop.icon} />
-              <span>{prop.text}</span>
+  <!-- Use-Case Sections -->
+  {useCases.map((uc, i) => (
+    <section class:list={[
+      "py-16 md:py-20",
+      i % 2 === 1 ? "bg-gray-50" : "bg-white"
+    ]}>
+      <Container>
+        <div class="max-w-3xl mx-auto">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="bg-infinity-orange/10 rounded-full p-3 w-12 h-12 flex items-center justify-center shrink-0">
+              <Icon class="text-infinity-orange w-6 h-6" name={uc.icon} />
             </div>
-          ))}
-        </div>
-
-        <div class="mt-10">
-          <p class="text-4xl font-bold text-infinity-dark">
-            {t.features_page.team_price}
-          </p>
-          <div class="mt-6">
-            <a
-              href={`/${lang}/beta`}
-              class="bg-infinity-orange text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-600 transition-colors inline-block"
-            >
-              {t.features_page.team_cta}
-            </a>
+            <h2 class="text-2xl md:text-3xl font-bold text-infinity-dark">
+              {uc.title}
+            </h2>
           </div>
-          <p class="text-sm text-slate-500 mt-3">
-            {t.features_page.team_no_card}
-          </p>
+          <ul class="space-y-3 ml-16">
+            {uc.points.map((point) => (
+              <li class="flex items-start gap-3 text-slate-700">
+                <svg class="w-5 h-5 text-infinity-orange shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Container>
+    </section>
+  ))}
+
+  <!-- Feature Grid -->
+  <section class="py-16 md:py-20 bg-white">
+    <Container>
+      <h2 class="text-2xl md:text-3xl font-bold text-infinity-dark text-center mb-10">
+        {t.features_page.grid_title}
+      </h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        {gridItems.map((item) => (
+          <div class="flex flex-col items-center gap-2 p-4 rounded-lg bg-gray-50 text-center">
+            <div class="bg-infinity-orange/10 rounded-full p-2 w-10 h-10 flex items-center justify-center">
+              <Icon class="text-infinity-orange w-5 h-5" name={item.icon} />
+            </div>
+            <span class="text-sm font-medium text-infinity-dark">{item.title}</span>
+          </div>
+        ))}
+        <div class="flex flex-col items-center justify-center gap-2 p-4 rounded-lg border-2 border-dashed border-gray-300 text-center">
+          <span class="text-sm font-medium text-slate-500 italic">{t.features_page.grid_more}</span>
         </div>
       </div>
     </Container>
   </section>
 
-  <!-- CTA Section -->
-  <Container>
-    <Cta lang={lang} />
-  </Container>
+  <!-- Beta CTA Section -->
+  <section class="py-16 md:py-20">
+    <Container>
+      <div class="bg-infinity-dark p-8 md:px-20 md:py-16 mx-auto max-w-5xl rounded-lg flex flex-col items-center text-center">
+        <h2 class="text-white text-3xl md:text-4xl font-bold tracking-tight">
+          {t.features_page.beta_title}
+        </h2>
+        <p class="text-slate-300 mt-4 text-lg max-w-xl">
+          {t.features_page.beta_desc}
+        </p>
+        <div class="mt-8">
+          <a
+            href={`/${lang}/beta`}
+            class="bg-infinity-orange text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-600 transition-colors inline-block"
+          >
+            {t.features_page.beta_cta}
+          </a>
+        </div>
+      </div>
+    </Container>
+  </section>
 </Layout>
-
-<style>
-  @media (prefers-reduced-motion: no-preference) {
-    .feature-card {
-      animation: fade-in-up linear;
-      animation-timeline: view();
-      animation-range: entry 0% cover 30%;
-    }
-  }
-
-  @keyframes fade-in-up {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-</style>

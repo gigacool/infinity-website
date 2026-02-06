@@ -100,6 +100,7 @@
   "nav": {
     "features": "Features",
     "all_features": "All Features",
+    "pricing": "Pricing",
     "about": "About",
     "blog": "Blog",
     "contact": "Contact"
@@ -121,7 +122,7 @@
     "section_subtitle": "Everything you need to stay ahead, prove your skills, and actually enjoy the process.",
     "quizzes": {
       "title": "Smart Quizzes",
-      "description": "Adaptive assessments that adjust to your level and identify your gaps."
+      "description": "Adaptive assessments that adjust to your level and help you grow effectively."
     },
     "surveys": {
       "title": "AI Surveys",
@@ -138,83 +139,38 @@
   },
   "features_page": {
     "title": "Features",
-    "meta_description": "Discover Infinity's four pillars: Smart Quizzes, AI Surveys, Micro-learning, and Gamification.",
-    "hero_title": "Everything you need to stay ahead",
-    "hero_description": "Four powerful tools to learn, prove, and grow.",
-    "quizzes_desc": "Adaptive assessments that prove what you know.",
-    "surveys_desc": "Identify your skill gaps with AI-powered assessments.",
-    "microlearning_desc": "Bite-sized lessons that fit your busy schedule.",
-    "gamification_desc": "Badges, tokens, and rewards that keep you engaged.",
-    "team_title": "Built for teams too",
-    "team_desc": "Simple skill development for your entire team. No enterprise complexity — just results.",
-    "team_price": "€5.99/month per user",
-    "team_cta": "Start 14-day free trial",
-    "team_no_card": "No credit card required",
-    "team_setup": "Simple setup",
-    "team_tracking": "Skill tracking",
-    "team_no_enterprise": "No enterprise complexity",
-    "benefits_title": "Key Benefits",
-    "related_title": "Explore More Features"
-  },
-  "features_quizzes": {
-    "title": "Smart Quizzes",
-    "meta_description": "Adaptive quizzes that prove what you know — anti-cheating, leaderboards, and instant feedback.",
-    "description": "Assessments that adapt to your level and prove real knowledge, not rote memorization.",
-    "benefit_1_title": "Adaptive Difficulty",
-    "benefit_1_desc": "Questions adjust to your skill level in real-time, ensuring the right challenge every time.",
-    "benefit_2_title": "Anti-Cheating Measures",
-    "benefit_2_desc": "Randomized questions, time limits, and integrity verification keep results trustworthy.",
-    "benefit_3_title": "Leaderboards",
-    "benefit_3_desc": "Track your progress and compare with peers through healthy competition.",
-    "benefit_4_title": "Instant Feedback",
-    "benefit_4_desc": "Know immediately what you got right and why, so you learn from every attempt.",
-    "benefit_5_title": "Skill Certification",
-    "benefit_5_desc": "Earn verifiable proof of your knowledge to share with employers and teams."
-  },
-  "features_surveys": {
-    "title": "AI Surveys",
-    "meta_description": "AI-powered surveys that identify your skill gaps and create personalized learning paths.",
-    "description": "Intelligent assessments that map your skills and guide your learning journey.",
-    "benefit_1_title": "AI-Powered Analysis",
-    "benefit_1_desc": "Smart assessments that understand your strengths and pinpoint your gaps.",
-    "benefit_2_title": "Personalized Learning Paths",
-    "benefit_2_desc": "Get recommendations tailored specifically to your needs and goals.",
-    "benefit_3_title": "Team Insights",
-    "benefit_3_desc": "Managers see aggregate skill data across the team to plan development.",
-    "benefit_4_title": "Progress Tracking",
-    "benefit_4_desc": "Reassess over time and measure your growth with clear benchmarks.",
-    "benefit_5_title": "Actionable Results",
-    "benefit_5_desc": "Not just scores — get specific next steps to close your skill gaps."
-  },
-  "features_microlearning": {
-    "title": "Micro-learning",
-    "meta_description": "Bite-sized lessons designed for busy professionals — learn in 5 minutes a day.",
-    "description": "Short, focused lessons designed for busy professionals who learn on the go.",
-    "benefit_1_title": "5-Minute Lessons",
-    "benefit_1_desc": "Learn during coffee breaks, commutes, or between meetings — no long sessions needed.",
-    "benefit_2_title": "Spaced Repetition",
-    "benefit_2_desc": "Science-backed methodology that spaces reviews to make knowledge stick long-term.",
-    "benefit_3_title": "Mobile-First",
-    "benefit_3_desc": "Designed for learning on your phone, anywhere and anytime.",
-    "benefit_4_title": "Daily Streaks",
-    "benefit_4_desc": "Build consistent learning habits with streak tracking and reminders.",
-    "benefit_5_title": "Focused Content",
-    "benefit_5_desc": "No fluff — just the knowledge that matters most for your career."
-  },
-  "features_gamification": {
-    "title": "Gamification",
-    "meta_description": "Gamified learning with badges, tokens, and rewards that make skill development engaging.",
-    "description": "Learning that feels rewarding — earn badges, collect tokens, and track your growth.",
-    "benefit_1_title": "Skill Badges",
-    "benefit_1_desc": "Earn verifiable badges that prove your expertise and share them with your network.",
-    "benefit_2_title": "Token Rewards",
-    "benefit_2_desc": "Collect tokens as you learn and track your engagement over time.",
-    "benefit_3_title": "Progress Dashboard",
-    "benefit_3_desc": "Visual tracking of your entire learning journey with clear milestones.",
-    "benefit_4_title": "Daily Streaks",
-    "benefit_4_desc": "Build momentum with consecutive learning days and stay consistent.",
-    "benefit_5_title": "Achievements",
-    "benefit_5_desc": "Unlock milestones that celebrate your growth and keep you motivated."
+    "meta_description": "Discover how Infinity helps you grow with micro-learning, spaced repetition, skill badges, and AI-powered learning paths.",
+    "hero_title": "How Infinity helps you grow",
+    "hero_description": "Real outcomes, powered by learning science.",
+    "uc1_title": "Grow every day, even with 5 minutes",
+    "uc1_point1": "Micro-lessons that fit between meetings",
+    "uc1_point2": "Mobile-first — learn anywhere",
+    "uc1_point3": "Daily streaks that build lasting habits",
+    "uc2_title": "Make every lesson stick",
+    "uc2_point1": "Spaced repetition at scientifically optimized intervals",
+    "uc2_point2": "Adaptive difficulty that meets you where you are",
+    "uc2_point3": "Active recall that strengthens real understanding",
+    "uc3_title": "Demonstrate your skills",
+    "uc3_point1": "Earn verifiable skill badges",
+    "uc3_point2": "Share certifications with employers and your network",
+    "uc3_point3": "Track your entire growth journey visually",
+    "uc4_title": "Discover what to learn next",
+    "uc4_point1": "AI-powered analysis of your strengths",
+    "uc4_point2": "Personalized learning paths tailored to your goals",
+    "uc4_point3": "Clear benchmarks that show your progress",
+    "grid_title": "What we're building to support you",
+    "grid_1": "Smart Quizzes",
+    "grid_2": "AI Surveys",
+    "grid_3": "Micro-learning",
+    "grid_4": "Gamification",
+    "grid_5": "Spaced Repetition",
+    "grid_6": "Skill Badges",
+    "grid_7": "Adaptive Learning",
+    "grid_8": "Progress Dashboard",
+    "grid_more": "and more",
+    "beta_title": "Ready to grow?",
+    "beta_desc": "Join the beta and help shape the future of learning.",
+    "beta_cta": "Join the beta and shape what's next"
   },
   "footer": {
     "features": "Features",
@@ -289,6 +245,45 @@
     "error_message_required": "Please enter a message.",
     "error_message_min": "Message must be at least 10 characters.",
     "error_generic": "Something went wrong. Please try again."
+  },
+  "pricing": {
+    "title": "Pricing",
+    "meta_description": "Simple plans for every ambition. Join the Infinity beta and get founding member benefits.",
+    "hero_title": "Simple plans for every ambition",
+    "hero_subtitle": "We're finalizing our pricing. Join the beta today and get founding member benefits.",
+    "coming_soon": "Coming soon",
+    "individual": {
+      "name": "Individual",
+      "description": "For professionals investing in themselves",
+      "features": [
+        "Unlimited learning paths",
+        "Skill badges & certifications",
+        "Spaced repetition",
+        "Progress dashboard"
+      ]
+    },
+    "teams": {
+      "name": "Teams",
+      "description": "For managers who want their team to grow together",
+      "includes_previous": "Everything in Individual, plus:",
+      "features": [
+        "Team analytics",
+        "Skill mapping",
+        "Shared learning paths"
+      ]
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "description": "For organizations at scale",
+      "includes_previous": "Everything in Teams, plus:",
+      "features": [
+        "Custom content",
+        "SSO & integrations",
+        "Dedicated support"
+      ]
+    },
+    "cta_contact": "Contact us",
+    "footer_note": "Beta users will get early access and founding member pricing."
   },
   "accessibility": {
     "skip_to_content": "Skip to main content"
