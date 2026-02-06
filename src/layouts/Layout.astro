@@ -30,6 +30,8 @@ const defaultTitle = lang === 'fr'
 const defaultDescription = lang === 'fr'
   ? "n∞sia — Plateforme d'apprentissage gamifiée alimentée par l'IA. Apprenez ce qui compte, montrez ce que vous savez et continuez à progresser."
   : "n∞sia — AI-powered gamified learning platform. Learn what matters, showcase what you know, and keep growing.";
+
+const isBetaPage = Astro.url.pathname.includes('/beta');
 ---
 
 <!doctype html>
@@ -76,7 +78,7 @@ const defaultDescription = lang === 'fr'
     <div transition:name={`footer-${lang}`} transition:animate="none">
       <Footer lang={lang} />
     </div>
-    <StickyCTA lang={lang} />
+    {!isBetaPage && <StickyCTA lang={lang} />}
     <CookieConsent lang={lang} />
     <style is:global>
       /* Improve Page speed */
