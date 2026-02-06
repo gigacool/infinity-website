@@ -247,21 +247,19 @@
   },
   "about": {
     "title": "À propos",
-    "meta_description": "Découvrez le fondateur et la science derrière Infinity : répétition espacée, gamification et apprentissage adaptatif.",
+    "meta_description": "Rencontrez le fondateur et la science de l'apprentissage derrière Infinity : répétition espacée, gamification et IA adaptative.",
     "hero_title": "Pourquoi j'ai créé Infinity",
     "founder_intro": "Salut, moi c'est Cédric.",
-    "founder_story_p1": "Il y a quelques années, j'ai atteint un point de rupture. Mon secteur évoluait à toute vitesse : nouveaux outils, nouveaux frameworks, nouvelles certifications à suivre. Chaque formation revenait à remplir un panier percé. De longues vidéos oubliées dès le vendredi. Des certificats qui ne prouvaient rien et n'avaient souvent aucun rapport avec les compétences dont j'avais réellement besoin au quotidien. J'investissais du temps et de l'argent, mais rien ne restait.",
-    "founder_story_p2": "Et je n'étais pas le seul. J'ai croisé des professionnels aguerris, 10, 15, 20 ans d'expérience, tout aussi perdus. Ils avaient une expertise profonde et beaucoup à apporter, mais peinaient à s'adapter aux nouveaux outils et aux nouvelles méthodes de travail. À côté, des profils juniors suivaient le rythme plus facilement, moins de choses à réapprendre. Mais le décalage se creusait des deux côtés : de l'expérience sans adaptation d'un côté, de la vitesse sans profondeur de l'autre.",
-    "founder_story_p3": "J'ai commencé à creuser comment l'apprentissage fonctionne vraiment, la science derrière la mémoire, la motivation et la formation d'habitudes. Ce que j'ai découvert a tout changé : les techniques qui marchent (répétition espacée, rappel actif, pratique délibérée) sont bien documentées, mais presque aucune plateforme ne les utilise correctement.",
-    "founder_story_p4": "Alors j'ai décidé de construire la plateforme que j'aurais voulu avoir. Une qui respecte votre temps, s'adapte à votre niveau et fait que les vraies compétences restent. Pas juste cocher une case.",
-    "founder_story_p5": "C'est ça, Infinity. C'est personnel pour moi. Et je pense que ça le sera aussi pour vous.",
+    "founder_story_p1": "J'ai toujours cru que l'apprentissage devrait ressembler à du vrai progrès, pas à une course aux certificats. Mais en regardant ce qui existait, j'ai vu un décalage : les outils n'étaient pas conçus pour la façon dont on apprend vraiment.",
+    "founder_story_p2": "Alors je suis allé à la source. La science de la mémoire, de la motivation et des habitudes révèle des techniques qui fonctionnent vraiment : répétition espacée, rappel actif, pratique délibérée. Prouvées, puissantes, et presque jamais utilisées.",
+    "founder_story_p3": "Infinity est né de cette obsession. Une plateforme qui respecte votre temps, s'adapte à vous et fait que les compétences restent pour de vrai. Conçu pour tous ceux qui croient que le meilleur investissement, c'est en soi-même.",
     "methodology_title": "La science derrière Infinity",
     "spaced_repetition_title": "Répétition Espacée",
-    "spaced_repetition_desc": "La recherche montre qu'on oublie 80 % de ce qu'on apprend en une semaine. La répétition espacée combat cela en révisant le contenu à des intervalles scientifiquement optimisés. Au lieu de tout ingurgiter, vous apprenez un peu, attendez, puis révisez juste avant d'oublier. Le résultat ? Des connaissances qui restent des mois et des années, pas des jours.",
+    "spaced_repetition_desc": "Vos connaissances restent des mois et des années, pas des jours. Infinity révise le contenu à des intervalles scientifiquement optimisés : vous apprenez un peu, attendez, puis révisez juste avant d'oublier. C'est la technique la plus prouvée en science de l'apprentissage.",
     "gamification_title": "Science de la Gamification",
-    "gamification_desc": "La gamification, ce ne sont pas des artifices, c'est de la psychologie comportementale appliquée. Les badges, les séries et les barres de progression activent la motivation intrinsèque : le désir de s'améliorer, de voir sa progression, de se sentir accompli. Quand l'apprentissage est gratifiant à chaque instant, on revient. Et c'est la régularité qui transforme la connaissance en compétence.",
+    "gamification_desc": "Badges, séries et suivi de progression activent votre envie naturelle de progresser et de voir vos résultats. Quand apprendre est gratifiant à chaque instant, on revient régulièrement. Et c'est la régularité qui transforme la connaissance en compétence.",
     "adaptive_title": "Apprentissage Adaptatif",
-    "adaptive_desc": "Aucun apprenant n'est identique. Notre IA analyse vos performances, vos difficultés et ce que vous savez déjà, puis ajuste le contenu en temps réel. Vous passez moins de temps sur ce qui est facile et plus là où ça compte. C'est comme avoir un tuteur personnel qui sait exactement où vous en êtes."
+    "adaptive_desc": "Notre IA analyse vos performances et ce que vous savez déjà, puis ajuste le contenu en temps réel. Vous passez moins de temps sur ce qui est facile et plus là où ça compte. C'est comme avoir un tuteur personnel qui sait exactement où vous en êtes."
   },
   "cookie": {
     "message": "Nous utilisons des analyses pour améliorer votre expérience. Aucune donnée personnelle n'est collectée.",

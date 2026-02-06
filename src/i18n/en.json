@@ -247,21 +247,19 @@
   },
   "about": {
     "title": "About",
-    "meta_description": "Learn about the founder and the science behind Infinity — spaced repetition, gamification, and adaptive learning.",
+    "meta_description": "Meet the founder and the learning science that powers Infinity — spaced repetition, gamification, and adaptive AI.",
     "hero_title": "Why I built Infinity",
     "founder_intro": "Hi, I'm Cedric.",
-    "founder_story_p1": "A few years ago, I hit a wall. My industry was evolving fast — new tools, new frameworks, new certifications to keep up with — and every course I tried felt like drinking from a firehose. Long videos I'd forget by Friday. Certificates that proved nothing and often bore no relation to the skills I actually needed day to day. I was investing time and money, but the skills never stuck.",
-    "founder_story_p2": "And I wasn't alone. I met seasoned professionals — 10, 15, 20 years of experience — who felt just as lost. They had deep expertise and so much to offer, yet struggled to adapt to new tools and ways of working. Meanwhile, junior profiles kept up more easily — less to relearn. But the gap was widening on both sides: experience without adaptation on one hand, speed without depth on the other.",
-    "founder_story_p3": "I started digging into how learning actually works — the science behind memory, motivation, and habit formation. What I found changed everything: the techniques that work (spaced repetition, active recall, deliberate practice) are well-documented, but almost no learning platform uses them properly.",
-    "founder_story_p4": "So I decided to build the platform I wished existed. One that respects your time, adapts to your level, and makes real skills stick — not just check a box.",
-    "founder_story_p5": "That's Infinity. It's personal for me. And I think it will be personal for you too.",
+    "founder_story_p1": "I've always believed learning should feel like real progress — not checking boxes or chasing certificates. But when I looked at what was available, I saw a gap: the tools weren't built for how we actually learn.",
+    "founder_story_p2": "So I went to the source. The science of memory, motivation, and habits reveals techniques that genuinely work — spaced repetition, active recall, deliberate practice. Proven, powerful, and barely used by anyone.",
+    "founder_story_p3": "Infinity is what came out of that obsession. A platform that respects your time, adapts to you, and makes skills stick for real. Built for everyone who believes the best investment is in yourself.",
     "methodology_title": "The science behind Infinity",
     "spaced_repetition_title": "Spaced Repetition",
-    "spaced_repetition_desc": "Research shows we forget 80% of what we learn within a week. Spaced repetition fights this by reviewing material at scientifically optimized intervals. Instead of cramming, you learn a little, wait, then review just before you'd forget. The result? Knowledge that stays with you for months and years, not days.",
+    "spaced_repetition_desc": "Your knowledge stays for months and years, not days. Infinity reviews material at scientifically optimized intervals — you learn a little, wait, then revisit just before you'd forget. It's the most proven technique in learning science.",
     "gamification_title": "Gamification Science",
-    "gamification_desc": "Gamification isn't gimmicks — it's applied behavioral psychology. Badges, streaks, and progress bars tap into intrinsic motivation: the desire to improve, to see progress, to feel accomplished. When learning feels rewarding moment to moment, you show up consistently. And consistency is what turns knowledge into skill.",
+    "gamification_desc": "Badges, streaks, and progress tracking tap into your natural drive to improve and see results. When learning feels rewarding moment to moment, you show up consistently — and consistency is what turns knowledge into skill.",
     "adaptive_title": "Adaptive Learning",
-    "adaptive_desc": "No two learners are the same. Our AI analyzes how you perform, where you struggle, and what you already know — then adjusts the content in real time. You spend less time on what's easy and more time where it matters. It's like having a personal tutor who knows exactly where you are."
+    "adaptive_desc": "Our AI analyzes how you perform and what you already know, then adjusts content in real time. You spend less time on what's easy and more where it matters — like a personal tutor who knows exactly where you are."
   },
   "cookie": {
     "message": "We use analytics to improve your experience. No personal data is collected.",
