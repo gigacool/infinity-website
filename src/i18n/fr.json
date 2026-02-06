@@ -56,7 +56,7 @@
     "expect_email": "Un email de confirmation arrive dans votre boîte",
     "expect_dashboard": "Vous recevrez un aperçu de votre tableau de bord personnalisé",
     "expect_feedback": "Vous pourrez nous faire part de vos retours dès le premier jour",
-    "share_prompt": "Vous connaissez quelqu'un qui se sent dépassé ? Partagez cette opportunité.",
+    "share_prompt": "Quelqu'un qui aimerait découvrir ça ? Partagez cette opportunité.",
     "return_home": "Retour à l'accueil"
   },
   "skills": {
@@ -95,7 +95,7 @@
   },
   "site": {
     "name": "n∞sia",
-    "tagline": "Apprenez ce qui compte. Prouvez ce que vous savez. Gardez une longueur d'avance."
+    "tagline": "Apprenez ce qui compte. Montrez ce que vous savez. Continuez à progresser."
   },
   "nav": {
     "features": "Fonctionnalités",
@@ -112,14 +112,14 @@
     "learn_more": "En savoir plus"
   },
   "hero": {
-    "tagline": "ENFIN, UNE PLATEFORME D'APPRENTISSAGE QUI COMPREND",
-    "title": "Apprenez ce qui compte. Prouvez ce que vous savez. Gardez une longueur d'avance.",
-    "subtitle": "Les compétences deviennent obsolètes plus vite que jamais. Infinity vous aide à vous concentrer sur ce qui vient, à l'apprendre plus vite et à construire un profil de compétences portable.",
+    "tagline": "UNE PLATEFORME D'APPRENTISSAGE CONÇUE POUR VOTRE FAÇON D'APPRENDRE",
+    "title": "Apprenez ce qui compte. Montrez ce que vous savez. Continuez à progresser.",
+    "subtitle": "Le monde avance vite — vous aussi. Infinity vous aide à vous concentrer sur ce qui vient, à apprendre à votre rythme et à construire un profil de compétences que vous emportez partout.",
     "trust_signal": "Rejoignez les professionnels qui façonnent l'avenir de l'apprentissage"
   },
   "features": {
     "section_title": "Quatre façons de garder une longueur d'avance",
-    "section_subtitle": "Tout ce dont vous avez besoin pour rester à jour, prouver vos compétences et vraiment apprécier le processus.",
+    "section_subtitle": "Tout ce dont vous avez besoin pour progresser, montrer vos compétences et vraiment apprécier le processus.",
     "quizzes": {
       "title": "Quiz Intelligents",
       "description": "Évaluations adaptatives qui s'ajustent à votre niveau et vous font progresser efficacement."

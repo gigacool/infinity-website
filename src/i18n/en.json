@@ -56,7 +56,7 @@
     "expect_email": "A confirmation email is on its way",
     "expect_dashboard": "You'll receive a preview of your personalized skill dashboard",
     "expect_feedback": "You'll be able to share feedback from day one",
-    "share_prompt": "Know someone who feels behind? Share this opportunity.",
+    "share_prompt": "Know someone who'd love this? Share the opportunity.",
     "return_home": "Back to home"
   },
   "skills": {
@@ -95,7 +95,7 @@
   },
   "site": {
     "name": "n∞sia",
-    "tagline": "Learn what matters. Prove what you know. Stay ahead."
+    "tagline": "Learn what matters. Showcase what you know. Keep growing."
   },
   "nav": {
     "features": "Features",
@@ -112,14 +112,14 @@
     "learn_more": "Learn more"
   },
   "hero": {
-    "tagline": "FINALLY, A LEARNING PLATFORM THAT GETS IT",
-    "title": "Learn what matters. Prove what you know. Stay ahead.",
-    "subtitle": "Skills become obsolete faster than ever. Infinity helps you focus on what's coming, learn it faster, and build a portable skill profile.",
+    "tagline": "A LEARNING PLATFORM DESIGNED FOR HOW YOU ACTUALLY GROW",
+    "title": "Learn what matters. Showcase what you know. Keep growing.",
+    "subtitle": "The world moves fast — and so can you. Infinity helps you focus on what's next, learn it your way, and build a skill profile you can take anywhere.",
     "trust_signal": "Join professionals shaping the future of learning"
   },
   "features": {
     "section_title": "Four ways to stay ahead",
-    "section_subtitle": "Everything you need to stay ahead, prove your skills, and actually enjoy the process.",
+    "section_subtitle": "Everything you need to grow, showcase your skills, and actually enjoy the process.",
     "quizzes": {
       "title": "Smart Quizzes",
       "description": "Adaptive assessments that adjust to your level and help you grow effectively."
