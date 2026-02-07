@@ -113,7 +113,11 @@
   },
   "hero": {
     "tagline": "UNE PLATEFORME D'APPRENTISSAGE CONÇUE POUR VOTRE FAÇON D'APPRENDRE",
-    "title": "Apprenez ce qui compte. Montrez ce que vous savez. Continuez à progresser.",
+    "title_lines": [
+      "Apprenez ce qui compte.",
+      "Montrez ce que vous savez.",
+      "Continuez à progresser."
+    ],
     "subtitle": "Le monde avance vite — vous aussi. Infinity vous aide à vous concentrer sur ce qui vient, à apprendre à votre rythme et à construire un profil de compétences que vous emportez partout.",
     "trust_signal": "Rejoignez les professionnels qui façonnent l'avenir de l'apprentissage"
   },

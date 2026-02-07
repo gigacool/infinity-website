@@ -113,7 +113,11 @@
   },
   "hero": {
     "tagline": "A LEARNING PLATFORM DESIGNED FOR HOW YOU ACTUALLY GROW",
-    "title": "Learn what matters. Showcase what you know. Keep growing.",
+    "title_lines": [
+      "Learn what matters.",
+      "Showcase what you know.",
+      "Keep growing."
+    ],
     "subtitle": "The world moves fast — and so can you. Infinity helps you focus on what's next, learn it your way, and build a skill profile you can take anywhere.",
     "trust_signal": "Join professionals shaping the future of learning"
   },

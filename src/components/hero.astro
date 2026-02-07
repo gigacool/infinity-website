@@ -18,7 +18,9 @@ const t = getTranslations(lang);
     {t.hero.tagline}
   </p>
   <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter text-infinity-dark max-w-4xl mx-auto">
-    {t.hero.title}
+    {t.hero.title_lines.map((line: string, i: number) => (
+      <>{i > 0 && <br />}{line}</>
+    ))}
   </h1>
   <p class="text-lg mt-6 text-slate-600 max-w-2xl mx-auto">
     {t.hero.subtitle}
