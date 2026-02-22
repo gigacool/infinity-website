@@ -1,8 +1,8 @@
 {
   "beta": {
     "page_title": "Rejoindre la bêta",
-    "meta_description": "Inscrivez-vous pour un accès anticipé à Infinity, la plateforme d'apprentissage gamifiée par l'IA.",
-    "page_subtitle": "Soyez parmi les premiers à découvrir Infinity",
+    "meta_description": "Inscrivez-vous pour un accès anticipé à Noosia, la plateforme d'apprentissage gamifiée par l'IA.",
+    "page_subtitle": "Soyez parmi les premiers à découvrir Noosia",
     "email_label": "Adresse email",
     "email_placeholder": "vous@exemple.com",
     "name_label": "Prénom",
@@ -94,7 +94,7 @@
     }
   },
   "site": {
-    "name": "n∞sia",
+    "name": "noosia",
     "tagline": "Apprenez ce qui compte. Montrez ce que vous savez. Continuez à progresser."
   },
   "nav": {
@@ -118,7 +118,7 @@
       "Montrez ce que vous savez.",
       "Continuez à progresser."
     ],
-    "subtitle": "Le monde avance vite — vous aussi. Infinity vous aide à vous concentrer sur ce qui vient, à apprendre à votre rythme et à construire un profil de compétences que vous emportez partout.",
+    "subtitle": "Le monde avance vite — vous aussi. Noosia vous aide à vous concentrer sur ce qui vient, à apprendre à votre rythme et à construire un profil de compétences que vous emportez partout.",
     "trust_signal": "Rejoignez les professionnels qui façonnent l'avenir de l'apprentissage"
   },
   "features": {
@@ -143,8 +143,8 @@
   },
   "features_page": {
     "title": "Fonctionnalités",
-    "meta_description": "Découvrez comment Infinity vous aide à progresser grâce au micro-apprentissage, à la répétition espacée, aux badges de compétences et aux parcours d'apprentissage par l'IA.",
-    "hero_title": "Comment Infinity vous aide à progresser",
+    "meta_description": "Découvrez comment Noosia vous aide à progresser grâce au micro-apprentissage, à la répétition espacée, aux badges de compétences et aux parcours d'apprentissage par l'IA.",
+    "hero_title": "Comment Noosia vous aide à progresser",
     "hero_description": "Des résultats concrets, portés par la science de l'apprentissage.",
     "uc1_title": "Progressez chaque jour, même avec 5 minutes",
     "uc1_point1": "Des micro-leçons qui se glissent entre deux réunions",
@@ -207,15 +207,15 @@
   },
   "about": {
     "title": "À propos",
-    "meta_description": "Rencontrez le fondateur et la science de l'apprentissage derrière Infinity : répétition espacée, gamification et IA adaptative.",
-    "hero_title": "Pourquoi j'ai créé Infinity",
+    "meta_description": "Rencontrez le fondateur et la science de l'apprentissage derrière Noosia : répétition espacée, gamification et IA adaptative.",
+    "hero_title": "Pourquoi j'ai créé Noosia",
     "founder_intro": "Salut, moi c'est Cédric.",
     "founder_story_p1": "J'ai toujours cru que l'apprentissage devrait ressembler à du vrai progrès, pas à une course aux certificats. Mais en regardant ce qui existait, j'ai vu un décalage : les outils n'étaient pas conçus pour la façon dont on apprend vraiment.",
     "founder_story_p2": "Alors je suis allé à la source. La science de la mémoire, de la motivation et des habitudes révèle des techniques qui fonctionnent vraiment : répétition espacée, rappel actif, pratique délibérée. Prouvées, puissantes, et presque jamais utilisées.",
-    "founder_story_p3": "Infinity est né de cette obsession. Une plateforme qui respecte votre temps, s'adapte à vous et fait que les compétences restent pour de vrai. Conçu pour tous ceux qui croient que le meilleur investissement, c'est en soi-même.",
-    "methodology_title": "La science derrière Infinity",
+    "founder_story_p3": "Noosia est né de cette obsession. Une plateforme qui respecte votre temps, s'adapte à vous et fait que les compétences restent pour de vrai. Conçu pour tous ceux qui croient que le meilleur investissement, c'est en soi-même.",
+    "methodology_title": "La science derrière Noosia",
     "spaced_repetition_title": "Répétition Espacée",
-    "spaced_repetition_desc": "Vos connaissances restent des mois et des années, pas des jours. Infinity révise le contenu à des intervalles scientifiquement optimisés : vous apprenez un peu, attendez, puis révisez juste avant d'oublier. C'est la technique la plus prouvée en science de l'apprentissage.",
+    "spaced_repetition_desc": "Vos connaissances restent des mois et des années, pas des jours. Noosia révise le contenu à des intervalles scientifiquement optimisés : vous apprenez un peu, attendez, puis révisez juste avant d'oublier. C'est la technique la plus prouvée en science de l'apprentissage.",
     "gamification_title": "Science de la Gamification",
     "gamification_desc": "Badges, séries et suivi de progression activent votre envie naturelle de progresser et de voir vos résultats. Quand apprendre est gratifiant à chaque instant, on revient régulièrement. Et c'est la régularité qui transforme la connaissance en compétence.",
     "adaptive_title": "Apprentissage Adaptatif",
@@ -229,7 +229,7 @@
   },
   "contact": {
     "title": "Contact",
-    "meta_description": "Contactez l'équipe n∞sia.",
+    "meta_description": "Contactez l'équipe noosia.",
     "hero_title": "Contactez-nous",
     "hero_desc": "Une question ? Nous serions ravis de vous entendre.",
     "name_label": "Nom",
@@ -252,7 +252,7 @@
   },
   "pricing": {
     "title": "Tarifs",
-    "meta_description": "Des plans simples pour chaque ambition. Rejoignez la bêta Infinity et bénéficiez des avantages fondateurs.",
+    "meta_description": "Des plans simples pour chaque ambition. Rejoignez la bêta Noosia et bénéficiez des avantages fondateurs.",
     "hero_title": "Des plans simples pour chaque ambition",
     "hero_subtitle": "Nous finalisons nos tarifs. Rejoignez la bêta et bénéficiez des avantages fondateurs.",
     "coming_soon": "Bientôt disponible",

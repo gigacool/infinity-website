@@ -1,8 +1,8 @@
 {
   "beta": {
     "page_title": "Join the Beta",
-    "meta_description": "Sign up for early access to Infinity — the AI-powered gamified learning platform.",
-    "page_subtitle": "Be among the first to experience Infinity",
+    "meta_description": "Sign up for early access to Noosia — the AI-powered gamified learning platform.",
+    "page_subtitle": "Be among the first to experience Noosia",
     "email_label": "Email address",
     "email_placeholder": "you@example.com",
     "name_label": "First name",
@@ -94,7 +94,7 @@
     }
   },
   "site": {
-    "name": "n∞sia",
+    "name": "noosia",
     "tagline": "Learn what matters. Showcase what you know. Keep growing."
   },
   "nav": {
@@ -118,7 +118,7 @@
       "Showcase what you know.",
       "Keep growing."
     ],
-    "subtitle": "The world moves fast — and so can you. Infinity helps you focus on what's next, learn it your way, and build a skill profile you can take anywhere.",
+    "subtitle": "The world moves fast — and so can you. Noosia helps you focus on what's next, learn it your way, and build a skill profile you can take anywhere.",
     "trust_signal": "Join professionals shaping the future of learning"
   },
   "features": {
@@ -143,8 +143,8 @@
   },
   "features_page": {
     "title": "Features",
-    "meta_description": "Discover how Infinity helps you grow with micro-learning, spaced repetition, skill badges, and AI-powered learning paths.",
-    "hero_title": "How Infinity helps you grow",
+    "meta_description": "Discover how Noosia helps you grow with micro-learning, spaced repetition, skill badges, and AI-powered learning paths.",
+    "hero_title": "How Noosia helps you grow",
     "hero_description": "Real outcomes, powered by learning science.",
     "uc1_title": "Grow every day, even with 5 minutes",
     "uc1_point1": "Micro-lessons that fit between meetings",
@@ -207,15 +207,15 @@
   },
   "about": {
     "title": "About",
-    "meta_description": "Meet the founder and the learning science that powers Infinity — spaced repetition, gamification, and adaptive AI.",
-    "hero_title": "Why I built Infinity",
+    "meta_description": "Meet the founder and the learning science that powers Noosia — spaced repetition, gamification, and adaptive AI.",
+    "hero_title": "Why I built Noosia",
     "founder_intro": "Hi, I'm Cedric.",
     "founder_story_p1": "I've always believed learning should feel like real progress — not checking boxes or chasing certificates. But when I looked at what was available, I saw a gap: the tools weren't built for how we actually learn.",
     "founder_story_p2": "So I went to the source. The science of memory, motivation, and habits reveals techniques that genuinely work — spaced repetition, active recall, deliberate practice. Proven, powerful, and barely used by anyone.",
-    "founder_story_p3": "Infinity is what came out of that obsession. A platform that respects your time, adapts to you, and makes skills stick for real. Built for everyone who believes the best investment is in yourself.",
-    "methodology_title": "The science behind Infinity",
+    "founder_story_p3": "Noosia is what came out of that obsession. A platform that respects your time, adapts to you, and makes skills stick for real. Built for everyone who believes the best investment is in yourself.",
+    "methodology_title": "The science behind Noosia",
     "spaced_repetition_title": "Spaced Repetition",
-    "spaced_repetition_desc": "Your knowledge stays for months and years, not days. Infinity reviews material at scientifically optimized intervals — you learn a little, wait, then revisit just before you'd forget. It's the most proven technique in learning science.",
+    "spaced_repetition_desc": "Your knowledge stays for months and years, not days. Noosia reviews material at scientifically optimized intervals — you learn a little, wait, then revisit just before you'd forget. It's the most proven technique in learning science.",
     "gamification_title": "Gamification Science",
     "gamification_desc": "Badges, streaks, and progress tracking tap into your natural drive to improve and see results. When learning feels rewarding moment to moment, you show up consistently — and consistency is what turns knowledge into skill.",
     "adaptive_title": "Adaptive Learning",
@@ -229,7 +229,7 @@
   },
   "contact": {
     "title": "Contact",
-    "meta_description": "Get in touch with the n∞sia team.",
+    "meta_description": "Get in touch with the noosia team.",
     "hero_title": "Get in touch",
     "hero_desc": "Have a question? We'd love to hear from you.",
     "name_label": "Name",
@@ -252,7 +252,7 @@
   },
   "pricing": {
     "title": "Pricing",
-    "meta_description": "Simple plans for every ambition. Join the Infinity beta and get founding member benefits.",
+    "meta_description": "Simple plans for every ambition. Join the Noosia beta and get founding member benefits.",
     "hero_title": "Simple plans for every ambition",
     "hero_subtitle": "We're finalizing our pricing. Join the beta today and get founding member benefits.",
     "coming_soon": "Coming soon",

@@ -15,7 +15,7 @@ const { title, lastItem, children, lang } = Astro.props;
 <li class="relative">
   <DropdownContainer class="group">
     <button
-      class="flex items-center gap-1 w-full lg:w-auto lg:px-3 py-2 text-infinity-dark hover:text-infinity-orange transition-colors"
+      class="flex items-center gap-1 w-full lg:w-auto lg:px-3 py-2 text-noosia-dark hover:text-noosia-orange transition-colors"
       aria-haspopup="menu"
     >
       <span>{title}</span>
@@ -50,7 +50,7 @@ const { title, lastItem, children, lang } = Astro.props;
             children.map((item) => (
               <a
                 href={item.path}
-                class="py-2 text-infinity-dark hover:text-infinity-orange transition-colors"
+                class="py-2 text-noosia-dark hover:text-noosia-orange transition-colors"
                 role="menuitem"
               >
                 {item.title}

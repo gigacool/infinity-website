@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://infinity.noosia.digital/sitemap-index.xml
+Sitemap: https://noosia.digital/sitemap-index.xml

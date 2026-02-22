@@ -44,7 +44,7 @@ const tiers = [
 
       <!-- Hero Section -->
       <section class="text-center mb-16">
-        <h1 class="text-4xl lg:text-5xl font-bold tracking-tight text-infinity-dark">
+        <h1 class="text-4xl lg:text-5xl font-bold tracking-tight text-noosia-dark">
           {t.pricing.hero_title}
         </h1>
         <p class="mt-4 text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto">
@@ -62,19 +62,19 @@ const tiers = [
               class:list={[
                 "relative flex flex-col rounded-2xl border p-8",
                 tier.highlighted
-                  ? "border-infinity-orange shadow-lg shadow-orange-100 ring-2 ring-infinity-orange"
+                  ? "border-noosia-orange shadow-lg shadow-orange-100 ring-2 ring-noosia-orange"
                   : "border-gray-200"
               ]}
             >
               <!-- Coming Soon Badge -->
               <div class="mb-6">
-                <span class="inline-block rounded-full bg-orange-50 px-3 py-1 text-sm font-medium text-infinity-orange">
+                <span class="inline-block rounded-full bg-orange-50 px-3 py-1 text-sm font-medium text-noosia-orange">
                   {t.pricing.coming_soon}
                 </span>
               </div>
 
               <!-- Tier Name -->
-              <h2 class="text-2xl font-bold text-infinity-dark">
+              <h2 class="text-2xl font-bold text-noosia-dark">
                 {tierData.name}
               </h2>
 
@@ -93,7 +93,7 @@ const tiers = [
                 {tierData.features.map((feature: string) => (
                   <li class="flex items-start gap-3">
                     <svg
-                      class="h-5 w-5 flex-shrink-0 text-infinity-orange mt-0.5"
+                      class="h-5 w-5 flex-shrink-0 text-noosia-orange mt-0.5"
                       viewBox="0 0 20 20"
                       fill="currentColor"
                       aria-hidden="true"
@@ -116,8 +116,8 @@ const tiers = [
                   class:list={[
                     "block w-full text-center rounded-full px-6 py-3 font-semibold transition-colors",
                     tier.highlighted
-                      ? "bg-infinity-orange text-white hover:bg-orange-600"
-                      : "bg-infinity-dark text-white hover:bg-gray-800"
+                      ? "bg-noosia-orange text-white hover:bg-orange-600"
+                      : "bg-noosia-dark text-white hover:bg-gray-800"
                   ]}
                 >
                   {tier.ctaLabel}

@@ -44,9 +44,8 @@ const menuitems = [
   <header class="flex flex-col lg:flex-row justify-between items-center my-5">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
-        <a href={`/${lang}/`} class="flex items-end gap-1" aria-label="n∞sia Infinity - Home">
+        <a href={`/${lang}/`} class="flex items-end gap-1" aria-label="Noosia - Home">
           <BrandName height={36} />
-          <span class="text-xl font-bold text-infinity-orange leading-none mb-[2px]">Infinity</span>
         </a>
         <div class="block lg:hidden">
           <MenuIcon class="w-4 h-4 text-gray-800" />
@@ -70,7 +69,7 @@ const menuitems = [
                   <li>
                     <a
                       href={item.path}
-                      class="flex lg:px-3 py-2 items-center text-infinity-dark hover:text-infinity-orange transition-colors">
+                      class="flex lg:px-3 py-2 items-center text-noosia-dark hover:text-noosia-orange transition-colors">
                       <span>{item.title}</span>
                     </a>
                   </li>
@@ -84,13 +83,13 @@ const menuitems = [
           <LanguageToggle currentLang={lang} currentPath={currentPath} />
           <a
             href={`/${lang}/beta`}
-            class="text-infinity-dark hover:text-infinity-orange transition-colors"
+            class="text-noosia-dark hover:text-noosia-orange transition-colors"
           >
             {t.cta.for_teams}
           </a>
           <a
             href={`/${lang}/beta`}
-            class="bg-infinity-orange text-white px-4 py-2 text-sm rounded-md hover:bg-orange-600 transition-colors w-full text-center"
+            class="bg-noosia-orange text-white px-4 py-2 text-sm rounded-md hover:bg-orange-600 transition-colors w-full text-center"
           >
             {t.cta.start_free}
           </a>
@@ -102,13 +101,13 @@ const menuitems = [
       <LanguageToggle currentLang={lang} currentPath={currentPath} />
       <a
         href={`/${lang}/beta`}
-        class="text-infinity-dark hover:text-infinity-orange transition-colors"
+        class="text-noosia-dark hover:text-noosia-orange transition-colors"
       >
         {t.cta.for_teams}
       </a>
       <a
         href={`/${lang}/beta`}
-        class="bg-infinity-orange text-white px-4 py-2 text-sm rounded-md hover:bg-orange-600 transition-colors"
+        class="bg-noosia-orange text-white px-4 py-2 text-sm rounded-md hover:bg-orange-600 transition-colors"
       >
         {t.cta.start_free}
       </a>

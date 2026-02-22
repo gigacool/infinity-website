@@ -20,7 +20,7 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": lang === 'fr' ? "Accueil" : "Home", "item": `https://infinity.noosia.digital/${lang}/` },
+    { "@type": "ListItem", "position": 1, "name": lang === 'fr' ? "Accueil" : "Home", "item": `https://noosia.digital/${lang}/` },
     { "@type": "ListItem", "position": 2, "name": t.legal.privacy }
   ]
 };
@@ -29,7 +29,7 @@ const breadcrumbSchema = {
 <Layout lang={lang} title={t.legal.privacy} description={lang === 'fr' ? "Politique de confidentialité de n∞sia." : "n∞sia's privacy policy."}>
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <Container>
-    <article class="mx-auto max-w-3xl py-16 prose prose-slate prose-headings:text-infinity-dark">
+    <article class="mx-auto max-w-3xl py-16 prose prose-slate prose-headings:text-noosia-dark">
 
       {lang === 'fr' ? (
         <div>

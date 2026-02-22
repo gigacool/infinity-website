@@ -106,8 +106,8 @@ export default function SkillGrid({ lang }: SkillGridProps) {
               onClick={() => { activeCategory.value = category.id; }}
               class={`flex-1 flex items-center justify-center gap-1.5 px-2 py-3 text-sm font-medium transition-colors duration-150 border-b-2 -mb-px
                 ${isActive
-                  ? 'border-infinity-orange text-infinity-orange'
-                  : 'border-transparent text-gray-500 hover:text-infinity-dark'
+                  ? 'border-noosia-orange text-noosia-orange'
+                  : 'border-transparent text-gray-500 hover:text-noosia-dark'
                 }`}
             >
               <span aria-hidden="true">{category.icon}</span>
@@ -139,10 +139,10 @@ export default function SkillGrid({ lang }: SkillGridProps) {
                 disabled={isDisabled}
                 class={`px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-150 min-h-[44px] border
                   ${isSelected
-                    ? 'border-infinity-orange bg-orange-50 text-infinity-orange'
+                    ? 'border-noosia-orange bg-orange-50 text-noosia-orange'
                     : isDisabled
                       ? 'border-gray-100 bg-gray-100 text-gray-400 cursor-not-allowed'
-                      : 'border-gray-200 bg-white text-infinity-dark hover:bg-gray-100'
+                      : 'border-gray-200 bg-white text-noosia-dark hover:bg-gray-100'
                   }`}
               >
                 {skill.name[lang]}
@@ -158,13 +158,13 @@ export default function SkillGrid({ lang }: SkillGridProps) {
           {Array.from(selectedSkills.value).map(skillId => (
             <span
               key={skillId}
-              class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg border border-infinity-orange bg-orange-50 text-infinity-orange text-sm font-medium"
+              class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg border border-noosia-orange bg-orange-50 text-noosia-orange text-sm font-medium"
             >
               {getSkillName(skillId)}
               <button
                 type="button"
                 onClick={() => removeSkill(skillId)}
-                class="ml-1 hover:bg-orange-100 rounded-full p-0.5 focus:outline-none focus:ring-2 focus:ring-infinity-orange"
+                class="ml-1 hover:bg-orange-100 rounded-full p-0.5 focus:outline-none focus:ring-2 focus:ring-noosia-orange"
                 aria-label={`${lang === 'fr' ? 'Retirer' : 'Remove'} ${getSkillName(skillId)}`}
               >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

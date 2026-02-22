@@ -20,7 +20,7 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": lang === 'fr' ? "Accueil" : "Home", "item": `https://infinity.noosia.digital/${lang}/` },
+    { "@type": "ListItem", "position": 1, "name": lang === 'fr' ? "Accueil" : "Home", "item": `https://noosia.digital/${lang}/` },
     { "@type": "ListItem", "position": 2, "name": t.legal.terms }
   ]
 };
@@ -29,7 +29,7 @@ const breadcrumbSchema = {
 <Layout lang={lang} title={t.legal.terms} description={lang === 'fr' ? "Conditions d'utilisation de n∞sia." : "n∞sia's terms of service."}>
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <Container>
-    <article class="mx-auto max-w-3xl py-16 prose prose-slate prose-headings:text-infinity-dark">
+    <article class="mx-auto max-w-3xl py-16 prose prose-slate prose-headings:text-noosia-dark">
 
       {lang === 'fr' ? (
         <div>
@@ -40,7 +40,7 @@ const breadcrumbSchema = {
           <p>En accédant au site web n∞sia et en l'utilisant, vous acceptez d'être lié par ces conditions d'utilisation. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser le site.</p>
 
           <h2>2. Description du service</h2>
-          <p>n∞sia propose Infinity, une plateforme d'apprentissage gamifiée alimentée par l'IA, actuellement en phase bêta. Le site web actuel est un site marketing qui présente le produit et permet l'inscription au programme bêta.</p>
+          <p>n∞sia propose Noosia, une plateforme d'apprentissage gamifiée alimentée par l'IA, actuellement en phase bêta. Le site web actuel est un site marketing qui présente le produit et permet l'inscription au programme bêta.</p>
 
           <h2>3. Programme bêta</h2>
           <p>En vous inscrivant au programme bêta :</p>
@@ -88,7 +88,7 @@ const breadcrumbSchema = {
           <p>By accessing and using the n∞sia website, you agree to be bound by these terms of service. If you do not agree to these terms, please do not use the site.</p>
 
           <h2>2. Description of Service</h2>
-          <p>n∞sia offers Infinity, an AI-powered gamified learning platform, currently in beta. The current website is a marketing site that presents the product and enables beta program signup.</p>
+          <p>n∞sia offers Noosia, an AI-powered gamified learning platform, currently in beta. The current website is a marketing site that presents the product and enables beta program signup.</p>
 
           <h2>3. Beta Program</h2>
           <p>By signing up for the beta program:</p>

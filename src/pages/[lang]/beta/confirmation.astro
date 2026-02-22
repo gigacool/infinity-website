@@ -17,7 +17,7 @@ const { lang } = Astro.params as { lang: Language };
 const t = getTranslations(lang);
 
 // Social share URLs
-const siteUrl = `https://infinity.noosia.digital/${lang}/beta`;
+const siteUrl = `https://noosia.digital/${lang}/beta`;
 const shareTextFr = "Je viens de rejoindre la bêta n∞sia ! Enfin une plateforme qui comprend que les compétences bougent vite.";
 const shareTextEn = "Just joined the n∞sia beta! Finally a platform that gets it - skills move fast.";
 const shareText = lang === 'fr' ? shareTextFr : shareTextEn;
@@ -37,7 +37,7 @@ const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURICompon
       </div>
 
       <!-- Celebration Headline -->
-      <h1 class="text-4xl md:text-5xl font-bold text-infinity-dark mb-4">
+      <h1 class="text-4xl md:text-5xl font-bold text-noosia-dark mb-4">
         {t.confirmation.headline}
       </h1>
       <p class="text-xl text-gray-600 mb-8 max-w-lg">
@@ -46,27 +46,27 @@ const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURICompon
 
       <!-- Timeline Box -->
       <div class="bg-orange-50 border border-orange-200 rounded-lg p-6 mb-10 max-w-md">
-        <p class="text-lg font-semibold text-infinity-dark">
+        <p class="text-lg font-semibold text-noosia-dark">
           {t.confirmation.timeline}
         </p>
       </div>
 
       <!-- What Happens Next -->
       <div class="mb-12 max-w-lg">
-        <h2 class="text-xl font-semibold text-infinity-dark mb-6">
+        <h2 class="text-xl font-semibold text-noosia-dark mb-6">
           {t.confirmation.what_next}
         </h2>
         <ul class="text-left space-y-4 text-gray-600">
           <li class="flex items-start gap-3">
-            <span class="text-infinity-orange font-bold text-lg flex-shrink-0">✓</span>
+            <span class="text-noosia-orange font-bold text-lg flex-shrink-0">✓</span>
             <span>{t.confirmation.expect_email}</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="text-infinity-orange font-bold text-lg flex-shrink-0">✓</span>
+            <span class="text-noosia-orange font-bold text-lg flex-shrink-0">✓</span>
             <span>{t.confirmation.expect_dashboard}</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="text-infinity-orange font-bold text-lg flex-shrink-0">✓</span>
+            <span class="text-noosia-orange font-bold text-lg flex-shrink-0">✓</span>
             <span>{t.confirmation.expect_feedback}</span>
           </li>
         </ul>
@@ -106,7 +106,7 @@ const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURICompon
       <!-- Return Home Link -->
       <a
         href={`/${lang}/`}
-        class="mt-10 text-infinity-orange hover:underline font-medium"
+        class="mt-10 text-noosia-orange hover:underline font-medium"
       >
         {t.confirmation.return_home}
       </a>

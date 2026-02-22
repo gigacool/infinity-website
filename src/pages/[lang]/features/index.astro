@@ -52,7 +52,7 @@ const gridItems = [
   { title: t.features_page.grid_8, icon: "bx:bxs-dashboard" },
 ];
 
-const siteUrl = "https://infinity.noosia.digital";
+const siteUrl = "https://noosia.digital";
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -93,17 +93,17 @@ const breadcrumbSchema = {
       <Container>
         <div class="max-w-3xl mx-auto">
           <div class="flex items-center gap-4 mb-6">
-            <div class="bg-infinity-orange/10 rounded-full p-3 w-12 h-12 flex items-center justify-center shrink-0">
-              <Icon class="text-infinity-orange w-6 h-6" name={uc.icon} />
+            <div class="bg-noosia-orange/10 rounded-full p-3 w-12 h-12 flex items-center justify-center shrink-0">
+              <Icon class="text-noosia-orange w-6 h-6" name={uc.icon} />
             </div>
-            <h2 class="text-2xl md:text-3xl font-bold text-infinity-dark">
+            <h2 class="text-2xl md:text-3xl font-bold text-noosia-dark">
               {uc.title}
             </h2>
           </div>
           <ul class="space-y-3 ml-16">
             {uc.points.map((point) => (
               <li class="flex items-start gap-3 text-slate-700">
-                <svg class="w-5 h-5 text-infinity-orange shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <svg class="w-5 h-5 text-noosia-orange shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                 </svg>
                 <span>{point}</span>
@@ -118,16 +118,16 @@ const breadcrumbSchema = {
   <!-- Feature Grid -->
   <section class="py-16 md:py-20 bg-white">
     <Container>
-      <h2 class="text-2xl md:text-3xl font-bold text-infinity-dark text-center mb-10">
+      <h2 class="text-2xl md:text-3xl font-bold text-noosia-dark text-center mb-10">
         {t.features_page.grid_title}
       </h2>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
         {gridItems.map((item) => (
           <div class="flex flex-col items-center gap-2 p-4 rounded-lg bg-gray-50 text-center">
-            <div class="bg-infinity-orange/10 rounded-full p-2 w-10 h-10 flex items-center justify-center">
-              <Icon class="text-infinity-orange w-5 h-5" name={item.icon} />
+            <div class="bg-noosia-orange/10 rounded-full p-2 w-10 h-10 flex items-center justify-center">
+              <Icon class="text-noosia-orange w-5 h-5" name={item.icon} />
             </div>
-            <span class="text-sm font-medium text-infinity-dark">{item.title}</span>
+            <span class="text-sm font-medium text-noosia-dark">{item.title}</span>
           </div>
         ))}
         <div class="flex flex-col items-center justify-center gap-2 p-4 rounded-lg border-2 border-dashed border-gray-300 text-center">
@@ -140,7 +140,7 @@ const breadcrumbSchema = {
   <!-- Beta CTA Section -->
   <section class="py-16 md:py-20">
     <Container>
-      <div class="bg-infinity-dark p-8 md:px-20 md:py-16 mx-auto max-w-5xl rounded-lg flex flex-col items-center text-center">
+      <div class="bg-noosia-dark p-8 md:px-20 md:py-16 mx-auto max-w-5xl rounded-lg flex flex-col items-center text-center">
         <h2 class="text-white text-3xl md:text-4xl font-bold tracking-tight">
           {t.features_page.beta_title}
         </h2>
@@ -150,7 +150,7 @@ const breadcrumbSchema = {
         <div class="mt-8">
           <a
             href={`/${lang}/beta`}
-            class="bg-infinity-orange text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-600 transition-colors inline-block"
+            class="bg-noosia-orange text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-600 transition-colors inline-block"
           >
             {t.features_page.beta_cta}
           </a>

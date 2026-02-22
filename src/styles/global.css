@@ -6,16 +6,16 @@
   /* Typography - System font for zero load time */
   --font-sans: Arial, ui-sans-serif, system-ui, sans-serif;
 
-  /* Infinity Brand Colors - these create Tailwind utility classes */
-  /* Usage: bg-infinity-orange, text-infinity-dark, bg-infinity-light */
-  --color-infinity-orange: #F97316;
-  --color-infinity-dark: #374151;
-  --color-infinity-light: #F9FAFB;
+  /* Noosia Brand Colors - these create Tailwind utility classes */
+  /* Usage: bg-noosia-orange, text-noosia-dark, bg-noosia-light */
+  --color-noosia-orange: #F97316;
+  --color-noosia-dark: #374151;
+  --color-noosia-light: #F9FAFB;
 
   /* Semantic Aliases */
-  --color-primary: var(--color-infinity-orange);
-  --color-text: var(--color-infinity-dark);
-  --color-background: var(--color-infinity-light);
+  --color-primary: var(--color-noosia-orange);
+  --color-text: var(--color-noosia-dark);
+  --color-background: var(--color-noosia-light);
 }
 
 /* Motion tokens with reduced motion support */
@@ -35,7 +35,7 @@
 
 /* Focus visible pattern for accessibility */
 :focus-visible {
-  outline: 2px solid var(--color-infinity-orange);
+  outline: 2px solid var(--color-noosia-orange);
   outline-offset: 2px;
 }
 
@@ -49,7 +49,7 @@
   top: -100%;
   left: 16px;
   padding: 8px 16px;
-  background: var(--color-infinity-orange);
+  background: var(--color-noosia-orange);
   color: white;
   z-index: 9999;
   transition: top var(--transition-fast);

@@ -14,10 +14,10 @@ const t = getTranslations(lang);
 ---
 
 <section class="pt-16 pb-8 md:pt-12 md:pb-24 text-center">
-  <p class="text-sm font-semibold uppercase tracking-wider text-infinity-orange mb-4">
+  <p class="text-sm font-semibold uppercase tracking-wider text-noosia-orange mb-4">
     {t.hero.tagline}
   </p>
-  <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter text-infinity-dark max-w-4xl mx-auto">
+  <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter text-noosia-dark max-w-4xl mx-auto">
     {t.hero.title_lines.map((line: string, i: number) => (
       <>{i > 0 && <br />}{line}</>
     ))}
@@ -45,6 +45,6 @@ const t = getTranslations(lang);
     <TrustSignals lang={lang} />
   </div>
   <div class="py-12 md:py-16 flex justify-center">
-    <!--<MockupFrame alt="Infinity Platform Dashboard showing badges, tokens, and streak achievements" />-->
+    <!--<MockupFrame alt="Noosia Platform Dashboard showing badges, tokens, and streak achievements" />-->
   </div>
 </section>

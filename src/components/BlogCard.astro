@@ -23,10 +23,10 @@ const formattedDate = date.toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-US',
 
 <a href={`/${lang}/blog/${slug}`} class="group block">
   <article class="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow p-6 h-full flex flex-col">
-    <span class="text-sm font-medium text-infinity-orange uppercase tracking-wider">
+    <span class="text-sm font-medium text-noosia-orange uppercase tracking-wider">
       {category}
     </span>
-    <h2 class="text-xl font-bold text-slate-900 mt-2 group-hover:text-infinity-orange transition-colors">
+    <h2 class="text-xl font-bold text-slate-900 mt-2 group-hover:text-noosia-orange transition-colors">
       {title}
     </h2>
     <p class="text-slate-600 mt-3 flex-1">
@@ -36,7 +36,7 @@ const formattedDate = date.toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-US',
       <time class="text-sm text-gray-400" datetime={date.toISOString()}>
         {formattedDate}
       </time>
-      <span class="text-sm font-medium text-infinity-orange group-hover:underline">
+      <span class="text-sm font-medium text-noosia-orange group-hover:underline">
         {t.blog.read_more} &rarr;
       </span>
     </div>
