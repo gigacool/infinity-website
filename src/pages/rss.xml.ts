@@ -14,7 +14,7 @@ export async function GET(context: APIContext) {
   return rss({
     title: 'n∞sia Blog',
     description: 'Articles about learning, skills, and professional growth.',
-    site: context.site ?? 'https://infinity-website-psi.vercel.app',
+    site: context.site ?? 'https://infinity.noosia.digital',
     items: sortedPosts.map((post) => {
       const [lang, ...slugParts] = post.id.split('/');
       const slug = slugParts.join('/').replace(/\.mdx?$/, '');

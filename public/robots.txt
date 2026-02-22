@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://infinity-website-psi.vercel.app/sitemap-index.xml
+Sitemap: https://infinity.noosia.digital/sitemap-index.xml

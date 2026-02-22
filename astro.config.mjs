@@ -8,7 +8,7 @@ import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://infinity-website-psi.vercel.app",
+  site: "https://infinity.noosia.digital",
   output: "server",
   adapter: vercel(),
   integrations: [
